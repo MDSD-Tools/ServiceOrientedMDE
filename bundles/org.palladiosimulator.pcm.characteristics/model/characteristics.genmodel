@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/org.palladiosimulator.pcm.characteristics/src-gen"
+    creationIcons="false" editDirectory="/org.palladiosimulator.pcm.characteristics.edit/src-gen"
+    editorDirectory="/org.palladiosimulator.pcm.characteristics.editor/src-gen" modelPluginID="org.palladiosimulator.pcm.characteristics"
+    modelName="Characteristics" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0"
+    copyrightFields="false" usedGenPackages="../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../de.uka.ipd.sdq.identifier/model/identifier.genmodel#//identifier"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>characteristics.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="Characteristics" basePackage="org.palladiosimulator.pcm" disposableProviderFactory="true"
+      extensibleProviderFactory="true" childCreationExtenders="true" ecorePackage="characteristics.ecore#/">
+    <nestedGenPackages prefix="Manifestation" basePackage="org.palladiosimulator.pcm.characteristics"
+        disposableProviderFactory="true" ecorePackage="characteristics.ecore#//manifestation">
+      <genClasses image="false" ecoreClass="characteristics.ecore#//manifestation/CharacteristicManifestationFilter"/>
+      <genClasses image="false" ecoreClass="characteristics.ecore#//manifestation/DerivedCharacteristicManifestationType">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference characteristics.ecore#//manifestation/DerivedCharacteristicManifestationType/requiredCharacterizations"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="characteristics.ecore#//manifestation/StaticManifestationType"/>
+      <genClasses image="false" ecoreClass="characteristics.ecore#//manifestation/ManifestationType"/>
+      <genClasses ecoreClass="characteristics.ecore#//manifestation/ManifestationTypeRepository">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference characteristics.ecore#//manifestation/ManifestationTypeRepository/types"/>
+      </genClasses>
+      <genClasses ecoreClass="characteristics.ecore#//manifestation/ProbabilisticManifestationType"/>
+      <genClasses ecoreClass="characteristics.ecore#//manifestation/CharacterizationRequirement">
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference characteristics.ecore#//manifestation/CharacterizationRequirement/derivedManifestation"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Instance" basePackage="org.palladiosimulator.pcm.characteristics"
+        disposableProviderFactory="true" ecorePackage="characteristics.ecore#//instance">
+      <genClasses image="false" ecoreClass="characteristics.ecore#//instance/CharacteristicManifestation">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference characteristics.ecore#//instance/CharacteristicManifestation/manifestation"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference characteristics.ecore#//instance/CharacteristicManifestation/valueType"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="characteristics.ecore#//instance/Characterizable">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference characteristics.ecore#//instance/Characterizable/characteristics"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Characteristic" basePackage="org.palladiosimulator.pcm.characteristics"
+        disposableProviderFactory="true" ecorePackage="characteristics.ecore#//characteristic">
+      <genClasses image="false" ecoreClass="characteristics.ecore#//characteristic/Characteristic">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference characteristics.ecore#//characteristic/Characteristic/valueType"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="characteristics.ecore#//characteristic/CharacteristicApplicationRule">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference characteristics.ecore#//characteristic/CharacteristicApplicationRule/validCharacteristics"/>
+        <genOperations ecoreOperation="characteristics.ecore#//characteristic/CharacteristicApplicationRule/isApplicableTo">
+          <genParameters ecoreParameter="characteristics.ecore#//characteristic/CharacteristicApplicationRule/isApplicableTo/element"/>
+        </genOperations>
+      </genClasses>
+      <genClasses ecoreClass="characteristics.ecore#//characteristic/CharacteristicCatalog">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference characteristics.ecore#//characteristic/CharacteristicCatalog/characteristics"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference characteristics.ecore#//characteristic/CharacteristicCatalog/profiles"/>
+      </genClasses>
+      <genClasses ecoreClass="characteristics.ecore#//characteristic/CharacteristicProfile">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference characteristics.ecore#//characteristic/CharacteristicProfile/applicationrules"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Valuetype" basePackage="org.palladiosimulator.pcm.characteristics"
+        disposableProviderFactory="true" ecorePackage="characteristics.ecore#//valuetype">
+      <genDataTypes ecoreDataType="characteristics.ecore#//valuetype/Optional">
+        <genTypeParameters ecoreTypeParameter="characteristics.ecore#//valuetype/Optional/T"/>
+      </genDataTypes>
+      <genClasses image="false" ecoreClass="characteristics.ecore#//valuetype/ValueType">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute characteristics.ecore#//valuetype/ValueType/isParametric"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference characteristics.ecore#//valuetype/ValueType/properties"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute characteristics.ecore#//valuetype/ValueType/name"/>
+        <genOperations ecoreOperation="characteristics.ecore#//valuetype/ValueType/getProperty">
+          <genParameters ecoreParameter="characteristics.ecore#//valuetype/ValueType/getProperty/propertyType"/>
+          <genTypeParameters ecoreTypeParameter="characteristics.ecore#//valuetype/ValueType/getProperty/P"/>
+        </genOperations>
+      </genClasses>
+      <genClasses ecoreClass="characteristics.ecore#//valuetype/EDataTypeValueType">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference characteristics.ecore#//valuetype/EDataTypeValueType/baseType"/>
+      </genClasses>
+      <genClasses ecoreClass="characteristics.ecore#//valuetype/ComposedValueType">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference characteristics.ecore#//valuetype/ComposedValueType/nestedTypes"/>
+      </genClasses>
+      <genClasses ecoreClass="characteristics.ecore#//valuetype/BaseValueType"/>
+      <genClasses ecoreClass="characteristics.ecore#//valuetype/EnumValueType"/>
+      <genClasses image="false" ecoreClass="characteristics.ecore#//valuetype/ValueTypeProperty"/>
+      <genClasses image="false" ecoreClass="characteristics.ecore#//valuetype/ExplicitSetValueType">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference characteristics.ecore#//valuetype/ExplicitSetValueType/explicitValues"/>
+      </genClasses>
+      <nestedGenPackages prefix="Properties" basePackage="org.palladiosimulator.pcm.characteristics.valuetype"
+          disposableProviderFactory="true" ecorePackage="characteristics.ecore#//valuetype/properties">
+        <genClasses image="false" ecoreClass="characteristics.ecore#//valuetype/properties/OrderedValueType">
+          <genOperations ecoreOperation="characteristics.ecore#//valuetype/properties/OrderedValueType/compare">
+            <genParameters ecoreParameter="characteristics.ecore#//valuetype/properties/OrderedValueType/compare/first"/>
+            <genParameters ecoreParameter="characteristics.ecore#//valuetype/properties/OrderedValueType/compare/second"/>
+          </genOperations>
+        </genClasses>
+        <genClasses image="false" ecoreClass="characteristics.ecore#//valuetype/properties/FiniteSetValueType">
+          <genOperations ecoreOperation="characteristics.ecore#//valuetype/properties/FiniteSetValueType/values"/>
+        </genClasses>
+      </nestedGenPackages>
+    </nestedGenPackages>
+  </genPackages>
+</genmodel:GenModel>
