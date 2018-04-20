@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="characteristics" nsURI="http://www.mdsd.tools/characteristics/1.0"
+    nsPrefix="characteristics">
+  <eAnnotations source="http://www.eclipse.org/OCL/Import">
+    <details key="ecore" value="http://www.eclipse.org/emf/2002/Ecore"/>
+    <details key="identifier" value="../../../plugin/de.uka.ipd.sdq.identifier/model/identifier.ecore#/"/>
+  </eAnnotations>
+  <eSubpackages name="manifestation" nsURI="http://www.mdsd.tools/characteristics/manifestation/1.0"
+      nsPrefix="manifestation">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+      <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+      <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    </eAnnotations>
+    <eClassifiers xsi:type="ecore:EClass" name="DerivedManifestation" abstract="true"
+        eSuperTypes="#//manifestation/Manifestation">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="requiredCharacterizations"
+          upperBound="-1" eType="#//manifestation/ManifestationRequirement" containment="true"
+          eOpposite="#//manifestation/ManifestationRequirement/derivedManifestation"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="manifestationProviders"
+          upperBound="-1" eType="#//manifestation/RequiredManifestationProvider"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Manifestation" abstract="true" eSuperTypes="platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="ManifestationMustProduceSamplesOfTheCorrectValueType"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+        <details key="ManifestationMustProduceSamplesOfTheCorrectValueType" value="self.valuetype.adheresToValueType(self.sample())"/>
+      </eAnnotations>
+      <eOperations name="sample" eType="#//manifestation/EManifestationObject"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="valuetype" lowerBound="1"
+          eType="#//valuetype/ValueType"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ProbabilisticManifestation" abstract="true"
+        eSuperTypes="#//manifestation/Manifestation"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ManifestationRequirement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="derivedManifestation"
+          eType="#//manifestation/DerivedManifestation" eOpposite="#//manifestation/DerivedManifestation/requiredCharacterizations"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="characteristic" lowerBound="1"
+          eType="#//characteristic/Characteristic"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="requiredCharacterizations"
+          upperBound="-1" eType="#//manifestation/ManifestationRequirement" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="DiscreteProbabilityDistributionManifestation"
+        abstract="true" eSuperTypes="#//manifestation/ProbabilisticManifestation">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="manifestations" transient="true"
+          derived="true">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="#//manifestation/Manifestation"/>
+          <eTypeArguments eClassifier="#//manifestation/Manifestation"/>
+        </eGenericType>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="StaticManifestation" abstract="true"
+        eSuperTypes="#//manifestation/Manifestation">
+      <eOperations name="sample" eType="#//manifestation/EManifestationObject">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+          <details key="body" value="self.value"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="getStaticValue" eType="#//manifestation/EManifestationObject"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="#//manifestation/EManifestationObject"
+          transient="true" derived="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="StaticObjectManifestation" eSuperTypes="#//manifestation/StaticManifestation">
+      <eOperations name="getStaticValue" eType="#//manifestation/EManifestationObject">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+          <details key="body" value="self.valueObject"/>
+        </eAnnotations>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="valueObject" eType="#//manifestation/EManifestationObject"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EDataType" name="EManifestationObject" instanceClassName="java.lang.Object"/>
+    <eClassifiers xsi:type="ecore:EClass" name="CategoricalProbabilityMassFunction"
+        eSuperTypes="#//manifestation/DiscreteProbabilityDistributionManifestation">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="categories" lowerBound="1"
+          upperBound="-1" eType="#//manifestation/Category" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Category">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="manifestation" lowerBound="1"
+          eType="#//manifestation/Manifestation" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="probability" lowerBound="1"
+          eType="#//manifestation/Manifestation" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="RequiredManifestationProvider" abstract="true">
+      <eOperations name="satisfyRequirement" eType="#//manifestation/Manifestation">
+        <eParameters name="requirement" eType="#//manifestation/ManifestationRequirement"/>
+      </eOperations>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="instance" nsURI="http://www.mdsd.tools/characteristics/instance/1.0"
+      nsPrefix="instance">
+    <eClassifiers xsi:type="ecore:EClass" name="CharacteristicManifestation" eSuperTypes="#//instance/Characterizable">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="manifestation" lowerBound="1"
+          eType="#//manifestation/Manifestation" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="characteristic" lowerBound="1"
+          eType="#//characteristic/Characteristic"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Characterizable" abstract="true">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="localManifestations"
+          upperBound="-1" eType="#//instance/CharacteristicManifestation" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="manifestations" upperBound="-1"
+          eType="#//instance/CharacteristicManifestation" changeable="false" transient="true"
+          derived="true"/>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="characteristic" nsURI="http://www.mdsd.tools/characteristics/characteristic/1.0"
+      nsPrefix="characteristic">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+      <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+      <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    </eAnnotations>
+    <eClassifiers xsi:type="ecore:EClass" name="Characteristic" eSuperTypes="platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier #//characteristic/Characterizing #//instance/Characterizable">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="characteristicCanOnlyBeCharacterizedWithManifestationsOfNestedCharacteristics"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+        <details key="characteristicCanOnlyBeCharacterizedWithManifestationsOfNestedCharacteristics"
+            value="&#xA;&#x9;&#x9;&#x9;&#x9;self.localManifestations->forAll(it | self.characteristics->exists(it.characteristic))"/>
+      </eAnnotations>
+      <eOperations name="computeCharacteristic" lowerBound="1" eType="#//characteristic/Characteristic">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+          <details key="body" value="self"/>
+        </eAnnotations>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="valueType" eType="#//valuetype/ValueType"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="localCharacteristics"
+          upperBound="-1" eType="#//characteristic/Characterizing" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="refinesCharacteristics"
+          upperBound="-1" eType="#//characteristic/Characteristic"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="characteristics" unique="false"
+          upperBound="-1" eType="#//characteristic/Characteristic" changeable="false"
+          volatile="true" transient="true" derived="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+          <details key="derivation" value="localCharacteristics.characteristic->union(refinesCharacteristics.characteristics)"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="CharacteristicApplicationRule" abstract="true">
+      <eOperations name="isApplicableTo" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eParameters name="element" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="allowedCharacteristics"
+          lowerBound="1" upperBound="-1" eType="#//characteristic/Characteristic"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="CharacteristicCatalog">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="characteristics" upperBound="-1"
+          eType="#//characteristic/Characteristic" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="profiles" upperBound="-1"
+          eType="#//characteristic/CharacteristicProfile" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="CharacteristicProfile">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="applicationRules" upperBound="-1"
+          eType="#//characteristic/CharacteristicApplicationRule" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="TypeBasedCharacteristicApplicationRule"
+        eSuperTypes="#//characteristic/CharacteristicApplicationRule">
+      <eOperations name="isApplicableTo" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+          <details key="body" value="self.legalTypes->exists(t | t.isInstance(element.oclAsType(ecore::EJavaObject)))"/>
+        </eAnnotations>
+        <eParameters name="element" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="legalTypes" lowerBound="1"
+          upperBound="-1" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Characterizing" abstract="true">
+      <eOperations name="computeCharacteristic" lowerBound="1" eType="#//characteristic/Characteristic"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="characteristic" lowerBound="1"
+          eType="#//characteristic/Characteristic" changeable="false" volatile="true"
+          transient="true" derived="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+          <details key="derivation" value="self.computeCharacteristic()"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="CharacteristicReference" eSuperTypes="#//characteristic/Characterizing">
+      <eOperations name="computeCharacteristic" lowerBound="1" eType="#//characteristic/Characteristic">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+          <details key="body" value="self.referencedCharacteristic"/>
+        </eAnnotations>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="referencedCharacteristic"
+          lowerBound="1" eType="#//characteristic/Characteristic"/>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="valuetype" nsURI="http://www.mdsd.tools/characteristics/valuetype/1.0"
+      nsPrefix="valuetype">
+    <eClassifiers xsi:type="ecore:EClass" name="ValueType" abstract="true" eSuperTypes="platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier">
+      <eOperations name="getProperty">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return tools.mdsd.characteristics.utils.ValueTypeUtils.getProperty(this, propertyType);"/>
+        </eAnnotations>
+        <eGenericType eTypeParameter="#//valuetype/ValueType/getProperty/P"/>
+        <eTypeParameters name="P">
+          <eBounds eClassifier="#//valuetype/ValueTypeProperty"/>
+        </eTypeParameters>
+        <eParameters name="propertyType">
+          <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaClass">
+            <eTypeArguments eTypeParameter="#//valuetype/ValueType/getProperty/P"/>
+          </eGenericType>
+        </eParameters>
+      </eOperations>
+      <eOperations name="adheresToValueType" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return tools.mdsd.characteristics.utils.ValueTypeUtils.adheresToValueType(this, instance);"/>
+        </eAnnotations>
+        <eParameters name="instance" eType="#//manifestation/EManifestationObject"/>
+      </eOperations>
+      <eOperations name="hasProperty" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return tools.mdsd.characteristics.utils.ValueTypeUtils.hasProperty(this, propertyType);"/>
+        </eAnnotations>
+        <eTypeParameters name="P">
+          <eBounds eClassifier="#//valuetype/ValueTypeProperty"/>
+        </eTypeParameters>
+        <eParameters name="propertyType">
+          <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaClass">
+            <eTypeArguments eTypeParameter="#//valuetype/ValueType/hasProperty/P"/>
+          </eGenericType>
+        </eParameters>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
+          eType="#//valuetype/ValueTypeProperty"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="EDataTypeValueType" eSuperTypes="#//valuetype/BaseValueType">
+      <eOperations name="adheresToValueType" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return tools.mdsd.characteristics.utils.ValueTypeUtils.isInstanceOfDataType(instance, this.baseType);"/>
+        </eAnnotations>
+        <eParameters name="instance" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="baseType" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EDataType"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="StructuredValueType" eSuperTypes="#//valuetype/ValueType">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="elements" ordered="false"
+          lowerBound="1" upperBound="-1" eType="#//valuetype/StructuredValueTypeElement"
+          containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="BaseValueType" abstract="true" eSuperTypes="#//valuetype/ValueType"/>
+    <eClassifiers xsi:type="ecore:EClass" name="EnumValueType" eSuperTypes="#//valuetype/BaseValueType #//valuetype/ExplicitSetValueType"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ValueTypeProperty" abstract="true"
+        interface="true"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ExplicitSetValueType" abstract="true">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="explicitValues" lowerBound="1"
+          upperBound="-1" eType="#//manifestation/Manifestation" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="CollectionValueType" eSuperTypes="#//valuetype/ValueType">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="nestedType" lowerBound="1"
+          eType="#//valuetype/ValueType"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="lowerBound" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" defaultValueLiteral="-1"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="upperBound" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" defaultValueLiteral="-1"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ValueTypeRepository">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="valuetype" upperBound="-1"
+          eType="#//valuetype/ValueType" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ConstraintValueType" eSuperTypes="#//valuetype/ValueType">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="valuetype" lowerBound="1"
+          eType="#//valuetype/ValueType"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ValueTypeAlias" eSuperTypes="#//valuetype/ValueType">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="originalValueType" lowerBound="1"
+          eType="#//valuetype/ValueType"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="StructuredValueTypeElement">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="valuetype" lowerBound="1"
+          eType="#//valuetype/ValueType"/>
+    </eClassifiers>
+  </eSubpackages>
+</ecore:EPackage>

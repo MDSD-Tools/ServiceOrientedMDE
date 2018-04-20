@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="BasicProperties" nsURI="http://www.mdsd.tools/characteristics/valuetype/basicProperties/1.0"
+    nsPrefix="BasicProperties">
+  <eAnnotations source="http://www.eclipse.org/OCL/Import">
+    <details key="ecore" value="http://www.eclipse.org/emf/2002/Ecore"/>
+    <details key="instance" value="characteristics.ecore#//instance"/>
+    <details key="manifestation" value="characteristics.ecore#//manifestation"/>
+    <details key="valuetype" value="characteristics.ecore#//valuetype"/>
+  </eAnnotations>
+  <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+    <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="OrderedValueType" abstract="true" interface="true"
+      eSuperTypes="characteristics.ecore#//valuetype/ValueTypeProperty">
+    <eOperations name="compare" eType="ecore:EClass characteristics.ecore#//instance/CharacteristicManifestation">
+      <eParameters name="first" eType="ecore:EClass characteristics.ecore#//manifestation/Manifestation"/>
+      <eParameters name="second" eType="ecore:EClass characteristics.ecore#//manifestation/Manifestation"/>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CountableSetValueType" abstract="true"
+      interface="true" eSuperTypes="characteristics.ecore#//valuetype/ValueTypeProperty">
+    <eOperations name="iterator">
+      <eGenericType eClassifier="#//Iterator">
+        <eTypeArguments eClassifier="ecore:EClass characteristics.ecore#//manifestation/Manifestation"/>
+      </eGenericType>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FiniteSetValueType" abstract="true"
+      interface="true" eSuperTypes="#//CountableSetValueType">
+    <eOperations name="values">
+      <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList">
+        <eTypeArguments eClassifier="ecore:EClass characteristics.ecore#//manifestation/Manifestation"/>
+      </eGenericType>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="values" lowerBound="1"
+        upperBound="-1" eType="ecore:EClass characteristics.ecore#//manifestation/Manifestation"
+        changeable="false" volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+        <details key="derivation" value="self.values()"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OrderedSetValueType" abstract="true"
+      interface="true" eSuperTypes="#//FiniteSetValueType #//OrderedValueType"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="Iterator" instanceClassName="java.util.Iterator"
+      serializable="false">
+    <eTypeParameters name="T"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UniqueElementsValueType" abstract="true"
+      interface="true" eSuperTypes="characteristics.ecore#//valuetype/ValueTypeProperty"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ValueTypeWithDefaultValue" abstract="true"
+      interface="true" eSuperTypes="characteristics.ecore#//valuetype/ValueTypeProperty">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="defaultValue" lowerBound="1"
+        eType="ecore:EClass characteristics.ecore#//manifestation/Manifestation" changeable="false"
+        volatile="true" transient="true" derived="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ParametricValueType" abstract="true"
+      interface="true" eSuperTypes="characteristics.ecore#//valuetype/ValueTypeProperty">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" unique="false"
+        lowerBound="1" upperBound="-1" eType="ecore:EClass characteristics.ecore#//valuetype/ValueType"
+        changeable="false" volatile="true" transient="true" derived="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EDataTypeBased" abstract="true" interface="true"
+      eSuperTypes="characteristics.ecore#//valuetype/ValueTypeProperty">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataType" lowerBound="1"
+        eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EDataType" changeable="false"
+        volatile="true" transient="true" derived="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="Collection" instanceClassName="java.util.Collection">
+    <eTypeParameters name="T"/>
+  </eClassifiers>
+</ecore:EPackage>

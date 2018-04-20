@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated characteristics -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="tools.mdsd.characteristics.manifestation.presentation.ManifestationModelWizardID"
+            name="%_UI_ManifestationModelWizard_label"
+            class="tools.mdsd.characteristics.manifestation.presentation.ManifestationModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/ManifestationModelFile.gif">
+         <description>%_UI_ManifestationModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated characteristics -->
+      <editor
+            id="tools.mdsd.characteristics.manifestation.presentation.ManifestationEditorID"
+            name="%_UI_ManifestationEditor_label"
+            icon="icons/full/obj16/ManifestationModelFile.gif"
+            extensions="manifestation"
+            class="tools.mdsd.characteristics.manifestation.presentation.ManifestationEditor"
+            contributorClass="tools.mdsd.characteristics.manifestation.presentation.ManifestationActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated characteristics -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="tools.mdsd.characteristics.instance.presentation.InstanceModelWizardID"
+            name="%_UI_InstanceModelWizard_label"
+            class="tools.mdsd.characteristics.instance.presentation.InstanceModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/InstanceModelFile.gif">
+         <description>%_UI_InstanceModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated characteristics -->
+      <editor
+            id="tools.mdsd.characteristics.instance.presentation.InstanceEditorID"
+            name="%_UI_InstanceEditor_label"
+            icon="icons/full/obj16/InstanceModelFile.gif"
+            extensions="instance"
+            class="tools.mdsd.characteristics.instance.presentation.InstanceEditor"
+            contributorClass="tools.mdsd.characteristics.instance.presentation.InstanceActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated characteristics -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="tools.mdsd.characteristics.characteristic.presentation.CharacteristicModelWizardID"
+            name="%_UI_CharacteristicModelWizard_label"
+            class="tools.mdsd.characteristics.characteristic.presentation.CharacteristicModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/CharacteristicModelFile.gif">
+         <description>%_UI_CharacteristicModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated characteristics -->
+      <editor
+            id="tools.mdsd.characteristics.characteristic.presentation.CharacteristicEditorID"
+            name="%_UI_CharacteristicEditor_label"
+            icon="icons/full/obj16/CharacteristicModelFile.gif"
+            extensions="characteristic"
+            class="tools.mdsd.characteristics.characteristic.presentation.CharacteristicEditor"
+            contributorClass="tools.mdsd.characteristics.characteristic.presentation.CharacteristicActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated characteristics -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="tools.mdsd.characteristics.valuetype.presentation.ValuetypeModelWizardID"
+            name="%_UI_ValuetypeModelWizard_label"
+            class="tools.mdsd.characteristics.valuetype.presentation.ValuetypeModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/ValuetypeModelFile.gif">
+         <description>%_UI_ValuetypeModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated characteristics -->
+      <editor
+            id="tools.mdsd.characteristics.valuetype.presentation.ValuetypeEditorID"
+            name="%_UI_ValuetypeEditor_label"
+            icon="icons/full/obj16/ValuetypeModelFile.gif"
+            extensions="valuetype"
+            class="tools.mdsd.characteristics.valuetype.presentation.ValuetypeEditor"
+            contributorClass="tools.mdsd.characteristics.valuetype.presentation.ValuetypeActionBarContributor">
+      </editor>
+   </extension>
+</plugin>

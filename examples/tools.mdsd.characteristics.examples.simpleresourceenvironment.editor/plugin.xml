@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated simpleresourceenvironment -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="tools.mdsd.characteristics.examples.simpleresourceenvironment.presentation.SimpleresourceenvironmentModelWizardID"
+            name="%_UI_SimpleresourceenvironmentModelWizard_label"
+            class="tools.mdsd.characteristics.examples.simpleresourceenvironment.presentation.SimpleresourceenvironmentModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/SimpleresourceenvironmentModelFile.gif">
+         <description>%_UI_SimpleresourceenvironmentModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated simpleresourceenvironment -->
+      <editor
+            id="tools.mdsd.characteristics.examples.simpleresourceenvironment.presentation.SimpleresourceenvironmentEditorID"
+            name="%_UI_SimpleresourceenvironmentEditor_label"
+            icon="icons/full/obj16/SimpleresourceenvironmentModelFile.gif"
+            extensions="simpleresourceenvironment"
+            class="tools.mdsd.characteristics.examples.simpleresourceenvironment.presentation.SimpleresourceenvironmentEditor"
+            contributorClass="tools.mdsd.characteristics.examples.simpleresourceenvironment.presentation.SimpleresourceenvironmentActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>
