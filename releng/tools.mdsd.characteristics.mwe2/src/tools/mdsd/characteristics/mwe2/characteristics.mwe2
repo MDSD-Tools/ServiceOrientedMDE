@@ -1,35 +1,36 @@
 module tools.mdsd.characteristics.mwe2.characteristics
 
-import org.eclipse.emf.mwe.utils.StandaloneSetup
-import org.eclipse.emf.mwe.utils.DirectoryCleaner
 import org.eclipse.emf.mwe2.ecore.EcoreGenerator
+import tools.mdsd.ecoreworkflow.mwe2lib.bean.EclipseRCPSupportingStandaloneSetup
+import tools.mdsd.ecoreworkflow.mwe2lib.component.ContextDependentMapping
+import tools.mdsd.ecoreworkflow.mwe2lib.component.RegexComponent
+import tools.mdsd.ecoreworkflow.mwe2lib.component.URISupportingDirectoryCleaner
 
-var workspaceRoot = "../../bundles"
+var workspaceRoot = "../../"
 
 Workflow {
-
-	bean = StandaloneSetup {
+	bean = EclipseRCPSupportingStandaloneSetup {
 		scanClassPath = true
 		platformUri = workspaceRoot
 		
-		uriMap = {
-			from = "platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.genmodel"
-			to = "platform:/resource/de.uka.ipd.sdq.identifier/model/identifier.genmodel"
+		uriMap = ContextDependentMapping {
+			onRunningPlatform = "platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.genmodel"
+			onStandalone = "platform:/resource/de.uka.ipd.sdq.identifier/model/identifier.genmodel"
 		}
-		uriMap = {
-			from = "platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.ecore"
-			to = "platform:/resource/de.uka.ipd.sdq.identifier/model/identifier.ecore"
-		}
-				
-		registerGenModelFile = "platform:/resource/org.eclipse.emf.codegen.ecore/model/GenModel.genmodel"
-		registerGenModelFile = "platform:/resource/org.eclipse.emf.ecore/model/Ecore.genmodel"
 		
-		registerGenModelFile = "platform:/resource/de.uka.ipd.sdq.identifier/model/identifier.genmodel"	
+		uriMap = ContextDependentMapping {
+			onRunningPlatform = "platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.ecore"
+			onStandalone = "platform:/resource/de.uka.ipd.sdq.identifier/model/identifier.ecore"
+		}
+
 		logResourceUriMap = true
+		
 	}
 
-	component = DirectoryCleaner {
-		directory = "src-gen"
+	component = URISupportingDirectoryCleaner {
+		directory = "platform:/resource/tools.mdsd.characteristics.model/src-gen"
+		directory = "platform:/resource/tools.mdsd.characteristics.edit/src-gen"
+		directory = "platform:/resource/tools.mdsd.characteristics.editor/src-gen"
 	}
 
 	component = EcoreGenerator {
@@ -43,22 +44,35 @@ Workflow {
 	}
 	
 	
-	component = component.RegexComponent {
+	component = RegexComponent {
 		replacement = {
-			directory = "${workspaceRoot}/tools.mdsd.characteristics.edit/src-gen/"
+			directory = "platform:/resource/tools.mdsd.characteristics.edit/src-gen/"
 			wildcard = "**.java"
 			mapping = {
-				from = 'new StaticObjectManifestationItemProvider'
-				to = 'new StaticObjectManifestationItemProviderCustom'
+				from = '(new|extends)( SingleValueItemProvider)(\\s|\\()'
+				to = '$1 SingleValueItemProviderCustom$3'
+			}
+			
+			mapping = {
+				from = '(new|extends)( StaticManifestationItemProvider)(\\s|\\()'
+				to = '$1 StaticManifestationItemProviderCustom$3'
 			}
 		}
 	}
 	
-	/*component = EcoreGenerator {
+	component = EcoreGenerator {
 		generateCustomClasses = false
 		generateEdit = false
 		generateEditor = false
 		genModel = "platform:/resource/tools.mdsd.characteristics.model/model/basicProperties.genmodel"
 		srcPath = "platform:/resource/tools.mdsd.characteristics.model/src"
-	}*/
+	}
+	
+	component = EcoreGenerator {
+		generateCustomClasses = false
+		generateEdit = false
+		generateEditor = false
+		genModel = "platform:/resource/tools.mdsd.characteristics.edit/model/editProperties.genmodel"
+		srcPath = "platform:/resource/tools.mdsd.characteristics.edit/src"
+	}
 }

@@ -59,16 +59,10 @@
           <details key="body" value="self.value"/>
         </eAnnotations>
       </eOperations>
-      <eOperations name="getStaticValue" eType="#//manifestation/EManifestationObject"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="#//manifestation/EManifestationObject"
           transient="true" derived="true"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="StaticObjectManifestation" eSuperTypes="#//manifestation/StaticManifestation">
-      <eOperations name="getStaticValue" eType="#//manifestation/EManifestationObject">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-          <details key="body" value="self.valueObject"/>
-        </eAnnotations>
-      </eOperations>
+    <eClassifiers xsi:type="ecore:EClass" name="SingleValue" eSuperTypes="#//manifestation/StaticManifestation">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="valueObject" eType="#//manifestation/EManifestationObject"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EDataType" name="EManifestationObject" instanceClassName="java.lang.Object"/>

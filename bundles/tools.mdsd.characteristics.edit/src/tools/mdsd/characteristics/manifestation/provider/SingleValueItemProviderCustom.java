@@ -14,17 +14,17 @@ import com.google.common.collect.Streams;
 
 import tools.mdsd.characteristics.manifestation.ManifestationPackage;
 
-public class StaticObjectManifestationItemProviderCustom extends StaticObjectManifestationItemProvider {
+public class SingleValueItemProviderCustom extends SingleValueItemProvider {
 	protected WeakHashMap<EObject, IItemPropertyDescriptor> valueTypeItemPropertyDescriptors;
 
-	public StaticObjectManifestationItemProviderCustom(AdapterFactory adapterFactory) {
+	public SingleValueItemProviderCustom(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 		valueTypeItemPropertyDescriptors = new WeakHashMap<>();
 	}
 	
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (ManifestationPackage.eINSTANCE.getStaticObjectManifestation().isInstance(object)) {
+		if (ManifestationPackage.eINSTANCE.getSingleValue().isInstance(object)) {
 			EObject eobject = (EObject) object;
 			EObject valuetype = (EObject) eobject.eGet(ManifestationPackage.eINSTANCE.getManifestation_Valuetype());
 			if (valuetype != null) {
@@ -50,6 +50,7 @@ public class StaticObjectManifestationItemProviderCustom extends StaticObjectMan
 				ManifestationPackage.Literals.MANIFESTATION__VALUETYPE, true,
 				null, null);
 	}
+	
 	
 	@Override
 	protected void addValueObjectPropertyDescriptor(Object object) {

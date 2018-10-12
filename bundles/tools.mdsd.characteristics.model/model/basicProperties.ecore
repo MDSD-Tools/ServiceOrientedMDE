@@ -72,4 +72,6 @@
   <eClassifiers xsi:type="ecore:EDataType" name="Collection" instanceClassName="java.util.Collection">
     <eTypeParameters name="T"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CollectionValueType" abstract="true"
+      interface="true" eSuperTypes="characteristics.ecore#//valuetype/ValueTypeProperty"/>
 </ecore:EPackage>

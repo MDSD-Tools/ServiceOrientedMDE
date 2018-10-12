@@ -174,7 +174,7 @@ public class CharacteristicManifestationItemProvider extends CharacterizableItem
 		newChildDescriptors.add
 			(createChildParameter
 				(InstancePackage.Literals.CHARACTERISTIC_MANIFESTATION__MANIFESTATION,
-				 ManifestationFactory.eINSTANCE.createStaticObjectManifestation()));
+				 ManifestationFactory.eINSTANCE.createSingleValue()));
 
 		newChildDescriptors.add
 			(createChildParameter

@@ -6,7 +6,7 @@
     testsDirectory="/tools.mdsd.characteristics.tests/src-gen" importerID="org.eclipse.emf.importer.ecore"
     complianceLevel="8.0" copyrightFields="false" editPluginID="tools.mdsd.characteristics.edit"
     editorPluginID="tools.mdsd.characteristics.editor" testsPluginID="tools.mdsd.characteristics.tests"
-    usedGenPackages="characteristics.genmodel#//characteristics ../../de.uka.ipd.sdq.identifier/model/identifier.genmodel#//identifier"
+    usedGenPackages="characteristics.genmodel#//characteristics platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.genmodel#//identifier"
     importOrganizing="true">
   <foreignModel>basicProperties.ecore</foreignModel>
   <genPackages prefix="BasicProperties" basePackage="tools.mdsd.characteristics.valuetype.properties"

@@ -1,5 +1,6 @@
 package tools.mdsd.characteristics.manifestation.provider;
 
+import java.util.Collection;
 import java.util.Optional;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -9,6 +10,7 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 
 import tools.mdsd.characteristics.valuetype.ValueType;
+import tools.mdsd.characteristics.valuetype.properties.BasicProperties.FiniteSetValueType;
 
 public class ValueTypeAwareManifestationObjectItemPropertyDescriptor extends ItemPropertyDescriptor {
 	
@@ -21,6 +23,12 @@ public class ValueTypeAwareManifestationObjectItemPropertyDescriptor extends Ite
 		this.valueTypeFeature = valueTypeFeature;
 	}
 	
+	
+	@Override
+	public Collection<?> getChoiceOfValues(Object object) {
+		return getValueType(object).filter(vt -> vt.hasProperty(FiniteSetValueType.class))
+				.map(vt -> vt.getProperty(FiniteSetValueType.class)).map(p -> p.getValues()).orElse(null);
+	}
 	
 	@Override
 	public Object getFeature(Object object) {

@@ -6,6 +6,16 @@
 	</projects>
 	<buildSpec>
 		<buildCommand>
+			<name>tools.mdsd.ecoreworkflow.builder.Builder</name>
+			<triggers>auto,full,incremental,</triggers>
+			<arguments>
+				<dictionary>
+					<key>tools.mdsd.ecoreworkflow.builder.workflowdefinition</key>
+					<value>../releng/tools.mdsd.characteristics.mwe2/src/tools/mdsd/characteristics/mwe2/characteristics.mwe2</value>
+				</dictionary>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
 			<name>org.eclipse.jdt.core.javabuilder</name>
 			<arguments>
 			</arguments>
@@ -24,17 +34,6 @@
 			<name>org.eclipse.pde.ds.core.builder</name>
 			<arguments>
 			</arguments>
-		</buildCommand>
-		<buildCommand>
-			<name>tools.mdsd.ecoreworkflow.builder.Builder</name>
-			<triggers>auto,full,incremental,</triggers>
-			<arguments>
-				<dictionary>
-					<key>tools.mdsd.ecoreworkflow.builder.workflowdefinition</key>
-					<value>../releng/tools.mdsd.characteristics.mwe2/src/tools/mdsd/characteristics/mwe2/characteristics.mwe2</value>
-				</dictionary>
-			</arguments>
-			
 		</buildCommand>
 	</buildSpec>
 	<natures>

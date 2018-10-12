@@ -153,7 +153,7 @@ public class ExplicitSetValueTypeItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ValuetypePackage.Literals.EXPLICIT_SET_VALUE_TYPE__EXPLICIT_VALUES,
-				 ManifestationFactory.eINSTANCE.createStaticObjectManifestation()));
+				 ManifestationFactory.eINSTANCE.createSingleValue()));
 
 		newChildDescriptors.add
 			(createChildParameter

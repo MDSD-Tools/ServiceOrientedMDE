@@ -166,7 +166,7 @@ public class CategoryItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ManifestationPackage.Literals.CATEGORY__MANIFESTATION,
-				 ManifestationFactory.eINSTANCE.createStaticObjectManifestation()));
+				 ManifestationFactory.eINSTANCE.createSingleValue()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -176,7 +176,7 @@ public class CategoryItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ManifestationPackage.Literals.CATEGORY__PROBABILITY,
-				 ManifestationFactory.eINSTANCE.createStaticObjectManifestation()));
+				 ManifestationFactory.eINSTANCE.createSingleValue()));
 
 		newChildDescriptors.add
 			(createChildParameter

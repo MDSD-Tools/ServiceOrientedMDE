@@ -1,5 +1,6 @@
 package tools.mdsd.characteristics.support.services;
 
+import java.util.AbstractMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Optional;
@@ -46,8 +47,8 @@ public class SimpleDSValueTypeSupportFactory implements IValueTypeSupportFactory
 		public Set<Class<? extends ValueTypeProperty>> getProvidedPropertiesFor(ValueType valueType) {
 			return mapping.computeIfAbsent(valueType, vt -> {
 				Map<Class<? extends ValueTypeProperty>, IValueTypePropertiesProvider> vtmapping = 
-						providers.stream().map(vtp -> Map.entry(vtp.getProvidedPropertiesFor(vt), vtp))
-					.flatMap(tup -> tup.getKey().stream().map(cls -> Map.entry(cls, tup.getValue())))
+						providers.stream().map(vtp -> new AbstractMap.SimpleImmutableEntry<>(vtp.getProvidedPropertiesFor(vt), vtp))
+					.flatMap(tup -> tup.getKey().stream().map(cls -> new AbstractMap.SimpleImmutableEntry<>(cls, tup.getValue())))
 					.collect(Collectors.toMap(v -> v.getKey(), v -> v.getValue()));
 				
 				return vtmapping;

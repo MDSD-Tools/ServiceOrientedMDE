@@ -116,31 +116,6 @@ public class ManifestationItemProviderAdapterFactory extends ManifestationAdapte
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link tools.mdsd.characteristics.manifestation.StaticObjectManifestation} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected StaticObjectManifestationItemProvider staticObjectManifestationItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link tools.mdsd.characteristics.manifestation.StaticObjectManifestation}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createStaticObjectManifestationAdapter()
-	{
-		if (staticObjectManifestationItemProvider == null)
-		{
-			staticObjectManifestationItemProvider = new StaticObjectManifestationItemProviderCustom(this);
-		}
-
-		return staticObjectManifestationItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link tools.mdsd.characteristics.manifestation.CategoricalProbabilityMassFunction} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -332,7 +307,6 @@ public class ManifestationItemProviderAdapterFactory extends ManifestationAdapte
 	public void dispose()
 	{
 		if (manifestationRequirementItemProvider != null) manifestationRequirementItemProvider.dispose();
-		if (staticObjectManifestationItemProvider != null) staticObjectManifestationItemProvider.dispose();
 		if (categoricalProbabilityMassFunctionItemProvider != null) categoricalProbabilityMassFunctionItemProvider.dispose();
 		if (categoryItemProvider != null) categoryItemProvider.dispose();
 	}

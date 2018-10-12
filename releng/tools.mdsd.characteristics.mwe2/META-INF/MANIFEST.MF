@@ -14,4 +14,6 @@ Require-Bundle: org.eclipse.emf.mwe.core,
  org.eclipse.emf.codegen.ecore;bundle-version="2.13.0",
  org.apache.commons.logging;bundle-version="1.1.1",
  de.uka.ipd.sdq.identifier;bundle-version="2.1.0",
- org.objectweb.asm;bundle-version="6.1.1"
+ org.objectweb.asm;bundle-version="6.1.1",
+ org.eclipse.core.resources,
+ tools.mdsd.ecoreworkflow.mwe2lib;bundle-version="0.1.0"

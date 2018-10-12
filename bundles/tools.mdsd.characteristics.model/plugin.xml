@@ -45,4 +45,5 @@
             class="tools.mdsd.characteristics.valuetype.ValuetypePackage"
             genModel="model/characteristics.genmodel"/>
    </extension>
+
 </plugin>
