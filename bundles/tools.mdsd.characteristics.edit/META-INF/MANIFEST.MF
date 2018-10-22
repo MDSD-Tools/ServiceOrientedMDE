@@ -2,6 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: tools.mdsd.characteristics.edit;singleton:=true
+Automatic-Module-Name: tools.mdsd.characteristics.edit
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Activator: tools.mdsd.characteristics.manifestation.provider.CharacteristicsEditPlugin$Implementation

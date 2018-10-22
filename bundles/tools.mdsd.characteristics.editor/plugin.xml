@@ -118,4 +118,5 @@
             contributorClass="tools.mdsd.characteristics.valuetype.presentation.ValuetypeActionBarContributor">
       </editor>
    </extension>
+
 </plugin>
