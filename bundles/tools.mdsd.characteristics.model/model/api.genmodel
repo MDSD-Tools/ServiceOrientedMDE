@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/tools.mdsd.characteristics.model/src-gen" creationIcons="false"
+    editDirectory="/tools.mdsd.characteristics.model.edit/src-gen" editorDirectory="/tools.mdsd.characteristics.model.editor/src-gen"
+    modelPluginID="tools.mdsd.characteristics.model" modelName="Api" editPluginClass=""
+    editorPluginClass="" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="10.0"
+    copyrightFields="false" editPluginID="tools.mdsd.characteristics.model.edit" editorPluginID="tools.mdsd.characteristics.model.editor"
+    usedGenPackages="characteristics.genmodel#//characteristics platform:/plugin/tools.mdsd.modelingfoundations.identifier/model/identifier.genmodel#//identifier"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>api.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="Api" basePackage="tools.mdsd.characteristics" disposableProviderFactory="true"
+      ecorePackage="api.ecore#/">
+    <genDataTypes ecoreDataType="api.ecore#//Optional">
+      <genTypeParameters ecoreTypeParameter="api.ecore#//Optional/T"/>
+    </genDataTypes>
+    <genClasses ecoreClass="api.ecore#//CharacteristicsModelingRealm">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference api.ecore#//CharacteristicsModelingRealm/valueTypePropertiesService"/>
+    </genClasses>
+    <genClasses ecoreClass="api.ecore#//ValueTypePropertiesService">
+      <genFeatures property="None" children="true" createChild="false" ecoreFeature="ecore:EReference api.ecore#//ValueTypePropertiesService/valueTypePropertiesProvider"/>
+    </genClasses>
+    <genClasses ecoreClass="api.ecore#//ValueTypePropertiesProvider">
+      <genOperations ecoreOperation="api.ecore#//ValueTypePropertiesProvider/getProperty">
+        <genParameters ecoreParameter="api.ecore#//ValueTypePropertiesProvider/getProperty/propertyType"/>
+        <genParameters ecoreParameter="api.ecore#//ValueTypePropertiesProvider/getProperty/valueType"/>
+        <genTypeParameters ecoreTypeParameter="api.ecore#//ValueTypePropertiesProvider/getProperty/T"/>
+      </genOperations>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

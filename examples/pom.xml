@@ -12,9 +12,7 @@
 	<packaging>pom</packaging>
 	
 	<modules>
-		<module>tools.mdsd.characteristics.examples.simpleresourceenvironment</module>
-		<module>tools.mdsd.characteristics.examples.simpleresourceenvironment.edit</module>
-		<module>tools.mdsd.characteristics.examples.simpleresourceenvironment.editor</module>
+
 	</modules>
 	
 </project>

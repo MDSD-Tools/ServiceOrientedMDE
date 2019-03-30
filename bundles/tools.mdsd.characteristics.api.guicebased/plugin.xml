@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.emf.ecore.protocol_parser">
+      <parser
+            class="tools.mdsd.characteristics.api.guicebased.GuiceAwareObjectFactory:tools.mdsd.characteristics.api.guicebased.CharacteristicsResourceFactory"
+            protocolName="characteristics">
+      </parser>
+   </extension>
+   <extension
+         point="org.eclipse.emf.ecore.factory_override">
+      <factory
+            class="tools.mdsd.characteristics.api.guicebased.impl.GuiceAwareApiFactoryImpl"
+            uri="http://www.mdsd.tools/characteristics/api/1.0">
+      </factory>
+   </extension>
+
+</plugin>

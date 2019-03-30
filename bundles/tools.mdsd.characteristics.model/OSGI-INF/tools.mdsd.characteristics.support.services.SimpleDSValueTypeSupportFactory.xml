@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.3.0" name="tools.mdsd.characteristics.support.services.SimpleDSValueTypeSupportFactory">
-   <service scope="singleton">
-      <provide interface="tools.mdsd.characteristics.support.api.IValueTypeSupportFactory"/>
-   </service>
-   <reference cardinality="0..n" field="providers" field-option="update" interface="tools.mdsd.characteristics.support.api.IValueTypePropertiesProvider" name="providers" policy="dynamic"/>
-   <implementation class="tools.mdsd.characteristics.support.services.SimpleDSValueTypeSupportFactory"/>
-</scr:component>

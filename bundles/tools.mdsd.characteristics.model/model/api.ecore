@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="api" nsURI="http://www.mdsd.tools/characteristics/api/1.0" nsPrefix="api">
+  <eClassifiers xsi:type="ecore:EClass" name="CharacteristicsModelingRealm">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="valueTypePropertiesService"
+        lowerBound="1" eType="#//ValueTypePropertiesService" transient="true" derived="true"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ValueTypePropertiesService" eSuperTypes="#//ValueTypePropertiesProvider">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="valueTypePropertiesProvider"
+        upperBound="-1" eType="#//ValueTypePropertiesProvider" changeable="false"
+        transient="true" derived="true" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ValueTypePropertiesProvider" abstract="true">
+    <eOperations name="getProperty">
+      <eGenericType eClassifier="#//Optional">
+        <eTypeArguments eTypeParameter="#//ValueTypePropertiesProvider/getProperty/T"/>
+      </eGenericType>
+      <eTypeParameters name="T"/>
+      <eParameters name="propertyType" lowerBound="1">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaClass">
+          <eTypeArguments eTypeParameter="#//ValueTypePropertiesProvider/getProperty/T"/>
+        </eGenericType>
+      </eParameters>
+      <eParameters name="valueType" eType="ecore:EClass characteristics.ecore#//valuetype/ValueType"/>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="Optional" instanceClassName="java.util.Optional"
+      serializable="false">
+    <eTypeParameters name="T"/>
+  </eClassifiers>
+</ecore:EPackage>

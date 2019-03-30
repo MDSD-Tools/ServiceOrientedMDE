@@ -9,15 +9,15 @@ Bundle-Activator: tools.mdsd.characteristics.manifestation.provider.Characterist
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: tools.mdsd.characteristics.characteristic.provider,
- tools.mdsd.characteristics.instance.provider,
+Export-Package: tools.mdsd.characteristics.binding.provider,
+ tools.mdsd.characteristics.characteristic.provider,
  tools.mdsd.characteristics.manifestation.provider,
  tools.mdsd.characteristics.valuetype.provider
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  tools.mdsd.characteristics.model;visibility:=reexport,
  org.eclipse.emf.edit;visibility:=reexport,
- de.uka.ipd.sdq.identifier;visibility:=reexport,
- de.uka.ipd.sdq.identifier.edit;visibility:=reexport,
- com.google.guava;bundle-version="21.0.0"
+ tools.mdsd.characteristics;bundle-version="1.0.0",
+ tools.mdsd.modelingfoundations.identifier.edit;bundle-version="1.0.0",
+ org.eclipse.emf.ecore.edit;bundle-version="2.12.0"
 Bundle-ActivationPolicy: lazy

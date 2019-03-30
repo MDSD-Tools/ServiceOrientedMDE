@@ -24,8 +24,8 @@
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <!-- @generated characteristics -->
       <factory
-            uri="http://www.mdsd.tools/characteristics/instance/1.0"
-            class="tools.mdsd.characteristics.instance.provider.InstanceItemProviderAdapterFactory"
+            uri="http://www.mdsd.tools/characteristics/binding/1.0"
+            class="tools.mdsd.characteristics.binding.provider.InstanceItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider

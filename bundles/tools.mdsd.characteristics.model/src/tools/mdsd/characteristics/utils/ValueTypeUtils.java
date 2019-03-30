@@ -1,19 +1,26 @@
 package tools.mdsd.characteristics.utils;
 
-import org.eclipse.emf.ecore.EDataType;
+import java.util.Optional;
 
-import tools.mdsd.characteristics.support.ModelingRealmManagement;
+import org.eclipse.emf.ecore.EDataType;
+import org.eclipse.emf.ecore.resource.Resource;
+
+import tools.mdsd.characteristics.CharacteristicsConstants;
+import tools.mdsd.characteristics.api.CharacteristicsModelingRealm;
 import tools.mdsd.characteristics.valuetype.ValueType;
-import tools.mdsd.characteristics.valuetype.ValueTypeProperty;
 import tools.mdsd.characteristics.valuetype.impl.ValueTypeImpl;;
 
 public final class ValueTypeUtils {
 	
 	private ValueTypeUtils() {}
 	
-	public static <P extends ValueTypeProperty> P getProperty(ValueType vt, Class<P> propertyType) {
-		return ModelingRealmManagement.getInstance().getModelingRealm(vt.eResource().getResourceSet()).getValueTypeSupport().getValueTypePropertiesProvider()
-				.getProperty(vt, propertyType).orElse(null);
+	public static <P> P getProperty(ValueType vt, Class<P> propertyType) {
+		return Optional.ofNullable(vt.eResource().getResourceSet().getResource(CharacteristicsConstants.REALM_INSTANCE_OR_DEFAULT, true))
+				.map(Resource::getContents).filter(c -> !c.isEmpty()).map(c -> c.get(0))
+				.map(CharacteristicsModelingRealm.class::cast)
+				.map(CharacteristicsModelingRealm::getValueTypePropertiesService)
+				.flatMap(vtps -> vtps.getProperty(propertyType, vt))
+				.orElse(null);
 	}
 	
 	public static boolean isInstanceOfDataType(Object obj, EDataType dataType) {
@@ -24,9 +31,15 @@ public final class ValueTypeUtils {
 		throw new UnsupportedOperationException("This operation should be overridden by the subclass");
 	}
 
-	public static boolean hasProperty(ValueType vt, Class<? extends ValueTypeProperty> propertyType) {
-		return ModelingRealmManagement.getInstance().getModelingRealm(vt.eResource().getResourceSet()).getValueTypeSupport().getValueTypePropertiesProvider()
-				.getProvidedPropertiesFor(vt).contains(propertyType);
+	public static boolean hasProperty(ValueType vt, Class<?> propertyType) {
+		
+		return Optional.ofNullable(vt.eResource().getResourceSet().getResource(CharacteristicsConstants.REALM_INSTANCE_OR_DEFAULT, true))
+			.map(Resource::getContents).filter(c -> !c.isEmpty()).map(c -> c.get(0))
+			.map(CharacteristicsModelingRealm.class::cast)
+			.map(CharacteristicsModelingRealm::getValueTypePropertiesService)
+			.flatMap(vtps -> vtps.getProperty(propertyType, vt))
+			.isPresent();
+		
 	}
 
 }

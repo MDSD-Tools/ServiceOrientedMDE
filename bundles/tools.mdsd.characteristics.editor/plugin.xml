@@ -41,9 +41,9 @@
             id="org.eclipse.emf.ecore.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
       <wizard
-            id="tools.mdsd.characteristics.instance.presentation.InstanceModelWizardID"
+            id="tools.mdsd.characteristics.binding.presentation.InstanceModelWizardID"
             name="%_UI_InstanceModelWizard_label"
-            class="tools.mdsd.characteristics.instance.presentation.InstanceModelWizard"
+            class="tools.mdsd.characteristics.binding.presentation.InstanceModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
             icon="icons/full/obj16/InstanceModelFile.gif">
          <description>%_UI_InstanceModelWizard_description</description>
@@ -54,12 +54,12 @@
    <extension point="org.eclipse.ui.editors">
       <!-- @generated characteristics -->
       <editor
-            id="tools.mdsd.characteristics.instance.presentation.InstanceEditorID"
+            id="tools.mdsd.characteristics.binding.presentation.InstanceEditorID"
             name="%_UI_InstanceEditor_label"
             icon="icons/full/obj16/InstanceModelFile.gif"
             extensions="instance"
-            class="tools.mdsd.characteristics.instance.presentation.InstanceEditor"
-            contributorClass="tools.mdsd.characteristics.instance.presentation.InstanceActionBarContributor">
+            class="tools.mdsd.characteristics.binding.presentation.InstanceEditor"
+            contributorClass="tools.mdsd.characteristics.binding.presentation.InstanceActionBarContributor">
       </editor>
    </extension>
 

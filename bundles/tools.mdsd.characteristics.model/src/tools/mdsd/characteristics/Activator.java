@@ -2,9 +2,6 @@ package tools.mdsd.characteristics;
 
 import org.eclipse.core.runtime.Plugin;
 import org.osgi.framework.BundleContext;
-import org.osgi.framework.ServiceReference;
-
-import tools.mdsd.characteristics.support.ModelingRealmManagement;
 
 public class Activator extends Plugin {
 	
@@ -29,14 +26,7 @@ public class Activator extends Plugin {
         super.start(context);
         bundleContext = context;
         plugin = this;
-        
-        startModelRealmManagement();
     }
-
-    private void startModelRealmManagement() {
-		ServiceReference<ModelingRealmManagement> serviceReference = this.bundleContext.getServiceReference(ModelingRealmManagement.class);
-		this.bundleContext.getService(serviceReference);
-	}
 
 	/*
      * (non-Javadoc)

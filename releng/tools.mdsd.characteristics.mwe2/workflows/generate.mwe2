@@ -1,0 +1,88 @@
+module generate
+
+import org.eclipse.emf.mwe2.ecore.EcoreGenerator
+import tools.mdsd.ecoreworkflow.mwe2lib.bean.EclipseRCPSupportingStandaloneSetup
+import tools.mdsd.ecoreworkflow.mwe2lib.component.ContextDependentMapping
+import tools.mdsd.ecoreworkflow.mwe2lib.component.RegexComponent
+import tools.mdsd.ecoreworkflow.mwe2lib.component.URISupportingDirectoryCleaner
+import tools.mdsd.ecoreworkflow.mwe2lib.component.GenPatternPostProcessor
+
+var workspaceRoot = "../../"
+
+Workflow {
+	bean = EclipseRCPSupportingStandaloneSetup {
+		scanClassPath = true
+		platformUri = workspaceRoot
+		
+		uriMap = ContextDependentMapping {
+			onRunningPlatform = "platform:/plugin/tools.mdsd.modelingfoundations.identifier/model/identifier.genmodel"
+			onStandalone = "platform:/resource/tools.mdsd.modelingfoundations.identifier/model/identifier.genmodel"
+		}
+		
+		uriMap = ContextDependentMapping {
+			onRunningPlatform = "platform:/plugin/tools.mdsd.modelingfoundations.identifier/model/identifier.ecore"
+			onStandalone = "platform:/resource/tools.mdsd.modelingfoundations.identifier/model/identifier.ecore"
+		}
+		
+		uriMap = ContextDependentMapping {
+			onRunningPlatform = "platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel"
+			onStandalone = "platform:/resource/org.eclipse.emf.ecore/model/Ecore.genmodel"
+		}
+		
+		uriMap = ContextDependentMapping {
+			onRunningPlatform = "platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore"
+			onStandalone = "platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore"
+		}
+		
+		logResourceUriMap = true
+	}
+
+	component = EcoreGenerator {
+		generateCustomClasses = false
+		generateEdit = true
+		generateEditor = true
+		genModel = "platform:/resource/tools.mdsd.characteristics.model/model/characteristics.genmodel"
+		srcPath = "platform:/resource/tools.mdsd.characteristics.model/src"
+		srcPath = "platform:/resource/tools.mdsd.characteristics.edit/src"
+		srcPath = "platform:/resource/tools.mdsd.characteristics.editor/src"
+	}
+		
+	component = EcoreGenerator {
+		generateCustomClasses = false
+		generateEdit = false
+		generateEditor = false
+		genModel = "platform:/resource/tools.mdsd.characteristics.model/model/api.genmodel"
+		srcPath = "platform:/resource/tools.mdsd.characteristics.model/src"
+	}
+	
+	component = EcoreGenerator {
+		generateCustomClasses = false
+		generateEdit = false
+		generateEditor = false
+		genModel = "platform:/resource/tools.mdsd.characteristics/model/basicProperties.genmodel"
+		srcPath = "platform:/resource/tools.mdsd.characteristics/src"
+	}
+	
+	component = tools.mdsd.ecoreworkflow.mwe2lib.component.GapPatternPostProcessor {
+		folders = {
+			gen = "platform:/resource/tools.mdsd.characteristics/src-gen"
+			src = "platform:/resource/tools.mdsd.characteristics/src"
+		}
+		folders = {
+			gen = "platform:/resource/tools.mdsd.characteristics.model/src-gen"
+			src = "platform:/resource/tools.mdsd.characteristics.model/src"
+		}
+		folders = {
+			gen = "platform:/resource/tools.mdsd.characteristics.model/src-gen"
+			src = "platform:/resource/tools.mdsd.characteristics.model/src"
+		}
+		folders = {
+			gen = "platform:/resource/tools.mdsd.characteristics.edit/src-gen"
+			src = "platform:/resource/tools.mdsd.characteristics.edit/src"
+		}
+		folders = {
+			gen = "platform:/resource/tools.mdsd.characteristics.editor/src-gen"
+			src = "platform:/resource/tools.mdsd.characteristics.editor/src"
+		}
+	}
+}

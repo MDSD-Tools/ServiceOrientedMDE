@@ -8,35 +8,29 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: tools.mdsd.characteristics.characteristic,
+Export-Package: tools.mdsd.characteristics,
+ tools.mdsd.characteristics.api,
+ tools.mdsd.characteristics.api.impl,
+ tools.mdsd.characteristics.api.util,
+ tools.mdsd.characteristics.binding,
+ tools.mdsd.characteristics.binding.impl,
+ tools.mdsd.characteristics.binding.util,
+ tools.mdsd.characteristics.characteristic,
  tools.mdsd.characteristics.characteristic.impl,
  tools.mdsd.characteristics.characteristic.util,
- tools.mdsd.characteristics.instance,
- tools.mdsd.characteristics.instance.impl,
- tools.mdsd.characteristics.instance.util,
  tools.mdsd.characteristics.manifestation,
  tools.mdsd.characteristics.manifestation.impl,
  tools.mdsd.characteristics.manifestation.util,
+ tools.mdsd.characteristics.utils,
  tools.mdsd.characteristics.valuetype,
  tools.mdsd.characteristics.valuetype.impl,
- tools.mdsd.characteristics.valuetype.properties.BasicProperties,
- tools.mdsd.characteristics.valuetype.properties.BasicProperties.impl,
- tools.mdsd.characteristics.valuetype.properties.BasicProperties.util,
  tools.mdsd.characteristics.valuetype.util
 Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport,
  tools.mdsd.characteristics.model;visibility:=reexport,
  org.eclipse.ocl.pivot;visibility:=reexport,
  org.eclipse.ocl.examples.codegen;visibility:=reexport,
- de.uka.ipd.sdq.identifier;visibility:=reexport,
- org.eclipse.core.runtime
+ org.eclipse.core.runtime,
+ tools.mdsd.modelingfoundations.identifier;bundle-version="0.1.0";visibility:=reexport,
+ org.eclipse.emf.cdo;bundle-version="4.6.100";visibility:=reexport
 Bundle-ActivationPolicy: lazy
-Import-Package: org.osgi.service.component.annotations;version="1.3.0";resolution:=optional
 Bundle-Activator: tools.mdsd.characteristics.Activator
-Service-Component: OSGI-INF/tools.mdsd.characteristics.support.services.HashTableBasedModelingRealmStorage.xml,
- OSGI-INF/tools.mdsd.characteristics.support.services.CharacteristicsModelingRealmFactory.xml,
- OSGI-INF/tools.mdsd.characteristics.support.services.SimpleDSValueTypeSupportFactory.xml,
- OSGI-INF/tools.mdsd.characteristics.support.services.providers.DefaultBaseValueTypePropertiesProvider.xml,
- OSGI-INF/tools.mdsd.characteristics.support.services.providers.ValueTypeAliasPropertiesProvider.xml,
- OSGI-INF/tools.mdsd.characteristics.support.services.providers.DefaultCollectionValueTypePropertiesProvider.xml,
- OSGI-INF/tools.mdsd.characteristics.support.ModelingRealmManagement.xml,
- OSGI-INF/tools.mdsd.characteristics.support.services.providers.EnumValueTypePropertiesProvider.xml
