@@ -44,8 +44,8 @@
         <genOperations ecoreOperation="characteristics.ecore#//manifestation/Category/determineValueType"/>
       </genClasses>
     </nestedGenPackages>
-    <nestedGenPackages prefix="Instance" basePackage="tools.mdsd.characteristics"
-        disposableProviderFactory="true" extensibleProviderFactory="true" ecorePackage="characteristics.ecore#//binding">
+    <nestedGenPackages prefix="Binding" basePackage="tools.mdsd.characteristics" disposableProviderFactory="true"
+        extensibleProviderFactory="true" ecorePackage="characteristics.ecore#//binding">
       <genClasses provider="Stateful" image="false" ecoreClass="characteristics.ecore#//binding/CharacterizationContext">
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference characteristics.ecore#//binding/CharacterizationContext/bindings"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"

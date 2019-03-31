@@ -25,7 +25,7 @@
       <!-- @generated characteristics -->
       <package
             uri="http://www.mdsd.tools/characteristics/binding/1.0"
-            class="tools.mdsd.characteristics.binding.InstancePackage"
+            class="tools.mdsd.characteristics.binding.BindingPackage"
             genModel="model/characteristics.genmodel"/>
    </extension>
 

@@ -34,7 +34,7 @@ public class ValueTypeEClassifierWrapper implements EClassifier, EGenericType {
 
 	@Override
 	public String getName() {
-		return valueType.getName();
+		return valueType.getEntityName();
 	}
 
 	@Override

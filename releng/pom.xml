@@ -12,6 +12,7 @@
 	<packaging>pom</packaging>
 	
 	<modules>
+		<module>tools.mdsd.characteristics.mwe2</module>
 		<module>tools.mdsd.characteristics.updatesite</module>
 	</modules>
 	

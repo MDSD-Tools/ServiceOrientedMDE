@@ -25,7 +25,7 @@
       <!-- @generated characteristics -->
       <factory
             uri="http://www.mdsd.tools/characteristics/binding/1.0"
-            class="tools.mdsd.characteristics.binding.provider.InstanceItemProviderAdapterFactory"
+            class="tools.mdsd.characteristics.binding.provider.BindingItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider

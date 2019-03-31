@@ -100,7 +100,7 @@ public class CharacteristicBasedVirtualStructuralFeature extends EStructuralFeat
 
 	@Override
 	public String getName() {
-		return this.characteristic.getName();
+		return this.characteristic.getEntityName();
 	}
 
 	@Override

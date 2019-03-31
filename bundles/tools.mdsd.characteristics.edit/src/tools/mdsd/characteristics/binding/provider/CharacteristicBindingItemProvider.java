@@ -1,6 +1,6 @@
 /**
  */
-package tools.mdsd.characteristics.instance.provider;
+package tools.mdsd.characteristics.binding.provider;
 
 
 import java.util.Optional;
@@ -8,39 +8,35 @@ import java.util.Optional;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.ecore.EObject;
 
+import tools.mdsd.characteristics.binding.CharacteristicBinding;
+import tools.mdsd.characteristics.binding.util.BindingSwitch;
 import tools.mdsd.characteristics.characteristic.Characteristic;
 import tools.mdsd.characteristics.characteristic.Characterizing;
-import tools.mdsd.characteristics.instance.CharacteristicManifestation;
-import tools.mdsd.characteristics.instance.provider.CharacteristicManifestationItemProvider;
-import tools.mdsd.characteristics.instance.util.InstanceSwitch;
-
 /**
  * This is the item provider adapter for a {@link tools.mdsd.characteristics.instance.CharacteristicManifestation} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * @generated
  */
-public class CharacteristicManifestationItemProviderCustom extends CharacteristicManifestationItemProvider
+public class CharacteristicBindingItemProvider extends CharacteristicBindingItemProviderGen
 {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
-	public CharacteristicManifestationItemProviderCustom(AdapterFactory adapterFactory)
+	public CharacteristicBindingItemProvider(AdapterFactory adapterFactory)
 	{
 		super(adapterFactory);
 	}
 
 	
 
-	protected InstanceSwitch<Optional<String>> LABEL_SWITCH = new InstanceSwitch<Optional<String>>() {
+	protected BindingSwitch<Optional<String>> LABEL_SWITCH = new BindingSwitch<Optional<String>>() {
 		@Override
-		public Optional<String> caseCharacteristicManifestation(CharacteristicManifestation object) {
+		public Optional<String> caseCharacteristicBinding(CharacteristicBinding object) {
 			return Optional.ofNullable(object.getCharacteristic())
 					.map(Characterizing::computeCharacteristic)
-					.map(Characteristic::getName);
+					.map(Characteristic::getEntityName);
 		}
 		
 		@Override

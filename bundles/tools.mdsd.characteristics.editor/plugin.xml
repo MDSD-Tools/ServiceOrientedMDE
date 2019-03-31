@@ -41,12 +41,12 @@
             id="org.eclipse.emf.ecore.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
       <wizard
-            id="tools.mdsd.characteristics.binding.presentation.InstanceModelWizardID"
-            name="%_UI_InstanceModelWizard_label"
-            class="tools.mdsd.characteristics.binding.presentation.InstanceModelWizard"
+            id="tools.mdsd.characteristics.binding.presentation.BindingModelWizardID"
+            name="%_UI_BindingModelWizard_label"
+            class="tools.mdsd.characteristics.binding.presentation.BindingModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
-            icon="icons/full/obj16/InstanceModelFile.gif">
-         <description>%_UI_InstanceModelWizard_description</description>
+            icon="icons/full/obj16/BindingModelFile.gif">
+         <description>%_UI_BindingModelWizard_description</description>
          <selection class="org.eclipse.core.resources.IResource"/>
       </wizard>
    </extension>
@@ -54,12 +54,12 @@
    <extension point="org.eclipse.ui.editors">
       <!-- @generated characteristics -->
       <editor
-            id="tools.mdsd.characteristics.binding.presentation.InstanceEditorID"
-            name="%_UI_InstanceEditor_label"
-            icon="icons/full/obj16/InstanceModelFile.gif"
-            extensions="instance"
-            class="tools.mdsd.characteristics.binding.presentation.InstanceEditor"
-            contributorClass="tools.mdsd.characteristics.binding.presentation.InstanceActionBarContributor">
+            id="tools.mdsd.characteristics.binding.presentation.BindingEditorID"
+            name="%_UI_BindingEditor_label"
+            icon="icons/full/obj16/BindingModelFile.gif"
+            extensions="binding"
+            class="tools.mdsd.characteristics.binding.presentation.BindingEditor"
+            contributorClass="tools.mdsd.characteristics.binding.presentation.BindingActionBarContributor">
       </editor>
    </extension>
 
