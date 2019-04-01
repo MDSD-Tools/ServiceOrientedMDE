@@ -13,5 +13,6 @@ Export-Package: tools.mdsd.characteristics.examples.pcmzero,
  tools.mdsd.characteristics.examples.pcmzero.util
 Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport,
  tools.mdsd.modelingfoundations.identifier;visibility:=reexport,
- org.eclipse.core.runtime
+ org.eclipse.core.runtime,
+ org.eclipse.emf.cdo
 Bundle-ActivationPolicy: lazy
