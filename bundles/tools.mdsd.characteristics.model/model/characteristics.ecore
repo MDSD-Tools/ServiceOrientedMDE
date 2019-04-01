@@ -89,10 +89,10 @@
     <eClassifiers xsi:type="ecore:EClass" name="CharacterizationContext" abstract="true">
       <eStructuralFeatures xsi:type="ecore:EReference" name="bindings" upperBound="-1"
           eType="#//binding/CharacteristicBinding" containment="true"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="includes" upperBound="-1"
-          eType="#//binding/CharacterizationContext"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="refines" upperBound="-1"
-          eType="#//binding/CharacterizationContext"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="includesContext" upperBound="-1"
+          eType="#//binding/CharacterizationContext" derived="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="refinesContext" upperBound="-1"
+          eType="#//binding/CharacterizationContext" derived="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ManifestationContainer">
       <eOperations name="determineValueType" lowerBound="1" eType="#//valuetype/ValueType"/>

@@ -63,6 +63,14 @@ Workflow {
 		srcPath = "platform:/resource/tools.mdsd.characteristics/src"
 	}
 	
+	component = EcoreGenerator {
+		generateCustomClasses = false
+		generateEdit = true
+		generateEditor = true
+		genModel = "platform:/resource/tools.mdsd.characteristics.examples.pcmzero/model/pcmzero.genmodel"
+		srcPath = "platform:/resource/tools.mdsd.characteristics.examples.pcmzero/src-gen"
+	}
+	
 	component = tools.mdsd.ecoreworkflow.mwe2lib.component.GapPatternPostProcessor {
 		folders = {
 			gen = "platform:/resource/tools.mdsd.characteristics/src-gen"
