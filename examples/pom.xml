@@ -12,9 +12,9 @@
 	<packaging>pom</packaging>
 	
 	<modules>
-		<module>tools.mdsd.characteristics.pcmzero</module>
-		<module>tools.mdsd.characteristics.pcmzero.edit</module>
-		<module>tools.mdsd.characteristics.pcmzero.editor</module>
+		<module>tools.mdsd.characteristics.examples.pcmzero</module>
+		<module>tools.mdsd.characteristics.examples.pcmzero.edit</module>
+		<module>tools.mdsd.characteristics.examples.pcmzero.editor</module>
 	</modules>
 	
 </project>
