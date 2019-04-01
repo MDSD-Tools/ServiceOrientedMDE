@@ -4,9 +4,9 @@
     modelDirectory="/tools.mdsd.characteristics.model/src-gen" editDirectory="/tools.mdsd.characteristics.edit/src-gen"
     editorDirectory="/tools.mdsd.characteristics.editor/src-gen" modelPluginID="tools.mdsd.characteristics.model"
     templateDirectory="/tools.mdsd.characteristics.model/templates/" modelName="Characteristics"
-    rootExtendsInterface="org.eclipse.emf.cdo.CDOObject" rootExtendsClass="org.eclipse.emf.internal.cdo.CDOObjectImpl"
-    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0"
-    copyrightFields="false" editPluginID="tools.mdsd.characteristics.edit" editorPluginID="tools.mdsd.characteristics.editor"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" codeFormatting="true"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    editPluginID="tools.mdsd.characteristics.edit" editorPluginID="tools.mdsd.characteristics.editor"
     usedGenPackages="../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore platform:/plugin/tools.mdsd.modelingfoundations.identifier/model/identifier.genmodel#//identifier"
     importOrganizing="true" decoration="Live">
   <foreignModel>characteristics.ecore</foreignModel>
