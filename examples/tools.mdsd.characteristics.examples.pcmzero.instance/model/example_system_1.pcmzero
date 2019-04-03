@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pcmzero:System xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:pcmzero="http://www.mdsd.tools/characteristics/examples/pcmzero" id="_VIESgFXZEemBdqFqxykUig" entityName="System A">
+  <assemblycontainer id="_ewx5MFXZEemBdqFqxykUig" entityName="Assembly Container A">
+    <assembly id="_pgb50FXZEemBdqFqxykUig" entityName="Assembly A">
+      <component href="example_repository_1.pcmzero#_hAYkUFXZEemBdqFqxykUig"/>
+    </assembly>
+    <assembly id="_qep1kFXZEemBdqFqxykUig" entityName="Assembly B">
+      <component href="example_repository_1.pcmzero#_hn_W4FXZEemBdqFqxykUig"/>
+    </assembly>
+  </assemblycontainer>
+</pcmzero:System>
