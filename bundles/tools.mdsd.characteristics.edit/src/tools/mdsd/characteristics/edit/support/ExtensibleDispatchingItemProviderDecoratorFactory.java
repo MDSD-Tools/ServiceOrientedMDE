@@ -31,26 +31,45 @@ public class ExtensibleDispatchingItemProviderDecoratorFactory extends Decorator
 	public void registerDecoratorFactoryProvider(EClass forClass, ItemProviderDecoratorFactoryProvider factoryProvider) {
 		registeredProviders.put(forClass, factoryProvider);
 	}
-
+	
 	@Override
-	protected IItemProviderDecorator createItemProviderDecorator(Object target, Object Type) {
+	public Object adapt(Object target, Object type) {
+		Object adapter = decoratedAdapterFactory.adapt(target, type);
+	    if (adapter instanceof IChangeNotifier)
+	    {
+	      IItemProviderDecorator itemProviderDecorator = itemProviderDecorators.get(adapter);
+	      if (itemProviderDecorator == null)
+	      {
+	    	itemProviderDecorator = createItemProviderDecorator(target, type, (IChangeNotifier) adapter);
+	        itemProviderDecorators.put(adapter, itemProviderDecorator);
+	        if (itemProviderDecorator.getDecoratedItemProvider() == null)
+	        	itemProviderDecorator.setDecoratedItemProvider((IChangeNotifier) adapter);
+	      }
+
+	      return itemProviderDecorator;
+	    }
+
+	    return adapter;
+	}
+
+	protected IItemProviderDecorator createItemProviderDecorator(Object target, Object Type, IChangeNotifier adapter) {
 		IItemProviderDecorator result = null;
 		if (target instanceof EObject) {
 			EClass clazz = ((EObject) target).eClass();
 			result = clazz.getEAllSuperTypes().stream().map(registeredProviders::get).flatMap(Collection::stream)
 				.<IItemProviderDecorator>reduce(null, (res, prov) -> {
 					IItemProviderDecorator decorator = prov.createItemProviderDecorator(target, Type, this);
-					if (res != null) {
-						if (res instanceof IChangeNotifier)
-							decorator.setDecoratedItemProvider((IChangeNotifier)res);
-						else 
-							decorator.setDecoratedItemProvider(res.getDecoratedItemProvider());
-					}
+					decorator.setDecoratedItemProvider(res == null ? adapter : (IChangeNotifier) res);
 					return decorator;
 				}, (res1, res2) -> res2);
 			
 		}
 		return result != null ? result : new AdapterItemProviderDecorator(this);
+	}
+	
+	@Override
+	protected IItemProviderDecorator createItemProviderDecorator(Object target, Object Type) {
+		throw new UnsupportedOperationException("Please use alternative creation providing the adapter directly");
 	}
 
 	@Override
