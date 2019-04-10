@@ -92,5 +92,13 @@ Workflow {
 			gen = "platform:/resource/tools.mdsd.characteristics.editor/src-gen"
 			src = "platform:/resource/tools.mdsd.characteristics.editor/src"
 		}
+		folders = {
+			gen = "platform:/resource/tools.mdsd.characteristics.examples.pcmzero/src-gen"
+			src = "platform:/resource/tools.mdsd.characteristics.examples.pcmzero/src"
+		}
+		folders = {
+			gen = "platform:/resource/tools.mdsd.characteristics.examples.pcmzero.editor/src-gen"
+			src = "platform:/resource/tools.mdsd.characteristics.examples.pcmzero.editor/src"
+		}
 	}
 }
