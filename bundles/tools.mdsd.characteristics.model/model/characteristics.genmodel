@@ -21,17 +21,18 @@
       <genClasses image="false" ecoreClass="characteristics.ecore#//manifestation/Manifestation">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference characteristics.ecore#//manifestation/Manifestation/container"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute characteristics.ecore#//manifestation/Manifestation/storage"/>
         <genOperations ecoreOperation="characteristics.ecore#//manifestation/Manifestation/sample"/>
       </genClasses>
       <genClasses ecoreClass="characteristics.ecore#//manifestation/ProbabilisticManifestation"/>
       <genClasses ecoreClass="characteristics.ecore#//manifestation/DiscreteProbabilityDistributionManifestation">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute characteristics.ecore#//manifestation/DiscreteProbabilityDistributionManifestation/manifestations"/>
       </genClasses>
-      <genClasses image="false" ecoreClass="characteristics.ecore#//manifestation/StaticManifestation"/>
-      <genClasses ecoreClass="characteristics.ecore#//manifestation/SingleValue">
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute characteristics.ecore#//manifestation/SingleValue/value"/>
-        <genOperations ecoreOperation="characteristics.ecore#//manifestation/SingleValue/sample"/>
+      <genClasses image="false" ecoreClass="characteristics.ecore#//manifestation/StaticManifestation">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute characteristics.ecore#//manifestation/StaticManifestation/value"/>
+        <genOperations ecoreOperation="characteristics.ecore#//manifestation/StaticManifestation/sample"/>
       </genClasses>
+      <genClasses ecoreClass="characteristics.ecore#//manifestation/SingleValue"/>
       <genClasses ecoreClass="characteristics.ecore#//manifestation/CategoricalProbabilityMassFunction">
         <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute characteristics.ecore#//manifestation/CategoricalProbabilityMassFunction/sumOfCategoryWeights"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference characteristics.ecore#//manifestation/CategoricalProbabilityMassFunction/categories"/>

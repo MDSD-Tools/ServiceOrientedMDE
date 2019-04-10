@@ -7,7 +7,7 @@
     editorPluginClass="" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="10.0"
     copyrightFields="false" editPluginID="tools.mdsd.characteristics.model.edit" editorPluginID="tools.mdsd.characteristics.model.editor"
-    usedGenPackages="characteristics.genmodel#//characteristics platform:/plugin/tools.mdsd.modelingfoundations.identifier/model/identifier.genmodel#//identifier"
+    usedGenPackages="characteristics.genmodel#//characteristics platform:/plugin/tools.mdsd.modelingfoundations.identifier/model/identifier.genmodel#//identifier ../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"
     operationReflection="true" importOrganizing="true">
   <foreignModel>api.ecore</foreignModel>
   <testsDirectory xsi:nil="true"/>
