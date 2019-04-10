@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pcmzero:System xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:pcmzero="http://www.mdsd.tools/characteristics/examples/pcmzero" id="_VIESgFXZEemBdqFqxykUig" entityName="System A">
+<pcmzero:System xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:characteristic="http://www.mdsd.tools/characteristics/characteristic/1.0" xmlns:manifestation="http://www.mdsd.tools/characteristics/manifestation/1.0" xmlns:pcmzero="http://www.mdsd.tools/characteristics/examples/pcmzero" id="_VIESgFXZEemBdqFqxykUig" entityName="System A">
   <assemblycontainer id="_ewx5MFXZEemBdqFqxykUig" entityName="Assembly Container A">
+    <bindings>
+      <manifestation xsi:type="manifestation:SingleValue" storage="FR"/>
+      <characteristic xsi:type="characteristic:Characteristic" href="example.characteristic#_pPDVIFnaEemxZKd6E3D9FQ"/>
+    </bindings>
     <assembly id="_pgb50FXZEemBdqFqxykUig" entityName="Assembly A">
       <component href="example_repository_1.pcmzero#_hAYkUFXZEemBdqFqxykUig"/>
     </assembly>
