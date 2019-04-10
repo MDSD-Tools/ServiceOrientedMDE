@@ -1,6 +1,7 @@
 package tools.mdsd.characteristics.api.guicebased.impl;
 
 import tools.mdsd.characteristics.api.CharacteristicsModelingRealm;
+import tools.mdsd.characteristics.api.SerializationService;
 import tools.mdsd.characteristics.api.ValueTypePropertiesService;
 import tools.mdsd.characteristics.api.impl.ApiFactoryImpl;
 
@@ -16,6 +17,9 @@ public class GuiceAwareApiFactoryImpl extends ApiFactoryImpl {
 		return new GuiceValueTypePropertiesServiceImpl();
 	}
 	
-	
+	@Override
+	public SerializationService createSerializationService() {
+		return new GuiceAwareSerializationServiceImpl();
+	}
 
 }
