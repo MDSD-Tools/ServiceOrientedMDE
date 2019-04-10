@@ -2,6 +2,7 @@
  */
 package tools.mdsd.characteristics.examples.pcmzero.presentation;
 
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
 
 import tools.mdsd.characteristics.CharacteristicsConstants;
@@ -32,7 +33,17 @@ public class PcmzeroEditor
 		super.createModel();
 		
 		//FIXME: This is a hack until we have properly resolved API initialization
-		editingDomain.getResourceSet().getResource(CharacteristicsConstants.REALM_INSTANCE_OR_DEFAULT,
+		Resource res = editingDomain.getResourceSet().getResource(CharacteristicsConstants.REALM_INSTANCE_OR_DEFAULT,
 				true);
+		
+		editingDomain.getResourceToReadOnlyMap().put(res, true);
+	}
+	
+	@Override
+	protected void handleActivate() {
+		super.handleActivate();
+		editingDomain.getResourceToReadOnlyMap().put(
+				editingDomain.getResourceSet().getResource(CharacteristicsConstants.REALM_INSTANCE_OR_DEFAULT,
+						false), true);
 	}
 }

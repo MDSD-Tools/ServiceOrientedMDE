@@ -1,5 +1,9 @@
 package tools.mdsd.characteristics.api.guicebased.impl;
 
+import java.io.IOException;
+import java.io.OutputStream;
+import java.util.Map;
+
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.impl.ResourceImpl;
 
@@ -19,5 +23,11 @@ public class GuiceInjectorAwareResourceImpl extends ResourceImpl implements Guic
 	@Override
 	public Injector getInjector() {
 		return injector;
+	}
+	
+	@Override
+	protected void doSave(OutputStream outputStream, Map<?, ?> options) throws IOException {
+		//Intentionally left blank to prevent Resource from throwing UnsupportedOperationException
+		//Setting the read-only property did not do the trick
 	}
 }

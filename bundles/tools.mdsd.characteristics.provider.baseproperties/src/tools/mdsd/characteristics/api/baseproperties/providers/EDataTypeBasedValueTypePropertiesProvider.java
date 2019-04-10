@@ -2,8 +2,11 @@ package tools.mdsd.characteristics.api.baseproperties.providers;
 
 import java.util.Optional;
 
+import org.eclipse.emf.common.util.ECollections;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
+import tools.mdsd.characteristics.api.ServiceRegistration;
 import tools.mdsd.characteristics.api.impl.ValueTypePropertiesProviderImpl;
 import tools.mdsd.characteristics.valuetype.EDataTypeValueType;
 import tools.mdsd.characteristics.valuetype.ValueType;
@@ -11,6 +14,10 @@ import tools.mdsd.characteristics.valuetype.properties.BasicProperties.EDataType
 import tools.mdsd.characteristics.valuetype.util.ValuetypeSwitch;
 
 public class EDataTypeBasedValueTypePropertiesProvider extends ValueTypePropertiesProviderImpl {
+	@Override
+	public EList<ServiceRegistration> getRegistrations() {
+		return ECollections.emptyEList();
+	}
 	
 	protected static ValuetypeSwitch<EDataTypeBased> EDATA_TYPE_BASED_VALUE_TYPE_SWITCH = 
 			new ValuetypeSwitch<EDataTypeBased>() {
