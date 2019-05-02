@@ -50,7 +50,7 @@ public class CharacteristicsContextItemProviderDecorator extends AdapterItemProv
 		} 
 	}
 
-	WeakHashMap<CharacterizationContext, List<IItemPropertyDescriptor>> characteristicBasedDescriptors = new WeakHashMap<>();
+	private WeakHashMap<CharacterizationContext, List<IItemPropertyDescriptor>> characteristicBasedDescriptors = new WeakHashMap<>();
 
 	public CharacteristicsContextItemProviderDecorator(AdapterFactory adapterFactory) {
 		super(adapterFactory);
@@ -82,38 +82,35 @@ public class CharacteristicsContextItemProviderDecorator extends AdapterItemProv
 	public Command createCommand(Object object, EditingDomain domain, Class<? extends Command> commandClass,
 			CommandParameter commandParameter) {
 		Command result = null;
-		if (commandParameter != null && commandParameter.owner instanceof CharacterizationContext) {
+		if (commandParameter != null && commandParameter.owner instanceof CharacterizationContext &&
+				commandParameter.getFeature() != null && 
+				commandParameter.getFeature() instanceof CharacteristicBasedVirtualStructuralFeature) {
 			CharacterizationContext ctx = (CharacterizationContext) commandParameter.owner;
 
 			if (commandClass == SetCommand.class) {
-				result = createSetCommand(object, domain, commandClass, commandParameter, ctx);
-			} /*else if (commandClass == AddCommand.class) {
-				result = createAddCommand(object, domain, commandClass, commandParameter, ctx);
-			}*/
+				result = createSetCommandforVirtualFeature(object, domain, commandClass, commandParameter, ctx);
+			}
 		}
 		return result != null ? result : super.createCommand(object, domain, commandClass, commandParameter);
 	}
 
-	private Command createSetCommand(Object object, EditingDomain domain, Class<? extends Command> commandClass,
+	private Command createSetCommandforVirtualFeature(Object object, EditingDomain domain, Class<? extends Command> commandClass,
 			CommandParameter commandParameter, CharacterizationContext ctx) {
-		
-		if (commandParameter.getFeature() instanceof CharacteristicBasedVirtualStructuralFeature) {
-			CharacteristicBasedVirtualStructuralFeature feature = (CharacteristicBasedVirtualStructuralFeature) commandParameter.getFeature();
+		CharacteristicBasedVirtualStructuralFeature feature = (CharacteristicBasedVirtualStructuralFeature) commandParameter.getFeature();
 
-			Optional<CharacteristicBinding> optBinding = ctx.getBindings().stream()
-					.filter(b -> b.getCharacteristic().equals(feature.getCharacteristic())).findAny();
-			if (optBinding.isPresent()) {
-				CompoundCommand result = new CompoundCommand();
-				CharacteristicBinding binding = optBinding.get();
-				SingleValue manifestation = ManifestationFactory.eINSTANCE.createSingleValue();
-				result.append(super.createCommand(binding, domain, commandClass, new CommandParameter(binding,
-						BindingPackage.eINSTANCE.getManifestationContainer_Manifestation(), manifestation)));
-				result.append(super.createCommand(manifestation, domain, commandClass,
-						new CommandParameter(manifestation,
-								ManifestationPackage.eINSTANCE.getStaticManifestation_Value(),
-								commandParameter.getValue())));
-				return result;
-			}
+		Optional<CharacteristicBinding> optBinding = ctx.getBindings().stream()
+				.filter(b -> b.getCharacteristic().equals(feature.getCharacteristic())).findAny();
+		if (optBinding.isPresent()) {
+			CompoundCommand result = new CompoundCommand();
+			CharacteristicBinding binding = optBinding.get();
+			SingleValue manifestation = ManifestationFactory.eINSTANCE.createSingleValue();
+			result.append(super.createCommand(binding, domain, commandClass, new CommandParameter(binding,
+					BindingPackage.eINSTANCE.getManifestationContainer_Manifestation(), manifestation)));
+			result.append(super.createCommand(manifestation, domain, commandClass,
+					new CommandParameter(manifestation,
+							ManifestationPackage.eINSTANCE.getStaticManifestation_Value(),
+							commandParameter.getValue())));
+			return result;
 		}
 		return null;
 	}
@@ -126,8 +123,9 @@ public class CharacteristicsContextItemProviderDecorator extends AdapterItemProv
 		List<IItemPropertyDescriptor> result = new LinkedList<>();
 		for (CharacteristicBinding binding : ctx.getBindings()) {
 			if (binding.getCharacteristic() != null) {
-				result.add(CharacteristicBasedItemPropertyDescriptor.create(
-						((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+				AdapterFactory af = adapterFactory instanceof ComposeableAdapterFactory ? 
+						((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory() : adapterFactory;
+				result.add(CharacteristicBasedItemPropertyDescriptor.create(af,
 						binding.getCharacteristic().computeCharacteristic()));
 			}
 			if (binding.eAdapters().stream().noneMatch(CacheClearingAdapter.class::isInstance)) {

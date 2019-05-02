@@ -10,7 +10,7 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
 public class FeatureFilteringItemProviderDecorator extends AdapterItemProviderDecorator {
-	private HashSet<EStructuralFeature> featuresToFilter;
+	final private HashSet<EStructuralFeature> featuresToFilter;
 	
 	public FeatureFilteringItemProviderDecorator(AdapterFactory adapterFactory,
 			EStructuralFeature... featuresToFilter) {

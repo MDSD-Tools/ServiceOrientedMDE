@@ -14,7 +14,6 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
  * This is the item provider adapter for a {@link tools.mdsd.characteristics.manifestation.Manifestation} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * @generated
  */
 public class ManifestationItemProvider 
 	extends ManifestationItemProviderGen
