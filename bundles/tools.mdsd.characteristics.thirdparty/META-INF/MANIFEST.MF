@@ -13,3 +13,5 @@ Export-Package: com.google.inject;version="1.4",com.google.inject.bind
  ",com.google.inject.spi;version="1.4",com.google.inject.util;version=
  "1.4"
 Require-Bundle: javax.inject
+Import-Package: org.aopalliance.aop;version="1.0.0",
+ org.aopalliance.intercept;version="1.0.0"

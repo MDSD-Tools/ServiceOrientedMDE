@@ -1,5 +1,6 @@
 package tools.mdsd.characteristics.edit.support.impl;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
@@ -60,7 +61,7 @@ public class CharacteristicsContextItemProviderDecorator extends AdapterItemProv
 
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		List<IItemPropertyDescriptor> result = super.getPropertyDescriptors(object);
+		List<IItemPropertyDescriptor> result = new ArrayList<>(super.getPropertyDescriptors(object));
 		if ((object instanceof CharacterizationContext)) {
 			CharacterizationContext ctx = (CharacterizationContext) object;
 			List<IItemPropertyDescriptor> characteristicBased = getCharacteristicBasedDescriptors(ctx);
