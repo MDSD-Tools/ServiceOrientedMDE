@@ -3,6 +3,9 @@ package tools.mdsd.characteristics.edit.support;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 import tools.mdsd.characteristics.binding.BindingPackage;
+import tools.mdsd.characteristics.edit.support.impl.CharacteristicsContextItemProviderDecorator;
+import tools.mdsd.characteristics.edit.support.impl.ValueTypeTextDecorator;
+import tools.mdsd.characteristics.edit.support.util.FeatureFilteringItemProviderDecorator;
 import tools.mdsd.characteristics.valuetype.ValuetypePackage;
 
 public final class CharacteristicsSupportExtension {

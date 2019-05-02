@@ -1,4 +1,4 @@
-package tools.mdsd.characteristics.edit.support;
+package tools.mdsd.characteristics.edit.support.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.AdapterFactory;

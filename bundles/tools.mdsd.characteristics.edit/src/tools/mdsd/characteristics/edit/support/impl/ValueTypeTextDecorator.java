@@ -1,7 +1,8 @@
-package tools.mdsd.characteristics.edit.support;
+package tools.mdsd.characteristics.edit.support.impl;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 
+import tools.mdsd.characteristics.edit.support.util.AdapterItemProviderDecorator;
 import tools.mdsd.characteristics.valuetype.ValueType;
 
 public class ValueTypeTextDecorator extends AdapterItemProviderDecorator {

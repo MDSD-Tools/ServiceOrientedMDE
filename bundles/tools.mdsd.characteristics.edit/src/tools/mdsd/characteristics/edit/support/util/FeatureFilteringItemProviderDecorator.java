@@ -1,4 +1,4 @@
-package tools.mdsd.characteristics.edit.support;
+package tools.mdsd.characteristics.edit.support.util;
 
 import java.util.Arrays;
 import java.util.HashSet;

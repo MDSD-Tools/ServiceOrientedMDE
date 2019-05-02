@@ -15,13 +15,15 @@ import org.eclipse.emf.edit.provider.IItemProviderDecorator;
 import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.ListMultimap;
 
+import tools.mdsd.characteristics.edit.support.util.AdapterItemProviderDecorator;
+
 public class ExtensibleDispatchingItemProviderDecoratorFactory extends DecoratorAdapterFactory implements IChildCreationExtender {
 	@FunctionalInterface
 	public interface ItemProviderDecoratorFactoryProvider {
 		IItemProviderDecorator createItemProviderDecorator(Object target, Object Type, AdapterFactory factory);
 	}
 	
-	ListMultimap<EClass, ItemProviderDecoratorFactoryProvider> registeredProviders = 
+	private ListMultimap<EClass, ItemProviderDecoratorFactoryProvider> registeredProviders = 
 			ArrayListMultimap.create();
 	
 	public ExtensibleDispatchingItemProviderDecoratorFactory(AdapterFactory decoratedAdapterFactory) {

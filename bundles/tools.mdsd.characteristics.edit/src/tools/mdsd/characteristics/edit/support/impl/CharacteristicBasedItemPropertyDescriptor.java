@@ -1,4 +1,4 @@
-package tools.mdsd.characteristics.edit.support;
+package tools.mdsd.characteristics.edit.support.impl;
 
 import java.util.List;
 

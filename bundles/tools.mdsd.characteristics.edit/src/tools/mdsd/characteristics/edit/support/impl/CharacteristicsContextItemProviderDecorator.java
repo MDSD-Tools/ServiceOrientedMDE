@@ -1,4 +1,4 @@
-package tools.mdsd.characteristics.edit.support;
+package tools.mdsd.characteristics.edit.support.impl;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -22,7 +22,9 @@ import tools.mdsd.characteristics.binding.BindingPackage;
 import tools.mdsd.characteristics.binding.CharacteristicBinding;
 import tools.mdsd.characteristics.binding.CharacterizationContext;
 import tools.mdsd.characteristics.characteristic.provider.CharacteristicBasedVirtualStructuralFeature;
+import tools.mdsd.characteristics.edit.support.ExtensibleDispatchingItemProviderDecoratorFactory;
 import tools.mdsd.characteristics.edit.support.ExtensibleDispatchingItemProviderDecoratorFactory.ItemProviderDecoratorFactoryProvider;
+import tools.mdsd.characteristics.edit.support.util.AdapterItemProviderDecorator;
 import tools.mdsd.characteristics.manifestation.ManifestationFactory;
 import tools.mdsd.characteristics.manifestation.ManifestationPackage;
 import tools.mdsd.characteristics.manifestation.SingleValue;
