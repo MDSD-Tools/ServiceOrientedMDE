@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         id="characteristicsenabled"
+         name="Characteristics Modeling Enabled Modeling Project"
+         point="org.eclipse.core.resources.natures">
+      <runtime>
+         <run
+               class="tools.mdsd.characteristics.ui.eclipse.CharacteristicsEnabledProjectNature">
+         </run>
+      </runtime>
+   </extension>
+   <extension
+         id="tools.mdsd.characteristics.ui.eclipse.characteristicsenabled.enable"
+         name="Enable Characteristics Modeling"
+         point="org.eclipse.ui.commands">
+   </extension>
+   <extension
+         id="tools.mdsd.characteristics.ui.eclipse.characteristicsenabled.disable"
+         name="Disable Characteristics Modeling"
+         point="org.eclipse.ui.commands">
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="tools.mdsd.characteristics.ui.eclipse.EnableCharacteristicsProjectNatureHandler"
+            commandId="tools.mdsd.characteristics.ui.eclipse.characteristicsenabled.enable">
+      </handler>
+   </extension>
+   <extension
+         id="enablecommand_menucontribution"
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:org.eclipse.ui.projectConfigure">
+         <command
+               commandId="tools.mdsd.characteristics.ui.eclipse.characteristicsenabled.enable"
+               label="Enable Characteristics Modeling"
+               style="push">
+            <visibleWhen
+                  checkEnabled="true">
+               <not>
+                  <reference
+                        definitionId="tools.mdsd.characteristics.ui.eclipse.characteristicsenabled.hasNature">
+                  </reference>
+               </not>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.core.expressions.definitions">
+      <definition
+            id="tools.mdsd.characteristics.ui.eclipse.characteristicsenabled.hasNature">
+         <adapt
+               type="org.eclipse.core.resources.IProject">
+            <test
+                  property="org.eclipse.core.resources.projectNature"
+                  value="tools.mdsd.characteristics.ui.eclipse.characteristicsenabled">
+            </test>
+         </adapt>
+      </definition>
+   </extension>
+   <extension
+         point="org.eclipse.ui.propertyPages">
+      <page
+            class="tools.mdsd.characteristics.ui.eclipse.properties.CharacteristicsEnabledProjectPropertyPage"
+            id="tools.mdsd.characteristics.ui.eclipse.properties.samplePropertyPage"
+            name="Characteristics"
+            nameFilter="*.*">
+         <enabledWhen>
+            <reference
+                  definitionId="tools.mdsd.characteristics.ui.eclipse.characteristicsenabled.hasNature">
+            </reference>
+         </enabledWhen>
+      </page>
+   </extension>
+
+</plugin>
