@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>tools.mdsd.characteristics.examples.pcmzero.instance</name>
+	<name>tools.mdsd.characteristics.api.guicebased.edit</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -24,6 +24,5 @@
 	<natures>
 		<nature>org.eclipse.pde.PluginNature</nature>
 		<nature>org.eclipse.jdt.core.javanature</nature>
-		<nature>tools.mdsd.characteristics.ui.eclipse.characteristicsenabled</nature>
 	</natures>
 </projectDescription>

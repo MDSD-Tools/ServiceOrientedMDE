@@ -14,6 +14,7 @@
 	<modules>
 		<module>tools.mdsd.characteristics</module>
 		<module>tools.mdsd.characteristics.api.guicebased</module>
+		<module>tools.mdsd.characteristics.api.guicebased.edit</module>
 		<module>tools.mdsd.characteristics.edit</module>
 		<module>tools.mdsd.characteristics.editor</module>
 		<module>tools.mdsd.characteristics.model</module>

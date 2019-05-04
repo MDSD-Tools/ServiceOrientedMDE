@@ -7,6 +7,8 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="serializationService" lowerBound="1"
         eType="#//SerializationService" transient="true" derived="true" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="configuration" upperBound="-1"
+        eType="#//ConfigurationItem" containment="true" eOpposite="#//ConfigurationItem/modelingRealm"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ValueTypePropertiesService" eSuperTypes="#//ValueTypePropertiesProvider">
     <eStructuralFeatures xsi:type="ecore:EReference" name="valueTypePropertiesProvider"
@@ -65,5 +67,13 @@
       <eParameters name="valueType" eType="ecore:EClass characteristics.ecore#//valuetype/ValueType"/>
       <eParameters name="serialized" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
     </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConfigurationItem" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="modelingRealm" eType="#//CharacteristicsModelingRealm"
+        eOpposite="#//CharacteristicsModelingRealm/configuration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProfileActivation" eSuperTypes="#//ConfigurationItem">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="activatedProfile" lowerBound="1"
+        eType="ecore:EClass characteristics.ecore#//characteristic/CharacteristicProfile"/>
   </eClassifiers>
 </ecore:EPackage>

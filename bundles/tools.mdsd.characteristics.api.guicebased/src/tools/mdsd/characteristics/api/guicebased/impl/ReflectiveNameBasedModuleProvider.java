@@ -3,16 +3,15 @@ package tools.mdsd.characteristics.api.guicebased.impl;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 
-import org.eclipse.emf.common.util.URI;
-
 import com.google.inject.Module;
 
-import tools.mdsd.characteristics.api.guicebased.CharacteristicsResourceFactory;
+import tools.mdsd.characteristics.api.guicebased.ModuleProvider;
+import tools.mdsd.characteristics.api.guicebased.guicebasedapi.ModuleImport;
 
-public class ReflectiveNameBasedModuleProvider implements CharacteristicsResourceFactory.ModuleProvider {
+public class ReflectiveNameBasedModuleProvider implements ModuleProvider<ModuleImport> {
 	@Override
-	public Module getModule(URI uri) {
-		String moduleName = uri.segment(1);
+	public Module getModule(ModuleImport item) {
+		String moduleName = item.getModuleFQN();
 		try {
 			Class<?> moduleClass = Class.forName(moduleName);
 			Constructor<?>[] constructors = moduleClass.getConstructors();
@@ -25,7 +24,7 @@ public class ReflectiveNameBasedModuleProvider implements CharacteristicsResourc
 					if (constructor.getParameterCount() == 0) {
 						return (Module) constructor.newInstance();
 					} else if (constructor.getParameterCount() == 1) {
-						return (Module) constructor.newInstance(uri);
+						return (Module) constructor.newInstance(item);
 					}
 				} catch (InstantiationException | IllegalAccessException | InvocationTargetException e) {
 					throw new RuntimeException(e);
@@ -36,6 +35,11 @@ public class ReflectiveNameBasedModuleProvider implements CharacteristicsResourc
 		} catch (ClassNotFoundException e) {
 			throw new RuntimeException(e);
 		}
+	}
+
+	@Override
+	public Class<ModuleImport> getConfigurationType() {
+		return ModuleImport.class;
 	}
 }
 

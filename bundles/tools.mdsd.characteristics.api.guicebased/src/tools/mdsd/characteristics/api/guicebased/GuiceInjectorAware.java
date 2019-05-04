@@ -10,7 +10,6 @@ public interface GuiceInjectorAware {
 	
 	Injector getInjector();
 	
-
 	default <T> T resolveInstance(Key<T> key, EObject thiz) {
 		return getInjector(thiz).getInstance(key);
 	}
@@ -31,16 +30,16 @@ public interface GuiceInjectorAware {
 	public interface AwareEObject extends GuiceInjectorAware, EObject {
 		@Override
 		default Injector getInjector() {
-			return this.resolveInstance(Injector.class);
+			return this.resolveInstance(Injector.class, this);
 		}
 		
 		default <T> T resolveInstance(Key<T> key) {
-			return this.resolveInstance(key, this);
+			return getInjector().getInstance(key);
 		}
 		
 		
 		default <T> T resolveInstance(Class<T> clazz) {
-			return this.resolveInstance(clazz, this);
+			return getInjector().getInstance(clazz);
 		}
 	}
 
