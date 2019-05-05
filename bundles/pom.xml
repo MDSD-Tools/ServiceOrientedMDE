@@ -21,5 +21,6 @@
 		<module>tools.mdsd.characteristics.provider.baseproperties</module>
 		<module>tools.mdsd.characteristics.resources</module>
 		<module>tools.mdsd.characteristics.thirdparty</module>
+		<module>tools.mdsd.characteristics.ui.eclipse</module>
 	</modules>
 </project>
