@@ -1,5 +1,8 @@
 package tools.mdsd.characteristics.ui.eclipse;
 
+import java.util.Arrays;
+import java.util.List;
+
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
@@ -17,11 +20,31 @@ import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.handlers.HandlerUtil;
 
-public class EnableCharacteristicsProjectNatureHandler extends AbstractHandler {
+public abstract class CharacteristicsProjectNatureHandler extends AbstractHandler {
+	public static class EnableCharacteristicsProjectNatureHandler extends CharacteristicsProjectNatureHandler {
+		@Override
+		String[] adaptNatures(String[] oldNatures) {
+			String[] newNatures = new String[oldNatures.length + 1];
+            newNatures[oldNatures.length] = CharacteristicsEnabledProjectNature.NATURE_ID;
+            System.arraycopy(oldNatures, 0, newNatures, 0, oldNatures.length);
+            return newNatures;
+		}
+	}
+	
+	public static class DisableCharacteristicsProjectNatureHandler extends CharacteristicsProjectNatureHandler {
+		@Override
+		String[] adaptNatures(String[] oldNatures) {
+			List<String> natures = Arrays.asList(oldNatures);
+			natures.remove(CharacteristicsEnabledProjectNature.NATURE_ID);
+			return natures.toArray(new String[oldNatures.length - 1]);
+		}
+	}
+	
+	abstract String[] adaptNatures(String[] oldNatures);
 
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
-		// taken from:
+		// similar to:
 		// https://www.vogella.com/tutorials/EclipseProjectNatures/article.html#add-a-convert-handler
 		
 		ISelection currentSelection = HandlerUtil.getCurrentSelection(event);
@@ -37,10 +60,7 @@ public class EnableCharacteristicsProjectNatureHandler extends AbstractHandler {
                 IProject project = resource.getProject();
                 try {
                     IProjectDescription description = project.getDescription();
-                    String[] natures = description.getNatureIds();
-                    String[] newNatures = new String[natures.length + 1];
-                    newNatures[natures.length] = CharacteristicsEnabledProjectNature.NATURE_ID;
-                    System.arraycopy(natures, 0, newNatures, 0, natures.length);
+                    String[] newNatures = adaptNatures(description.getNatureIds()); 
                     IWorkspace workspace = ResourcesPlugin.getWorkspace();
                     IStatus status = workspace.validateNatureSet(newNatures);
 
