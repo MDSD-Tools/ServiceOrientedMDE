@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: tools.mdsd.characteristics.examples.pcmzero.instance
+Bundle-SymbolicName: tools.mdsd.characteristics.examples.pcmzero.instance
+Bundle-Version: 0.1.0.qualifier
+Automatic-Module-Name: tools.mdsd.characteristics.examples.pcmzero.instance
+Bundle-RequiredExecutionEnvironment: JavaSE-10

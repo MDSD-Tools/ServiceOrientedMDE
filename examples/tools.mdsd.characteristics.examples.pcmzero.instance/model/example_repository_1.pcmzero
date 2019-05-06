@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pcmzero:Repository xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:pcmzero="http://www.mdsd.tools/characteristics/examples/pcmzero" id="_vIKosFVoEem5D-4os6T3Kg" entityName="Repository A">
+  <component id="_hAYkUFXZEemBdqFqxykUig" entityName="Component A"/>
+  <component id="_hn_W4FXZEemBdqFqxykUig" entityName="Component B"/>
+</pcmzero:Repository>

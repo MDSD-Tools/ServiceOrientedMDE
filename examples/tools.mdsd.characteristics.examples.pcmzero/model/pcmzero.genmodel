@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/tools.mdsd.characteristics.examples.pcmzero/src-gen"
+    creationIcons="false" editDirectory="/tools.mdsd.characteristics.examples.pcmzero.edit/src-gen"
+    editorDirectory="/tools.mdsd.characteristics.examples.pcmzero.editor/src-gen"
+    modelPluginID="tools.mdsd.characteristics.examples.pcmzero" modelName="Pcmzero"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" codeFormatting="true"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="10.0" copyrightFields="false"
+    usedGenPackages="../../tools.mdsd.characteristics.model/model/characteristics.genmodel#//characteristics ../../tools.mdsd.modelingfoundations.identifier/model/identifier.genmodel#//identifier"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>pcmzero.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="Pcmzero" basePackage="tools.mdsd.characteristics.examples"
+      disposableProviderFactory="true" ecorePackage="pcmzero.ecore#/">
+    <genClasses ecoreClass="pcmzero.ecore#//Component"/>
+    <genClasses ecoreClass="pcmzero.ecore#//AssemblyContainer">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pcmzero.ecore#//AssemblyContainer/assembly"/>
+    </genClasses>
+    <genClasses ecoreClass="pcmzero.ecore#//Assembly">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pcmzero.ecore#//Assembly/component"/>
+    </genClasses>
+    <genClasses ecoreClass="pcmzero.ecore#//Repository">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pcmzero.ecore#//Repository/component"/>
+    </genClasses>
+    <genClasses ecoreClass="pcmzero.ecore#//System">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pcmzero.ecore#//System/assemblycontainer"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
