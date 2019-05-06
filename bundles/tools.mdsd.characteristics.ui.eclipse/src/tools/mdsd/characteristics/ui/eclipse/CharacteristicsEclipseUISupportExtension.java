@@ -13,6 +13,8 @@ public class CharacteristicsEclipseUISupportExtension {
 	
 	private CharacteristicsEclipseUISupportExtension() { }
 	
+	public static final String PLUGIN_ID = "tools.mdsd.characteristics.ui.eclipse";
+	
 	public static void loadModelingRealm(IResource resource, ResourceSet resourceSet) {
 		try {
 			IProject project = resource.getProject();

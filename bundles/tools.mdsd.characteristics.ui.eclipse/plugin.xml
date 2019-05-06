@@ -64,11 +64,14 @@
                style="push">
             <visibleWhen
                   checkEnabled="false">
-               <not>
-                  <reference
-                        definitionId="tools.mdsd.characteristics.ui.eclipse.characteristicsenabled.hasNature">
-                  </reference>
-               </not>
+               <iterate
+                     ifEmpty="false"
+                     operator="or">
+                  <not>
+                     <reference
+                           definitionId="tools.mdsd.characteristics.ui.eclipse.characteristicsenabled.hasNature">
+                     </reference></not>
+               </iterate>
             </visibleWhen>
          </command>
          <command
@@ -76,9 +79,13 @@
                style="push">
             <visibleWhen
                   checkEnabled="false">
-               <reference
-                     definitionId="tools.mdsd.characteristics.ui.eclipse.characteristicsenabled.hasNature">
-               </reference>
+               <iterate
+                     ifEmpty="false"
+                     operator="or">
+                  <reference
+                        definitionId="tools.mdsd.characteristics.ui.eclipse.characteristicsenabled.hasNature">
+                  </reference>
+               </iterate>
             </visibleWhen>
          </command>
       </menuContribution>

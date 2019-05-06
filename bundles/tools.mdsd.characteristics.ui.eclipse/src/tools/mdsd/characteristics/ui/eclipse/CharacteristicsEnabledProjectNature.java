@@ -32,7 +32,7 @@ public class CharacteristicsEnabledProjectNature implements IProjectNature {
 		IScopeContext scope = new ProjectScope(project);
 		IEclipsePreferences projectPrefs = scope.getNode(NATURE_ID);
 		if (projectPrefs == null) {
-			throw new CoreException(new Status(IStatus.ERROR, "tools.mdsd.characteristics.ui.eclipse", 
+			throw new CoreException(new Status(IStatus.ERROR, CharacteristicsEclipseUISupportExtension.PLUGIN_ID, 
 					"Configuration of nature specific preferences failed."));
 		}
 		
@@ -64,10 +64,10 @@ public class CharacteristicsEnabledProjectNature implements IProjectNature {
 			projectPrefs.flush();
 			
 		} catch (BackingStoreException e) {
-			throw new CoreException(new Status(IStatus.ERROR, "tools.mdsd.characteristics.ui.eclipse", 
+			throw new CoreException(new Status(IStatus.ERROR, CharacteristicsEclipseUISupportExtension.PLUGIN_ID, 
 					"The nature could not be added properly.", e));
 		} catch (IOException e) {
-			throw new CoreException(new Status(IStatus.ERROR, "tools.mdsd.characteristics.ui.eclipse", 
+			throw new CoreException(new Status(IStatus.ERROR, CharacteristicsEclipseUISupportExtension.PLUGIN_ID, 
 					"The model could not be stored.", e));
 		}
 	}
@@ -79,7 +79,7 @@ public class CharacteristicsEnabledProjectNature implements IProjectNature {
 		try {
 			projectPrefs.removeNode();
 		} catch (BackingStoreException e) {
-			throw new CoreException(new Status(IStatus.ERROR, "tools.mdsd.characteristics.ui.eclipse", 
+			throw new CoreException(new Status(IStatus.ERROR, CharacteristicsEclipseUISupportExtension.PLUGIN_ID, 
 					"The nature could not be removed properly.", e));
 		}
 	}
