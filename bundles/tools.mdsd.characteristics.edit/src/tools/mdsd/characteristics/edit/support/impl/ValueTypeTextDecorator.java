@@ -16,7 +16,7 @@ public class ValueTypeTextDecorator extends AdapterItemProviderDecorator {
 		if (object instanceof ValueType) {
 			String label = ((ValueType)object).getEntityName();
 			if (label != null && label.length() > 0) {
-				return "«ValueType» " + label;
+				return "Â«ValueTypeÂ» " + label;
 			}
 		}
 		return super.getText(object);
