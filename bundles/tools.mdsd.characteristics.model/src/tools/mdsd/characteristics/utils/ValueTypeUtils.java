@@ -24,7 +24,7 @@ public final class ValueTypeUtils {
 	}
 	
 	public static boolean isInstanceOfDataType(Object obj, EDataType dataType) {
-		return dataType.getInstanceClass().isAssignableFrom(obj.getClass());
+		return dataType.isInstance(obj);
 	}
 
 	public static boolean adheresToValueType(ValueTypeImpl valueTypeImpl, Object instance) {

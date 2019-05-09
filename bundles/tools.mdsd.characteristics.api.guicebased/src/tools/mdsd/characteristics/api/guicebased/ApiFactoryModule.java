@@ -8,6 +8,7 @@ import com.google.inject.name.Names;
 
 import tools.mdsd.characteristics.api.ApiFactory;
 import tools.mdsd.characteristics.api.CharacteristicsModelingRealm;
+import tools.mdsd.characteristics.api.SerializationService;
 import tools.mdsd.characteristics.api.ValueTypePropertiesService;
 import tools.mdsd.characteristics.api.guicebased.CharacteristicsResourceFactory.ModuleProvider;
 import tools.mdsd.characteristics.api.guicebased.impl.GuiceInjectorAwareResourceFactoryImpl;
@@ -30,6 +31,11 @@ public class ApiFactoryModule extends AbstractModule {
 	@Provides
 	ValueTypePropertiesService provideValueTypePropertiesService(ApiFactory factory) {
 		return factory.createValueTypePropertiesService();
+	}
+	
+	@Provides
+	SerializationService provideSerializationService(ApiFactory factory) {
+		return factory.createSerializationService();
 	}
 
 }

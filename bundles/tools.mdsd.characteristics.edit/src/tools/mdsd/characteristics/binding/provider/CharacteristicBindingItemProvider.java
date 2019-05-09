@@ -29,8 +29,6 @@ public class CharacteristicBindingItemProvider extends CharacteristicBindingItem
 		super(adapterFactory);
 	}
 
-	
-
 	protected BindingSwitch<Optional<String>> LABEL_SWITCH = new BindingSwitch<Optional<String>>() {
 		@Override
 		public Optional<String> caseCharacteristicBinding(CharacteristicBinding object) {
@@ -59,6 +57,7 @@ public class CharacteristicBindingItemProvider extends CharacteristicBindingItem
 			.filter(EObject.class::isInstance)
 			.map(EObject.class::cast)
 			.flatMap(LABEL_SWITCH::doSwitch)
-			.orElseGet(() -> getString("_UI_CharacteristicManifestation_type"));
+			.map(name -> getString("_UI_CharacteristicBinding_label") + " " + name)
+			.orElseGet(() -> getString("_UI_UnboundCharacteristicBinding_label"));
 	}
 }

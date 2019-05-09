@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<valuetype:ValueTypeRepository xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:valuetype="http://www.mdsd.tools/characteristics/valuetype/1.0">
+  <valuetype xsi:type="valuetype:EDataTypeValueType" id="_K-7ygFoPEempz7R-Oblvgg" entityName="Country Code">
+    <baseType href="../../../plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </valuetype>
+</valuetype:ValueTypeRepository>

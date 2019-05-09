@@ -3,20 +3,18 @@ package tools.mdsd.characteristics.characteristic.provider;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EGenericType;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.impl.EStructuralFeatureImpl;
 
+import tools.mdsd.characteristics.binding.BindingPackage;
 import tools.mdsd.characteristics.characteristic.Characteristic;
 import tools.mdsd.characteristics.valuetype.properties.BasicProperties.EDataTypeBased;
 import tools.mdsd.characteristics.valuetype.provider.ValueTypeEClassifierWrapper;
 
 public class CharacteristicBasedVirtualStructuralFeature extends EStructuralFeatureImpl {
 	
-	private EObject characterizable;
 	private Characteristic characteristic;
 
-	public CharacteristicBasedVirtualStructuralFeature(EObject characterizable, Characteristic characteristic) {
-		this.characterizable = characterizable;
+	public CharacteristicBasedVirtualStructuralFeature(Characteristic characteristic) {
 		this.characteristic = characteristic;
 	}
 
@@ -183,12 +181,16 @@ public class CharacteristicBasedVirtualStructuralFeature extends EStructuralFeat
 
 	@Override
 	public EClass getEContainingClass() {
-		return characterizable.eClass();
+		return BindingPackage.eINSTANCE.getCharacterizationContext();
 	}
 
 	@Override
 	public Class<?> getContainerClass() {
-		return this.characterizable.getClass();
+		return BindingPackage.eINSTANCE.getCharacterizationContext().getInstanceClass();
+	}
+	
+	public Characteristic getCharacteristic() {
+		return characteristic;
 	}
 
 }

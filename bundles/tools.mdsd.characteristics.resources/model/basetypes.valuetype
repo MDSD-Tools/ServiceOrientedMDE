@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <valuetype:ValueTypeRepository xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:valuetype="http://www.mdsd.tools/characteristics/valuetype/1.0">
-  <valuetype xsi:type="valuetype:EDataTypeValueType" id="_-CU0YRcVEeiAq5w2bgThtg" name="Integer">
+  <valuetype xsi:type="valuetype:EDataTypeValueType" id="_-CU0YRcVEeiAq5w2bgThtg" entityName="Integer">
     <baseType href="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
   </valuetype>
-  <valuetype xsi:type="valuetype:EDataTypeValueType" id="_kPdd0RcWEeiAq5w2bgThtg" name="Boolean">
+  <valuetype xsi:type="valuetype:EDataTypeValueType" id="_kPdd0RcWEeiAq5w2bgThtg" entityName="Boolean">
     <baseType href="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
   </valuetype>
-  <valuetype xsi:type="valuetype:EDataTypeValueType" id="_qefy8RcWEeiAq5w2bgThtg" name="String">
+  <valuetype xsi:type="valuetype:EDataTypeValueType" id="_qefy8RcWEeiAq5w2bgThtg" entityName="String">
     <baseType href="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
   </valuetype>
-  <valuetype xsi:type="valuetype:EDataTypeValueType" id="_tiTiMRcWEeiAq5w2bgThtg" name="Double">
+  <valuetype xsi:type="valuetype:EDataTypeValueType" id="_tiTiMRcWEeiAq5w2bgThtg" entityName="Double">
     <baseType href="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
   </valuetype>
 </valuetype:ValueTypeRepository>
