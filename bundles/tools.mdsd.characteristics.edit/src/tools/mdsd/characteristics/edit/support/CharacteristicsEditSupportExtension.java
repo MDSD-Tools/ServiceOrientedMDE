@@ -8,8 +8,8 @@ import tools.mdsd.characteristics.edit.support.impl.ValueTypeTextDecorator;
 import tools.mdsd.characteristics.edit.support.util.FeatureFilteringItemProviderDecorator;
 import tools.mdsd.characteristics.valuetype.ValuetypePackage;
 
-public final class CharacteristicsSupportExtension {
-	private CharacteristicsSupportExtension() {
+public final class CharacteristicsEditSupportExtension {
+	private CharacteristicsEditSupportExtension() {
 	}
 
 	protected static final EStructuralFeature[] FILTERED_FEATURES = {

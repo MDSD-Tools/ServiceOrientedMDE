@@ -24,5 +24,6 @@
 	<natures>
 		<nature>org.eclipse.pde.PluginNature</nature>
 		<nature>org.eclipse.jdt.core.javanature</nature>
+		<nature>tools.mdsd.characteristics.ui.eclipse.characteristicsenabled</nature>
 	</natures>
 </projectDescription>

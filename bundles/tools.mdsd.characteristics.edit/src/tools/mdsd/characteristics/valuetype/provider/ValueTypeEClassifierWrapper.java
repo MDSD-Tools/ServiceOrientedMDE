@@ -1,7 +1,6 @@
 package tools.mdsd.characteristics.valuetype.provider;
 
 import java.lang.reflect.InvocationTargetException;
-
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.BasicEList;
@@ -19,8 +18,7 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.ETypeParameter;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.util.BasicInternalEList;
-
-import tools.mdsd.characteristics.manifestation.provider.CharacteristicsEditPlugin;
+import tools.mdsd.characteristics.CharacteristicsEditPlugin;
 import tools.mdsd.characteristics.valuetype.ValueType;
 import tools.mdsd.characteristics.valuetype.properties.BasicProperties.EDataTypeBased;
 
