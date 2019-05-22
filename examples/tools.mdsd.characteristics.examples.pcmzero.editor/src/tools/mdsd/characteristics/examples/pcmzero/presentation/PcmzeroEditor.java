@@ -5,7 +5,7 @@ package tools.mdsd.characteristics.examples.pcmzero.presentation;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
 
-import tools.mdsd.characteristics.edit.support.CharacteristicsSupportExtension;
+import tools.mdsd.characteristics.edit.support.CharacteristicsEditSupportExtension;
 import tools.mdsd.characteristics.edit.support.ExtensibleDispatchingItemProviderDecoratorFactory;
 import tools.mdsd.characteristics.ui.eclipse.CharacteristicsEclipseUISupportExtension;
 
@@ -22,7 +22,7 @@ public class PcmzeroEditor
 		
 		ExtensibleDispatchingItemProviderDecoratorFactory exFact = 
 				new ExtensibleDispatchingItemProviderDecoratorFactory(adapterFactory);
-		CharacteristicsSupportExtension.registerCharacteristicSupportExtensions(exFact);
+		CharacteristicsEditSupportExtension.registerCharacteristicSupportExtensions(exFact);
 		
 		adapterFactory = new ComposedAdapterFactory(exFact);
 		editingDomain.setAdapterFactory(adapterFactory);

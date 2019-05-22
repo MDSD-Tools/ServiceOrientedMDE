@@ -4,6 +4,7 @@
     modelDirectory="/tools.mdsd.characteristics.model/src-gen" editDirectory="/tools.mdsd.characteristics.edit/src-gen"
     editorDirectory="/tools.mdsd.characteristics.editor/src-gen" modelPluginID="tools.mdsd.characteristics.model"
     templateDirectory="/tools.mdsd.characteristics.model/templates/" modelName="Characteristics"
+    editPluginClass="tools.mdsd.characteristics.CharacteristicsEditPlugin" editorPluginClass="tools.mdsd.characteristics.CharacteristicsEditorPlugin"
     rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" codeFormatting="true"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
     editPluginID="tools.mdsd.characteristics.edit" editorPluginID="tools.mdsd.characteristics.editor"
@@ -65,6 +66,7 @@
             ecoreFeature="ecore:EReference characteristics.ecore#//binding/CharacteristicBinding/characteristic"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference characteristics.ecore#//binding/CharacteristicBinding/target"/>
+        <genOperations ecoreOperation="characteristics.ecore#//binding/CharacteristicBinding/determineValueType"/>
       </genClasses>
       <genClasses image="false" ecoreClass="characteristics.ecore#//binding/Namespace"/>
       <genClasses ecoreClass="characteristics.ecore#//binding/NamespaceImport">
