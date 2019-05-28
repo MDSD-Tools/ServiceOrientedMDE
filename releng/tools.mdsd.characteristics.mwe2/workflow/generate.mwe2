@@ -49,28 +49,35 @@ Workflow {
 		
 	component = EcoreGenerator {
 		generateCustomClasses = false
-		generateEdit = true
-		generateEditor = true
-		genModel = "platform:/resource/tools.mdsd.characteristics.model/model/api.genmodel"
-		srcPath = "platform:/resource/tools.mdsd.characteristics.model/src"
-		srcPath = "platform:/resource/tools.mdsd.characteristics.edit/src"
+		generateEdit = false
+		generateEditor = false
+		genModel = "platform:/resource/tools.mdsd.characteristics.api/model/api.genmodel"
+		srcPath = "platform:/resource/tools.mdsd.characteristics.api/src"
 	}
+	
+	component = EcoreGenerator {
+        generateCustomClasses = false
+        generateEdit = false
+        generateEditor = false
+        genModel = "platform:/resource/tools.mdsd.characteristics.realm/model/realm.genmodel"
+        srcPath = "platform:/resource/tools.mdsd.characteristics.realm/src"
+    }
 	
 	component = EcoreGenerator {
 		generateCustomClasses = false
 		generateEdit = true
 		generateEditor = false
-		genModel = "platform:/resource/tools.mdsd.characteristics.api.guicebased/model/guicebased.genmodel"
-		srcPath = "platform:/resource/tools.mdsd.characteristics.api.guicebased/src"
-		srcPath = "platform:/resource/tools.mdsd.characteristics.api.guicebased.edit/src"
+		genModel = "platform:/resource/tools.mdsd.characteristics.realm.guicebased/model/guicebased.genmodel"
+		srcPath = "platform:/resource/tools.mdsd.characteristics.realm.guicebased/src"
+		srcPath = "platform:/resource/tools.mdsd.characteristics.realm.guicebased.edit/src"
 	}
 	
 	component = EcoreGenerator {
 		generateCustomClasses = false
 		generateEdit = false
 		generateEditor = false
-		genModel = "platform:/resource/tools.mdsd.characteristics/model/basicProperties.genmodel"
-		srcPath = "platform:/resource/tools.mdsd.characteristics/src"
+		genModel = "platform:/resource/tools.mdsd.characteristics.properties.basic/model/basicproperties.genmodel"
+		srcPath = "platform:/resource/tools.mdsd.characteristics.properties.basic/src"
 	}
 	
 	component = EcoreGenerator {
@@ -83,25 +90,29 @@ Workflow {
 	
 	component = tools.mdsd.ecoreworkflow.mwe2lib.component.GapPatternPostProcessor {
 		folders = {
-			gen = "platform:/resource/tools.mdsd.characteristics/src-gen"
-			src = "platform:/resource/tools.mdsd.characteristics/src"
+			gen = "platform:/resource/tools.mdsd.characteristics.api/src-gen"
+			src = "platform:/resource/tools.mdsd.characteristics.api/src"
 		}
+		folders = {
+            gen = "platform:/resource/tools.mdsd.characteristics.edit/src-gen"
+            src = "platform:/resource/tools.mdsd.characteristics.edit/src"
+        }
+        folders = {
+            gen = "platform:/resource/tools.mdsd.characteristics.editor/src-gen"
+            src = "platform:/resource/tools.mdsd.characteristics.editor/src"
+        }
 		folders = {
 			gen = "platform:/resource/tools.mdsd.characteristics.model/src-gen"
 			src = "platform:/resource/tools.mdsd.characteristics.model/src"
 		}
+	    folders = {
+            gen = "platform:/resource/tools.mdsd.characteristics.properties.basic/src-gen"
+            src = "platform:/resource/tools.mdsd.characteristics.properties.basic/src"
+        }
 		folders = {
-			gen = "platform:/resource/tools.mdsd.characteristics.model/src-gen"
-			src = "platform:/resource/tools.mdsd.characteristics.model/src"
-		}
-		folders = {
-			gen = "platform:/resource/tools.mdsd.characteristics.edit/src-gen"
-			src = "platform:/resource/tools.mdsd.characteristics.edit/src"
-		}
-		folders = {
-			gen = "platform:/resource/tools.mdsd.characteristics.editor/src-gen"
-			src = "platform:/resource/tools.mdsd.characteristics.editor/src"
-		}
+            gen = "platform:/resource/tools.mdsd.characteristics.realm/src-gen"
+            src = "platform:/resource/tools.mdsd.characteristics.realm/src"
+        }
 		folders = {
 			gen = "platform:/resource/tools.mdsd.characteristics.examples.pcmzero/src-gen"
 			src = "platform:/resource/tools.mdsd.characteristics.examples.pcmzero/src"

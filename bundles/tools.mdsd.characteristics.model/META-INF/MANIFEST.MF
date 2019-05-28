@@ -9,9 +9,6 @@ Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: tools.mdsd.characteristics,
- tools.mdsd.characteristics.api,
- tools.mdsd.characteristics.api.impl,
- tools.mdsd.characteristics.api.util,
  tools.mdsd.characteristics.binding,
  tools.mdsd.characteristics.binding.impl,
  tools.mdsd.characteristics.binding.util,
@@ -21,7 +18,6 @@ Export-Package: tools.mdsd.characteristics,
  tools.mdsd.characteristics.manifestation,
  tools.mdsd.characteristics.manifestation.impl,
  tools.mdsd.characteristics.manifestation.util,
- tools.mdsd.characteristics.utils,
  tools.mdsd.characteristics.valuetype,
  tools.mdsd.characteristics.valuetype.impl,
  tools.mdsd.characteristics.valuetype.util

@@ -121,17 +121,14 @@
     <nestedGenPackages prefix="Valuetype" basePackage="tools.mdsd.characteristics"
         disposableProviderFactory="true" extensibleProviderFactory="true" ecorePackage="characteristics.ecore#//valuetype">
       <genClasses image="false" ecoreClass="characteristics.ecore#//valuetype/ValueType">
-        <genOperations ecoreOperation="characteristics.ecore#//valuetype/ValueType/getProperty"
-            body="return tools.mdsd.characteristics.utils.ValueTypeUtils.getProperty(this, propertyType);">
+        <genOperations ecoreOperation="characteristics.ecore#//valuetype/ValueType/getProperty">
           <genParameters ecoreParameter="characteristics.ecore#//valuetype/ValueType/getProperty/propertyType"/>
           <genTypeParameters ecoreTypeParameter="characteristics.ecore#//valuetype/ValueType/getProperty/P"/>
         </genOperations>
-        <genOperations ecoreOperation="characteristics.ecore#//valuetype/ValueType/adheresToValueType"
-            body="return tools.mdsd.characteristics.utils.ValueTypeUtils.adheresToValueType(this, instance);">
+        <genOperations ecoreOperation="characteristics.ecore#//valuetype/ValueType/adheresToValueType">
           <genParameters ecoreParameter="characteristics.ecore#//valuetype/ValueType/adheresToValueType/instance"/>
         </genOperations>
-        <genOperations ecoreOperation="characteristics.ecore#//valuetype/ValueType/hasProperty"
-            body="return tools.mdsd.characteristics.utils.ValueTypeUtils.hasProperty(this, propertyType);">
+        <genOperations ecoreOperation="characteristics.ecore#//valuetype/ValueType/hasProperty">
           <genParameters ecoreParameter="characteristics.ecore#//valuetype/ValueType/hasProperty/propertyType"/>
           <genTypeParameters ecoreTypeParameter="characteristics.ecore#//valuetype/ValueType/hasProperty/P"/>
         </genOperations>
@@ -139,8 +136,7 @@
       <genClasses ecoreClass="characteristics.ecore#//valuetype/EDataTypeValueType">
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference characteristics.ecore#//valuetype/EDataTypeValueType/baseType"/>
-        <genOperations ecoreOperation="characteristics.ecore#//valuetype/EDataTypeValueType/adheresToValueType"
-            body="return tools.mdsd.characteristics.utils.ValueTypeUtils.isInstanceOfDataType(instance, this.baseType);">
+        <genOperations ecoreOperation="characteristics.ecore#//valuetype/EDataTypeValueType/adheresToValueType">
           <genParameters ecoreParameter="characteristics.ecore#//valuetype/EDataTypeValueType/adheresToValueType/instance"/>
         </genOperations>
       </genClasses>

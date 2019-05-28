@@ -12,8 +12,7 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: tools.mdsd.characteristics.characteristic.presentation,
  tools.mdsd.characteristics.manifestation.presentation,
  tools.mdsd.characteristics.valuetype.presentation,
- tools.mdsd.characteristics,
- tools.mdsd.characteristics.api.presentation
+ tools.mdsd.characteristics
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,
  tools.mdsd.characteristics.edit;visibility:=reexport,
