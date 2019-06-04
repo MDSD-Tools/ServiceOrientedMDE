@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: MDSD.tools Characteristics Services Tests Fragment
+Bundle-SymbolicName: tools.mdsd.characteristics.services.tests
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: MDSD.tools
+Fragment-Host: tools.mdsd.characteristics.services
+Automatic-Module-Name: tools.mdsd.characteristics.services.tests
+Require-Bundle: org.junit,
+ org.junit.jupiter.api,
+ org.junit.jupiter.engine,
+ org.junit.jupiter.migrationsupport,
+ org.junit.jupiter.params,
+ org.junit.platform.commons,
+ org.junit.platform.engine,
+ org.junit.platform.launcher,
+ org.junit.platform.runner,
+ org.junit.platform.suite.api,
+ org.junit.vintage.engine,
+ org.hamcrest.core,
+ org.opentest4j,
+ org.apiguardian,
+ org.mockito;bundle-version="2.23.0",
+ org.eclipse.emf,
+ org.objenesis;bundle-version="2.6.0"
+Import-Package: org.mockito.junit.jupiter

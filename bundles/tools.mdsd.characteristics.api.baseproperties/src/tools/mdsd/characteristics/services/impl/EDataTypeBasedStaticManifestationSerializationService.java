@@ -3,7 +3,7 @@ package tools.mdsd.characteristics.services.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import tools.mdsd.characteristics.properties.basic.EDataTypeBased;
-import tools.mdsd.characteristics.services.StaticManifestationSerializationService;
+import tools.mdsd.characteristics.services.api.StaticManifestationSerializationService;
 import tools.mdsd.characteristics.valuetype.ValueType;
 import tools.mdsd.characteristics.valuetype.ValuetypePackage;
 
@@ -24,7 +24,6 @@ public class EDataTypeBasedStaticManifestationSerializationService implements St
     @Override
     public void registerService(
             ServiceRegistrationFacade<? super StaticManifestationSerializationService> facade) {
-        facade.register(this, EClass.class, ValuetypePackage.eINSTANCE.getEDataTypeValueType());
-        
+        facade.register(this, EClass.class, ValuetypePackage.eINSTANCE.getEDataTypeValueType());   
     }
 }

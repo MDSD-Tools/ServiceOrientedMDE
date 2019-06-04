@@ -4,6 +4,8 @@ import java.util.Optional;
 import org.eclipse.emf.common.util.ECollections;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
+import tools.mdsd.characteristics.properties.basic.EDataTypeBased;
+import tools.mdsd.characteristics.services.ServiceRegistration;
 import tools.mdsd.characteristics.valuetype.EDataTypeValueType;
 import tools.mdsd.characteristics.valuetype.ValueType;
 import tools.mdsd.characteristics.valuetype.util.ValuetypeSwitch;

@@ -1,4 +1,4 @@
-package tools.mdsd.characteristics.services;
+package tools.mdsd.characteristics.services.api;
 
 public interface ValueTypePropertiesProvider {
 
