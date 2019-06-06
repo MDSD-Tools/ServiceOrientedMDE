@@ -5,9 +5,8 @@
     creationIcons="false" editDirectory="/tools.mdsd.characteristics.properties.basic.edit/src-gen"
     editorDirectory="/tools.mdsd.characteristics.properties.basic.editor/src-gen"
     modelPluginID="tools.mdsd.characteristics.properties.basic" modelName="Basicproperties"
-    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" codeFormatting="true"
-    importerID="org.eclipse.emf.importer.ecore" complianceLevel="10.0" copyrightFields="false"
-    usedGenPackages="../../tools.mdsd.characteristics.model/model/characteristics.genmodel#//characteristics ../../tools.mdsd.modelingfoundations.identifier/model/identifier.genmodel#//identifier"
+    rootExtendsInterface="" rootExtendsClass="" codeFormatting="true" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="10.0" copyrightFields="false" usedGenPackages="../../tools.mdsd.characteristics.model/model/characteristics.genmodel#//characteristics ../../tools.mdsd.modelingfoundations.identifier/model/identifier.genmodel#//identifier"
     operationReflection="true" importOrganizing="true">
   <foreignModel>basicproperties.ecore</foreignModel>
   <testsDirectory xsi:nil="true"/>

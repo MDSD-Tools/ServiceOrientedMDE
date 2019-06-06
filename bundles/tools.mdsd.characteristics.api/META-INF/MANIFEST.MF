@@ -9,8 +9,8 @@ Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-10
 Export-Package: tools.mdsd.characteristics.api,
- tools.mdsd.characteristics.api.impl,
- tools.mdsd.characteristics.api.util
+ tools.mdsd.characteristics.api.impl
 Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport,
+ tools.mdsd.characteristics.model;visibility:=reexport,
  org.eclipse.core.runtime
 Bundle-ActivationPolicy: lazy

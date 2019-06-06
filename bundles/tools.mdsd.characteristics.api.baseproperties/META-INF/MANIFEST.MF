@@ -5,6 +5,6 @@ Bundle-SymbolicName: tools.mdsd.characteristics.services.basic;singleton:=true
 Bundle-Version: 0.1.0.qualifier
 Automatic-Module-Name: tools.mdsd.characteristics.provider.baseproperties
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Require-Bundle: tools.mdsd.characteristics,
- tools.mdsd.characteristics.services
-Import-Package: javax.inject;version="1.0.0"
+Require-Bundle: tools.mdsd.characteristics
+Import-Package: tools.mdsd.characteristics.services,
+ tools.mdsd.characteristics.services.api

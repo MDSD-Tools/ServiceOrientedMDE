@@ -1,7 +1,7 @@
 package tools.mdsd.characteristics.services;
 
-
-public interface ServiceManagerFactory<ObjectType> {
-    <T extends Service<T>> ServiceManager<ObjectType, T> createServiceManager(Iterable<T> services);
+public interface ServiceManagerFactory {
+    
+    <T extends Service<T>> ServiceManager<T> createServiceManager(Iterable<T> services);
 
 }

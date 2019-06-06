@@ -7,6 +7,8 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.verifyNoMoreInteractions;
 import static org.mockito.Mockito.when;
+import static tools.mdsd.characteristics.services.Defaults.Argument;
+import static tools.mdsd.characteristics.services.Defaults.OBJECT_IDENTITY;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Optional;
 import org.eclipse.emf.ecore.EObject;
@@ -17,6 +19,11 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.mockito.junit.jupiter.MockitoSettings;
 import org.mockito.quality.Strictness;
+import tools.mdsd.characteristics.services.Service;
+import tools.mdsd.characteristics.services.ServiceManager;
+import tools.mdsd.characteristics.services.ServiceRegistrationFacade;
+import tools.mdsd.characteristics.services.ServiceWrapperFactory;
+import tools.mdsd.characteristics.services.annotations.DispatchOnce;
 import tools.mdsd.characteristics.services.impl.ServiceWrapperImpl;
 
 @ExtendWith(MockitoExtension.class)
@@ -26,13 +33,15 @@ class ServiceWrapperTest {
      * Some dummy service implementation to test the managing functionality
      */
     public interface TestService extends Service<TestService> {
+        @DispatchOnce
         int getTheAnswerToLifeTheUniverseAndEverything(EObject object);
 
         EObject getSomeOtherEObject(EObject object, int parameter, EObject secondParameter);
 
         @Override
-        default void registerService(ServiceRegistrationFacade<? super TestService> facade) {
-            facade.register(this, EObject.class, keyObject);
+        default void registerService(ServiceRegistrationFacade<TestService> facade) {
+            facade.using(OBJECT_IDENTITY).when(Argument(0))
+                .matches(keyObject).register(this);
         }
     }
 
@@ -44,7 +53,7 @@ class ServiceWrapperTest {
 
 
     @Test
-    void testServiceCall(@Mock ServiceManager<EObject, TestService> mockManager,
+    void testServiceCall(@Mock ServiceManager<TestService> mockManager,
             @Mock TestService mockService, @Mock TestService mockService2)
             throws InstantiationException, IllegalAccessException, IllegalArgumentException,
             InvocationTargetException, NoSuchMethodException, SecurityException {

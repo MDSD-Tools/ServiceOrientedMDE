@@ -1,26 +1,12 @@
 package tools.mdsd.characteristics.services;
 
-import java.util.List;
+import java.util.Collection;
 import java.util.Optional;
 
-public class ServiceManager<ObjectType, ServiceType extends Service<ServiceType>> {
+public interface ServiceManager<ServiceType> {
 
-    private List<ServiceRegistry<?, ServiceType, ObjectType>> serviceRegistries;
+    Optional<ServiceType> getService(Object... parameter);
 
-    public ServiceManager(List<ServiceRegistry<?, ServiceType, ObjectType>> serviceRegistries) {
-        this.serviceRegistries = serviceRegistries;
-    }
-
-    public Optional<ServiceType> getService(ObjectType object) {
-        for (ServiceRegistry<?, ServiceType, ObjectType> reg : serviceRegistries) {
-            Optional<ServiceType> service = reg.getService(object);
-            if (service.isPresent())
-                return service;
-        }
-        return Optional.empty();
-    }
-
-
-
+    Collection<ServiceType> collectServices(Object... parameters);
 
 }
