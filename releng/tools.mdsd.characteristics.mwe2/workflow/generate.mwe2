@@ -43,6 +43,7 @@ Workflow {
 		generateEditor = true
 		genModel = "platform:/resource/tools.mdsd.characteristics.model/model/characteristics.genmodel"
 		srcPath = "platform:/resource/tools.mdsd.characteristics.model/src"
+		srcPath = "platform:/resource/tools.mdsd.characteristics.model.impl/src"
 		srcPath = "platform:/resource/tools.mdsd.characteristics.edit/src"
 		srcPath = "platform:/resource/tools.mdsd.characteristics.editor/src"
 	}
@@ -105,10 +106,6 @@ Workflow {
 			gen = "platform:/resource/tools.mdsd.characteristics.model/src-gen"
 			src = "platform:/resource/tools.mdsd.characteristics.model/src"
 		}
-	    folders = {
-            gen = "platform:/resource/tools.mdsd.characteristics.properties.basic/src-gen"
-            src = "platform:/resource/tools.mdsd.characteristics.properties.basic/src"
-        }
 		folders = {
             gen = "platform:/resource/tools.mdsd.characteristics.realm/src-gen"
             src = "platform:/resource/tools.mdsd.characteristics.realm/src"

@@ -17,10 +17,19 @@
 		<module>tools.mdsd.characteristics.edit</module>
 		<module>tools.mdsd.characteristics.editor</module>
 		<module>tools.mdsd.characteristics.model</module>
-		<module>tools.mdsd.characteristics.api.baseproperties</module>
+		<!--<module>tools.mdsd.characteristics.model.impl</module>-->
+		<module>tools.mdsd.characteristics.properties.basic</module>
+		<module>tools.mdsd.characteristics.realm</module>
+		<module>tools.mdsd.characteristics.realm.edit</module>
 		<module>tools.mdsd.characteristics.realm.guicebased</module>
 		<module>tools.mdsd.characteristics.realm.guicebased.edit</module>
 		<module>tools.mdsd.characteristics.resources</module>
+		<module>tools.mdsd.characteristics.services</module>
+		<module>tools.mdsd.characteristics.services.api</module>
+		<module>tools.mdsd.characteristics.services.basic</module>
+		<module>tools.mdsd.characteristics.services.eclipse</module>
+		<module>tools.mdsd.characteristics.services.eclipse.guice</module>
+		<module>tools.mdsd.characteristics.services.guice</module>
 		<module>tools.mdsd.characteristics.thirdparty</module>
 		<module>tools.mdsd.characteristics.ui.eclipse</module>
 	</modules>

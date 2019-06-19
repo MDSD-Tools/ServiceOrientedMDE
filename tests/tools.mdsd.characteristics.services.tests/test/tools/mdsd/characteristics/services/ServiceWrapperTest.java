@@ -3,31 +3,22 @@ package tools.mdsd.characteristics.services;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.verifyNoMoreInteractions;
 import static org.mockito.Mockito.when;
-import static tools.mdsd.characteristics.services.Defaults.Argument;
-import static tools.mdsd.characteristics.services.Defaults.OBJECT_IDENTITY;
 import java.lang.reflect.InvocationTargetException;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Optional;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EcoreFactory;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.Mock;
-import org.mockito.junit.jupiter.MockitoExtension;
-import org.mockito.junit.jupiter.MockitoSettings;
-import org.mockito.quality.Strictness;
-import tools.mdsd.characteristics.services.Service;
-import tools.mdsd.characteristics.services.ServiceManager;
-import tools.mdsd.characteristics.services.ServiceRegistrationFacade;
-import tools.mdsd.characteristics.services.ServiceWrapperFactory;
 import tools.mdsd.characteristics.services.annotations.DispatchOnce;
 import tools.mdsd.characteristics.services.impl.ServiceWrapperImpl;
 
-@ExtendWith(MockitoExtension.class)
-@MockitoSettings(strictness = Strictness.LENIENT)
 class ServiceWrapperTest {
     /**
      * Some dummy service implementation to test the managing functionality
@@ -40,37 +31,58 @@ class ServiceWrapperTest {
 
         @Override
         default void registerService(ServiceRegistrationFacade<TestService> facade) {
-            facade.using(OBJECT_IDENTITY).when(Argument(0))
-                .matches(keyObject).register(this);
+            // Since we are using a mock manager no registration is necessary
         }
     }
 
     private static EObject keyObject = EcoreFactory.eINSTANCE.createEObject();
     private static EObject keyObject2 = EcoreFactory.eINSTANCE.createEObject();
     private static EObject notRegisteredKey = EcoreFactory.eINSTANCE.createEObject();
-    
+
     protected ServiceWrapperFactory wrapperFactory = ServiceWrapperImpl.FACTORY;
 
+    private TestService mockService;
+    private TestService mockService2;
+    private ServiceManager<TestService> mockManager;
 
-    @Test
-    void testServiceCall(@Mock ServiceManager<TestService> mockManager,
-            @Mock TestService mockService, @Mock TestService mockService2)
-            throws InstantiationException, IllegalAccessException, IllegalArgumentException,
-            InvocationTargetException, NoSuchMethodException, SecurityException {
 
-        // Set-up service mocks
-        when(mockManager.getService(notRegisteredKey)).thenThrow(IllegalArgumentException.class);
-        when(mockManager.getService(keyObject)).thenReturn(Optional.of(mockService));
-        when(mockManager.getService(keyObject2)).thenReturn(Optional.of(mockService2));
+    @BeforeEach
+    void initializeMocks() {
+        mockService = mock(TestService.class);
+        mockService2 = mock(TestService.class);
 
         when(mockService.getTheAnswerToLifeTheUniverseAndEverything(any())).thenReturn(0);
         when(mockService.getTheAnswerToLifeTheUniverseAndEverything(keyObject)).thenReturn(42);
         when(mockService2.getTheAnswerToLifeTheUniverseAndEverything(any())).thenReturn(0);
         when(mockService2.getTheAnswerToLifeTheUniverseAndEverything(keyObject2)).thenReturn(43);
 
+        mockManager = new ServiceManager<TestService>() {
+
+            @Override
+            public Optional<TestService> getService(Object... parameter) {
+                if (parameter[0] == keyObject) {
+                    return Optional.of(mockService);
+                } else if (parameter[0] == keyObject2) {
+                    return Optional.of(mockService2);
+                }
+                throw new IllegalArgumentException();
+            }
+
+            @Override
+            public Collection<TestService> collectServices(Object... parameters) {
+                return Collections.emptyList();
+            }
+        };
+    }
+
+    @Test
+    void testServiceCall()
+            throws InstantiationException, IllegalAccessException, IllegalArgumentException,
+            InvocationTargetException, NoSuchMethodException, SecurityException {
         // Create ServiceWrapper to test
-        TestService managedService = wrapperFactory.createServiceWrapper(TestService.class, mockManager)
-                .getDeclaredConstructor().newInstance();
+        TestService managedService =
+                wrapperFactory.createServiceWrapper(TestService.class, mockManager)
+                        .getDeclaredConstructor().newInstance();
 
         // Verify behavior
         assertEquals(42, managedService.getTheAnswerToLifeTheUniverseAndEverything(keyObject));
