@@ -1,6 +1,6 @@
-package tools.mdsd.characteristics.model.impl.manifestation;
+package tools.mdsd.characteristics.manifestation.impl;
 
-import tools.mdsd.characteristics.utils.CharacteristicsAPIAware;
+import tools.mdsd.characteristics.model.impl.CharacteristicsAPIAware;
 
 /**
  * Implements the SingleValue specific deserialization capabilities for the

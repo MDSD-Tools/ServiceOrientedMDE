@@ -5,11 +5,12 @@
     editorDirectory="/tools.mdsd.characteristics.editor/src-gen" modelPluginID="tools.mdsd.characteristics.model"
     templateDirectory="/tools.mdsd.characteristics.model/templates/" modelName="Characteristics"
     editPluginClass="tools.mdsd.characteristics.CharacteristicsEditPlugin" editorPluginClass="tools.mdsd.characteristics.CharacteristicsEditorPlugin"
-    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" codeFormatting="true"
-    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" reflectiveDelegation="true"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" featureDelegation="Reflective"
+    minimalReflectiveMethods="false" complianceLevel="8.0" copyrightFields="false"
     editPluginID="tools.mdsd.characteristics.edit" editorPluginID="tools.mdsd.characteristics.editor"
     usedGenPackages="../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore platform:/plugin/tools.mdsd.modelingfoundations.identifier/model/identifier.genmodel#//identifier"
-    importOrganizing="true" decoration="Live">
+    operationReflection="true" importOrganizing="true" decoration="Live">
   <foreignModel>characteristics.ecore</foreignModel>
   <testsDirectory xsi:nil="true"/>
   <genPackages prefix="Characteristics" basePackage="tools.mdsd" disposableProviderFactory="true"
