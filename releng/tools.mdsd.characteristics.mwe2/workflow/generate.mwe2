@@ -53,7 +53,7 @@ Workflow {
 		generateEdit = false
 		generateEditor = false
 		genModel = "platform:/resource/tools.mdsd.characteristics.api/model/api.genmodel"
-		srcPath = "platform:/resource/tools.mdsd.characteristics.api/src"
+		srcPath = "platform:/resource/tools.mdsd.characteristics.api/src-gen"
 	}
 	
 	component = EcoreGenerator {
@@ -78,7 +78,7 @@ Workflow {
 		generateEdit = false
 		generateEditor = false
 		genModel = "platform:/resource/tools.mdsd.characteristics.properties.basic/model/basicproperties.genmodel"
-		srcPath = "platform:/resource/tools.mdsd.characteristics.properties.basic/src"
+		srcPath = "platform:/resource/tools.mdsd.characteristics.properties.basic/src-gen"
 	}
 	
 	component = EcoreGenerator {
@@ -90,10 +90,6 @@ Workflow {
 	}
 	
 	component = tools.mdsd.ecoreworkflow.mwe2lib.component.GapPatternPostProcessor {
-		folders = {
-			gen = "platform:/resource/tools.mdsd.characteristics.api/src-gen"
-			src = "platform:/resource/tools.mdsd.characteristics.api/src"
-		}
 		folders = {
             gen = "platform:/resource/tools.mdsd.characteristics.edit/src-gen"
             src = "platform:/resource/tools.mdsd.characteristics.edit/src"
