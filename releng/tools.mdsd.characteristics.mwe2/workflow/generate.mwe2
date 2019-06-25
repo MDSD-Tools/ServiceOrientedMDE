@@ -103,10 +103,6 @@ Workflow {
 			src = "platform:/resource/tools.mdsd.characteristics.model/src"
 		}
 		folders = {
-            gen = "platform:/resource/tools.mdsd.characteristics.realm/src-gen"
-            src = "platform:/resource/tools.mdsd.characteristics.realm/src"
-        }
-		folders = {
 			gen = "platform:/resource/tools.mdsd.characteristics.examples.pcmzero/src-gen"
 			src = "platform:/resource/tools.mdsd.characteristics.examples.pcmzero/src"
 		}
