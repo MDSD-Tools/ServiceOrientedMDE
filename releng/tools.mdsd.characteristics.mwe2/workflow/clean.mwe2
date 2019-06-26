@@ -20,6 +20,7 @@ Workflow {
 		directory = "platform:/resource/tools.mdsd.characteristics.model/src-gen"
 		directory = "platform:/resource/tools.mdsd.characteristics.properties.basic/src-gen"
 		directory = "platform:/resource/tools.mdsd.characteristics.realm/src-gen"
+		directory = "platform:/resource/tools.mdsd.characteristics.realm.edit/src-gen"
 		directory = "platform:/resource/tools.mdsd.characteristics.edit/src-gen"
 		directory = "platform:/resource/tools.mdsd.characteristics.editor/src-gen"
 		directory = "platform:/resource/tools.mdsd.characteristics.realm.guicebased/src-gen"

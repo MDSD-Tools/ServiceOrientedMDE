@@ -58,7 +58,7 @@ Workflow {
 	
 	component = EcoreGenerator {
         generateCustomClasses = false
-        generateEdit = false
+        generateEdit = true
         generateEditor = false
         genModel = "platform:/resource/tools.mdsd.characteristics.realm/model/realm.genmodel"
         srcPath = "platform:/resource/tools.mdsd.characteristics.realm/src"
