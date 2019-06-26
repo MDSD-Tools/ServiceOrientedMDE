@@ -24,9 +24,7 @@
       </eAnnotations>
       <eOperations name="sample" eType="#//manifestation/EManifestationObject"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="container" lowerBound="1"
-          eType="#//binding/ManifestationContainer" eOpposite="#//binding/ManifestationContainer/manifestation"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="storage" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          eType="#//manifestation/ManifestationContainer" transient="true" eOpposite="#//manifestation/ManifestationContainer/manifestation"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ProbabilisticManifestation" abstract="true"
         eSuperTypes="#//manifestation/Manifestation"/>
@@ -50,7 +48,10 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="#//manifestation/EManifestationObject"
           volatile="true" transient="true" derived="true"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="SingleValue" eSuperTypes="#//manifestation/StaticManifestation"/>
+    <eClassifiers xsi:type="ecore:EClass" name="SingleValue" eSuperTypes="#//manifestation/StaticManifestation">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="explicitValue" lowerBound="1"
+          eType="#//manifestation/EManifestationObject"/>
+    </eClassifiers>
     <eClassifiers xsi:type="ecore:EDataType" name="EManifestationObject" instanceClassName="java.lang.Object"/>
     <eClassifiers xsi:type="ecore:EClass" name="CategoricalProbabilityMassFunction"
         eSuperTypes="#//manifestation/DiscreteProbabilityDistributionManifestation">
@@ -64,7 +65,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="categories" lowerBound="1"
           upperBound="-1" eType="#//manifestation/Category" containment="true" eOpposite="#//manifestation/Category/probabilityMassFunction"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Category" eSuperTypes="#//binding/ManifestationContainer">
+    <eClassifiers xsi:type="ecore:EClass" name="Category" eSuperTypes="#//manifestation/ManifestationContainer">
       <eOperations name="determineValueType" lowerBound="1" eType="#//valuetype/ValueType">
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
           <details key="body" value="self.probabilityMassFunction.container.valuetype"/>
@@ -82,6 +83,20 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="probabilityMassFunction"
           eType="#//manifestation/CategoricalProbabilityMassFunction" eOpposite="#//manifestation/CategoricalProbabilityMassFunction/categories"/>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EDataType" name="EManifestationSpecification" instanceClassName="java.lang.String"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ManifestationContainer" abstract="true">
+      <eOperations name="determineValueType" lowerBound="1" eType="#//valuetype/ValueType"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="manifestation" eType="#//manifestation/Manifestation"
+          transient="true" containment="true" eOpposite="#//manifestation/Manifestation/container"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="valuetype" lowerBound="1"
+          eType="#//valuetype/ValueType" changeable="false" volatile="true" transient="true"
+          derived="true">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+          <details key="derivation" value="self.determineValueType()"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="specification" eType="#//manifestation/EManifestationSpecification"/>
+    </eClassifiers>
   </eSubpackages>
   <eSubpackages name="binding" nsURI="http://www.mdsd.tools/characteristics/binding/1.0"
       nsPrefix="binding">
@@ -98,19 +113,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="refinesContext" upperBound="-1"
           eType="#//binding/CharacterizationContext" derived="true"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ManifestationContainer">
-      <eOperations name="determineValueType" lowerBound="1" eType="#//valuetype/ValueType"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="manifestation" eType="#//manifestation/Manifestation"
-          containment="true" eOpposite="#//manifestation/Manifestation/container"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="valuetype" lowerBound="1"
-          eType="#//valuetype/ValueType" changeable="false" volatile="true" transient="true"
-          derived="true">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-          <details key="derivation" value="self.determineValueType()"/>
-        </eAnnotations>
-      </eStructuralFeatures>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="CharacteristicBinding" eSuperTypes="#//binding/ManifestationContainer">
+    <eClassifiers xsi:type="ecore:EClass" name="CharacteristicBinding" eSuperTypes="#//manifestation/ManifestationContainer">
       <eOperations name="determineValueType" lowerBound="1" eType="#//valuetype/ValueType">
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
           <details key="body" value="characteristic.computeCharacteristic().valueType"/>
@@ -256,7 +259,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="valuetype" lowerBound="1"
           eType="#//valuetype/ValueType"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="EnumLiteral" eSuperTypes="#//binding/ManifestationContainer platform:/plugin/tools.mdsd.modelingfoundations.identifier/model/identifier.ecore#//NamedElement">
+    <eClassifiers xsi:type="ecore:EClass" name="EnumLiteral" eSuperTypes="#//manifestation/ManifestationContainer platform:/plugin/tools.mdsd.modelingfoundations.identifier/model/identifier.ecore#//NamedElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
         <details key="constraints" value="LiteralMustDefineEitherNameOrValue"/>
       </eAnnotations>

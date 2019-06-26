@@ -1,14 +1,12 @@
 /**
  */
-package tools.mdsd.characteristics.binding.provider;
+package tools.mdsd.characteristics.manifestation.provider;
 
 
 import java.util.Collection;
-
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.ecore.EStructuralFeature;
-
-import tools.mdsd.characteristics.binding.BindingPackage;
+import tools.mdsd.characteristics.manifestation.ManifestationPackage;
 
 /**
  * This is the item provider adapter for a {@link tools.mdsd.characteristics.binding.ManifestationContainer} object.
@@ -32,7 +30,7 @@ public class ManifestationContainerItemProvider
 		if (childrenFeatures == null)
 		{
 			super.getChildrenFeatures(object);
-			childrenFeatures.remove(BindingPackage.Literals.MANIFESTATION_CONTAINER__MANIFESTATION);
+			childrenFeatures.remove(ManifestationPackage.Literals.MANIFESTATION_CONTAINER__MANIFESTATION);
 		}
 		return childrenFeatures;
 	}
