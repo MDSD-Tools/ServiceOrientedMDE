@@ -9,3 +9,5 @@ Require-Bundle: org.eclipse.core.runtime,
  tools.mdsd.characteristics.model
 Automatic-Module-Name: tools.mdsd.characteristics.model.impl
 Bundle-ActivationPolicy: lazy
+Import-Package: tools.mdsd.characteristics.api,
+ tools.mdsd.characteristics.services.api

@@ -12,6 +12,8 @@
 	<packaging>pom</packaging>
 	
 	<modules>
+		<module>tools.mdsd.characteristics.realm.tests</module>
+		<module>tools.mdsd.characteristics.realm.guicebased.tests</module>
 		<module>tools.mdsd.characteristics.services.tests</module>
 	</modules>
 	

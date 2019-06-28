@@ -87,7 +87,7 @@
     <eClassifiers xsi:type="ecore:EClass" name="ManifestationContainer" abstract="true">
       <eOperations name="determineValueType" lowerBound="1" eType="#//valuetype/ValueType"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="manifestation" eType="#//manifestation/Manifestation"
-          transient="true" containment="true" eOpposite="#//manifestation/Manifestation/container"/>
+          transient="true" derived="true" containment="true" eOpposite="#//manifestation/Manifestation/container"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="valuetype" lowerBound="1"
           eType="#//valuetype/ValueType" changeable="false" volatile="true" transient="true"
           derived="true">
@@ -192,6 +192,10 @@
       <eLiterals name="Mandatory" value="2"/>
       <eLiterals name="Optional" value="1"/>
       <eLiterals name="Invalid"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ProfileActivation" eSuperTypes="../../tools.mdsd.characteristics.realm/model/realm.ecore#//ConfigurationItem">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="activatedProfile" lowerBound="1"
+          eType="#//characteristic/CharacteristicProfile"/>
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="valuetype" nsURI="http://www.mdsd.tools/characteristics/valuetype/1.0"

@@ -10,13 +10,13 @@ import com.google.inject.Injector;
 import com.google.inject.Module;
 import com.google.inject.util.Modules;
 import tools.mdsd.characteristics.realm.ConfigurationItem;
+import tools.mdsd.characteristics.realm.DependencyResolvingAdapter;
 import tools.mdsd.characteristics.realm.RealmPackage;
 import tools.mdsd.characteristics.realm.guicebased.ApiFactoryModule;
-import tools.mdsd.characteristics.realm.guicebased.GuiceInjectorAware;
 import tools.mdsd.characteristics.realm.impl.CharacteristicsModelingRealmImpl;
 
 public class GuiceAwareCharacteristicsModelingRealmImpl
-		extends CharacteristicsModelingRealmImpl implements GuiceInjectorAware.AwareEObject {
+		extends CharacteristicsModelingRealmImpl {
 	
 	private class MonitorConfiguration extends EContentAdapter {
 		@Override
@@ -25,7 +25,7 @@ public class GuiceAwareCharacteristicsModelingRealmImpl
 			if (notification.getNotifier() == GuiceAwareCharacteristicsModelingRealmImpl.this) {
 				// Handle the case that a completely new configuration item was added / removed
 				if (notification.getFeature() == RealmPackage.eINSTANCE.getCharacteristicsModelingRealm_Configuration()) {
-					injector = null;
+					recreateInjector();
 				}
 			} else {
 				// Check if the change originated from the configuration elements
@@ -33,7 +33,7 @@ public class GuiceAwareCharacteristicsModelingRealmImpl
 				while (notifier.eContainer() != null) {
 					if (notifier.eContainer() == GuiceAwareCharacteristicsModelingRealmImpl.this) {
 						if (getConfiguration().contains(notifier)) {
-							injector = null;
+						    recreateInjector();
 						}
 					}
 					notifier = notifier.eContainer();
@@ -47,13 +47,33 @@ public class GuiceAwareCharacteristicsModelingRealmImpl
 	}
 	
 	private Injector injector = null;
+	private GuiceInjectorDependencyResolvingAdapter injectorAdapter = null;
 	
-	@Override
 	public Injector getInjector() {
 		if (injector == null) {
 			createInjector();
 		}
 		return injector;
+	}
+	
+	@Override
+	protected DependencyResolvingAdapter getResolvingAdapter() {
+	    if (injectorAdapter == null) {
+	        injectorAdapter = new GuiceInjectorDependencyResolvingAdapter(this::getInjector);
+	    }
+	    return injectorAdapter;    
+	}
+	
+	protected void recreateInjector() {
+	    boolean adapterWasSet = (injectorAdapter != null) 
+	            && eResource() != null
+	            && eResource().getResourceSet() != null
+	            && eResource().getResourceSet().eAdapters().remove(injectorAdapter);
+	    injector = null;
+	    if (adapterWasSet) {
+	        eResource().getResourceSet().eAdapters().add(injectorAdapter);
+	    }
+	    
 	}
 	
 	private synchronized void createInjector() {

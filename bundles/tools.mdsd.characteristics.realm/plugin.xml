@@ -14,4 +14,11 @@
             genModel="model/realm.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated realm -->
+      <parser
+            type="realm"
+            class="tools.mdsd.characteristics.realm.util.RealmResourceFactoryImpl"/>
+   </extension>
+
 </plugin>
