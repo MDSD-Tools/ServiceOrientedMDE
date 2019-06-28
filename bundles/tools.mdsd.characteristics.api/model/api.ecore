@@ -5,4 +5,89 @@
       serializable="false">
     <eTypeParameters name="T"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CharacteristicAccess" abstract="true"
+      interface="true">
+    <eOperations name="hasCharacteristic" lowerBound="1" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean">
+      <eParameters name="characterizable" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+    </eOperations>
+    <eOperations name="getAppliedCharacteristics" ordered="false" lowerBound="1" upperBound="-1"
+        eType="ecore:EClass ../../tools.mdsd.characteristics.model/model/characteristics.ecore#//characteristic/Characteristic">
+      <eParameters name="characterizable" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ManifestationAccess" abstract="true"
+      interface="true">
+    <eOperations name="getManifestation" eType="ecore:EClass ../../tools.mdsd.characteristics.model/model/characteristics.ecore#//manifestation/Manifestation">
+      <eParameters name="characterizable" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
+      <eParameters name="characteristic" eType="ecore:EClass ../../tools.mdsd.characteristics.model/model/characteristics.ecore#//characteristic/Characteristic"/>
+    </eOperations>
+    <eOperations name="getManifestationOrigin" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EObject">
+      <eParameters name="characterizable" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
+      <eParameters name="characteristic" eType="ecore:EClass ../../tools.mdsd.characteristics.model/model/characteristics.ecore#//characteristic/Characteristic"/>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ValueTypeAccess" abstract="true" interface="true">
+    <eOperations name="getProperty">
+      <eGenericType eClassifier="#//Optional">
+        <eTypeArguments eTypeParameter="#//ValueTypeAccess/getProperty/T"/>
+      </eGenericType>
+      <eTypeParameters name="T"/>
+      <eParameters name="valueType" eType="ecore:EClass ../../tools.mdsd.characteristics.model/model/characteristics.ecore#//valuetype/ValueType"/>
+      <eParameters name="propertyType">
+        <eGenericType eClassifier="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EJavaClass">
+          <eTypeArguments eTypeParameter="#//ValueTypeAccess/getProperty/T"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CharacteristicEdit" abstract="true"
+      interface="true">
+    <eOperations name="getApplicableCharacteristics" upperBound="-1" eType="ecore:EClass ../../tools.mdsd.characteristics.model/model/characteristics.ecore#//characteristic/Characteristic">
+      <eParameters name="characterizable" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
+    </eOperations>
+    <eOperations name="applyCharacteristic">
+      <eParameters name="characterizable" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
+      <eParameters name="characteristic" eType="ecore:EClass ../../tools.mdsd.characteristics.model/model/characteristics.ecore#//characteristic/Characteristic"/>
+    </eOperations>
+    <eOperations name="unapplyCharacteristic">
+      <eParameters name="characterizable" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
+      <eParameters name="characteristic" eType="ecore:EClass ../../tools.mdsd.characteristics.model/model/characteristics.ecore#//characteristic/Characteristic"/>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ManifestationEdit" abstract="true" interface="true">
+    <eOperations name="getSpecificationType">
+      <eGenericType eClassifier="#//SpecificationType">
+        <eTypeArguments/>
+      </eGenericType>
+      <eParameters name="characterizable" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
+      <eParameters name="characteristic" eType="ecore:EClass ../../tools.mdsd.characteristics.model/model/characteristics.ecore#//characteristic/Characteristic"/>
+    </eOperations>
+    <eOperations name="getSpecification">
+      <eGenericType eTypeParameter="#//ManifestationEdit/getSpecification/SpecType"/>
+      <eTypeParameters name="SpecType"/>
+      <eParameters name="characterizable" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
+      <eParameters name="characteristic" eType="ecore:EClass ../../tools.mdsd.characteristics.model/model/characteristics.ecore#//characteristic/Characteristic"/>
+      <eParameters name="specificationType">
+        <eGenericType eClassifier="#//SpecificationType">
+          <eTypeArguments eTypeParameter="#//ManifestationEdit/getSpecification/SpecType"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
+    <eOperations name="setSpecification">
+      <eTypeParameters name="SpecType"/>
+      <eParameters name="characterizable" eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
+      <eParameters name="characteristic" eType="ecore:EClass ../../tools.mdsd.characteristics.model/model/characteristics.ecore#//characteristic/Characteristic"/>
+      <eParameters name="specificationType">
+        <eGenericType eClassifier="#//SpecificationType">
+          <eTypeArguments eTypeParameter="#//ManifestationEdit/setSpecification/SpecType"/>
+        </eGenericType>
+      </eParameters>
+      <eParameters name="specification">
+        <eGenericType eTypeParameter="#//ManifestationEdit/setSpecification/SpecType"/>
+      </eParameters>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SpecificationType" eSuperTypes="platform:/plugin/tools.mdsd.modelingfoundations.identifier/model/identifier.ecore#//Entity">
+    <eTypeParameters name="SpecType"/>
+  </eClassifiers>
 </ecore:EPackage>
