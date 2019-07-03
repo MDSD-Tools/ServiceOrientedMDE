@@ -1,7 +1,7 @@
 package tools.mdsd.characteristics.services.eclipse;
 
 import java.util.Arrays;
-import java.util.List;
+import java.util.Collection;
 import java.util.stream.Collectors;
 import org.eclipse.core.runtime.IExtensionRegistry;
 import tools.mdsd.characteristics.services.Defaults;
@@ -18,7 +18,7 @@ public class ExtensionRegistryBasedServiceTypeRegistryAccessImpl
     }
 
     @Override
-    public List<Class<? extends Service<?>>> getRegisteredServiceTypes() {
+    public Collection<Class<?>> getRegisteredServiceTypes() {
         return Arrays
                 .stream(extensionRegistry
                         .getConfigurationElementsFor(Defaults.SERVICE_TYPE_EXTENSION_POINT_ID))
@@ -27,8 +27,8 @@ public class ExtensionRegistryBasedServiceTypeRegistryAccessImpl
     }
 
     @Override
-    public <T extends Service<T>> List<Class<? extends T>> getRegisteredImplementations(
-            Class<T> serviceType) {
+    public Collection<Class<?>> getRegisteredImplementations(
+            Class<?> serviceType) {
         String serviceName = serviceType.getName();
 
         return Arrays

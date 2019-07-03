@@ -2,11 +2,17 @@ package tools.mdsd.characteristics.realm.guicebased.impl;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
+import javax.inject.Inject;
+import com.google.inject.Injector;
 import com.google.inject.Module;
 import tools.mdsd.characteristics.realm.guicebased.ModuleImport;
 import tools.mdsd.characteristics.realm.guicebased.ModuleProvider;
 
 public class ReflectiveNameBasedModuleProvider implements ModuleProvider<ModuleImport> {
+    
+    @Inject
+    Injector injector;
+    
     @Override
     public Module getModule(ModuleImport item) {
         String moduleName = item.getModuleFQN();
@@ -19,11 +25,13 @@ public class ReflectiveNameBasedModuleProvider implements ModuleProvider<ModuleI
             } else {
                 Constructor<?> constructor = constructors[0];
                 try {
+                    Module result = null;
                     if (constructor.getParameterCount() == 0) {
-                        return (Module) constructor.newInstance();
+                        result = (Module) constructor.newInstance();
                     } else if (constructor.getParameterCount() == 1) {
-                        return (Module) constructor.newInstance(item);
+                        result = (Module) constructor.newInstance(item);
                     }
+                    injector.injectMembers(result);
                 } catch (InstantiationException | IllegalAccessException
                         | InvocationTargetException e) {
                     throw new RuntimeException(e);

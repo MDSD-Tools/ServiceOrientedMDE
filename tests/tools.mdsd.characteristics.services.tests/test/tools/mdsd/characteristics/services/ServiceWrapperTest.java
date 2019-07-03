@@ -12,6 +12,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Optional;
+import javax.inject.Provider;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EcoreFactory;
 import org.junit.jupiter.api.BeforeEach;
@@ -38,8 +39,6 @@ class ServiceWrapperTest {
     private static EObject keyObject = EcoreFactory.eINSTANCE.createEObject();
     private static EObject keyObject2 = EcoreFactory.eINSTANCE.createEObject();
     private static EObject notRegisteredKey = EcoreFactory.eINSTANCE.createEObject();
-
-    protected ServiceWrapperFactory wrapperFactory = ServiceWrapperImpl.FACTORY;
 
     private TestService mockService;
     private TestService mockService2;
@@ -80,9 +79,10 @@ class ServiceWrapperTest {
             throws InstantiationException, IllegalAccessException, IllegalArgumentException,
             InvocationTargetException, NoSuchMethodException, SecurityException {
         // Create ServiceWrapper to test
+        Provider<ServiceManager<TestService>> provider = () -> mockManager;
         TestService managedService =
-                wrapperFactory.createServiceWrapper(TestService.class, mockManager)
-                        .getDeclaredConstructor().newInstance();
+                ServiceWrapperImpl.of(TestService.class)
+                        .getDeclaredConstructor(Provider.class).newInstance(provider);
 
         // Verify behavior
         assertEquals(42, managedService.getTheAnswerToLifeTheUniverseAndEverything(keyObject));

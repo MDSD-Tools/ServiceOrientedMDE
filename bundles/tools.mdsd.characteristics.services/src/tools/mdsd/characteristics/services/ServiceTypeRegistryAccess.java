@@ -1,7 +1,9 @@
 package tools.mdsd.characteristics.services;
 
+import java.util.Collection;
+
 public interface ServiceTypeRegistryAccess {
-    Iterable<Class<? extends Service<?>>> getRegisteredServiceTypes();
+    Collection<Class<?>> getRegisteredServiceTypes();
     
-    <T extends Service<T>> Iterable<Class<? extends T>> getRegisteredImplementations(Class<T> serviceType);
+    Collection<Class<?>> getRegisteredImplementations(Class<?> serviceType);
 }
