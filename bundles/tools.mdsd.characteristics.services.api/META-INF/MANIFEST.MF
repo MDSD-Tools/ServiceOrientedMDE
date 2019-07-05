@@ -7,4 +7,5 @@ Automatic-Module-Name: tools.mdsd.characteristics.services.api
 Export-Package: tools.mdsd.characteristics.services.api
 Require-Bundle: tools.mdsd.characteristics.model;bundle-version="0.1.0"
 Import-Package: tools.mdsd.characteristics.services,
- tools.mdsd.characteristics.services.annotations
+ tools.mdsd.characteristics.services.annotations,
+ tools.mdsd.characteristics.services.delegation

@@ -15,4 +15,5 @@ Import-Package: com.google.inject;version="1.4.0",
  org.junit.jupiter.api.function;version="5.4.0",
  tools.mdsd.characteristics.services,
  tools.mdsd.characteristics.services.annotations,
+ tools.mdsd.characteristics.services.delegation,
  tools.mdsd.characteristics.services.guice
