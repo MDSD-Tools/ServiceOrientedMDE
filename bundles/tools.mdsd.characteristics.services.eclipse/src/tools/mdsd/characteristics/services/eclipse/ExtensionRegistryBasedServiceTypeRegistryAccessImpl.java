@@ -3,6 +3,7 @@ package tools.mdsd.characteristics.services.eclipse;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.stream.Collectors;
+import javax.inject.Inject;
 import org.eclipse.core.runtime.IExtensionRegistry;
 import tools.mdsd.characteristics.services.Defaults;
 import tools.mdsd.characteristics.services.Service;
@@ -12,6 +13,7 @@ public class ExtensionRegistryBasedServiceTypeRegistryAccessImpl
         implements ServiceTypeRegistryAccess {
     private IExtensionRegistry extensionRegistry;
 
+    @Inject
     public ExtensionRegistryBasedServiceTypeRegistryAccessImpl(
             IExtensionRegistry extensionRegistry) {
         this.extensionRegistry = extensionRegistry;

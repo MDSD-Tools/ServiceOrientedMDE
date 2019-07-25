@@ -4,7 +4,7 @@
    <extension
          point="org.eclipse.emf.ecore.factory_override">
       <factory
-            class="tools.mdsd.characteristics.realm.guicebased.GuiceAwareRealmFactoryImpl"
+            class="tools.mdsd.characteristics.realm.guicebased.impl.GuiceAwareRealmFactoryImpl"
             uri="http://www.mdsd.tools/characteristics/realm/1.0">
       </factory>
    </extension>

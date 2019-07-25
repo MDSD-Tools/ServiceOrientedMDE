@@ -2,6 +2,7 @@ package tools.mdsd.characteristics.realm.guicebased.impl;
 
 
 import java.util.Optional;
+import javax.inject.Inject;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EContentAdapter;
@@ -12,11 +13,12 @@ import com.google.inject.util.Modules;
 import tools.mdsd.characteristics.realm.ConfigurationItem;
 import tools.mdsd.characteristics.realm.DependencyResolvingAdapter;
 import tools.mdsd.characteristics.realm.RealmPackage;
-import tools.mdsd.characteristics.realm.guicebased.Bootstrap;
 import tools.mdsd.characteristics.realm.guicebased.ModuleProviderRegistry;
 import tools.mdsd.characteristics.realm.impl.CharacteristicsModelingRealmImpl;
 
 public class GuiceAwareCharacteristicsModelingRealmImpl extends CharacteristicsModelingRealmImpl {
+
+    private ModuleProviderRegistry moduleProviderRegistry;
 
     private class MonitorConfiguration extends EContentAdapter {
         @Override
@@ -43,10 +45,12 @@ public class GuiceAwareCharacteristicsModelingRealmImpl extends CharacteristicsM
         }
     }
 
-    public GuiceAwareCharacteristicsModelingRealmImpl() {
+    @Inject
+    public GuiceAwareCharacteristicsModelingRealmImpl(ModuleProviderRegistry moduleProviderRegistry) {
+        this.moduleProviderRegistry = moduleProviderRegistry;
         this.eAdapters().add(new MonitorConfiguration());
     }
-
+    
     private Injector injector = null;
     private GuiceInjectorDependencyResolvingAdapter injectorAdapter = null;
 
@@ -79,10 +83,8 @@ public class GuiceAwareCharacteristicsModelingRealmImpl extends CharacteristicsM
     private synchronized void createInjector() {
         if (injector == null) {
             Module injectorModule = Modules.EMPTY_MODULE;
-            ModuleProviderRegistry registry =
-                    Bootstrap.getBootstrappingInjector().getInstance(ModuleProviderRegistry.class);
             for (ConfigurationItem item : this.getConfiguration()) {
-                Optional<Module> module = registry.lookupModule(item);
+                Optional<Module> module = moduleProviderRegistry.lookupModule(item);
                 if (module.isPresent()) {
                     injectorModule = Modules.override(injectorModule).with(module.get());
                 }

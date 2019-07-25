@@ -118,6 +118,10 @@
               <styles xmi:type="notation:FontStyle" xmi:id="_qWbhnJgjEemfdJryDtyR4Q" fontName="Segoe UI" fontHeight="8"/>
               <layoutConstraint xmi:type="notation:Location" xmi:id="_qWbhnZgjEemfdJryDtyR4Q"/>
             </children>
+            <children xmi:type="notation:Node" xmi:id="_tUM0sJwJEembqfH7bXHepA" type="3010" element="_tTmXw5wJEembqfH7bXHepA">
+              <styles xmi:type="notation:FontStyle" xmi:id="_tUM0sZwJEembqfH7bXHepA" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_tUM0spwJEembqfH7bXHepA"/>
+            </children>
             <styles xmi:type="notation:SortingStyle" xmi:id="_o7itbZgiEemfdJryDtyR4Q"/>
             <styles xmi:type="notation:FilteringStyle" xmi:id="_o7itbpgiEemfdJryDtyR4Q"/>
           </children>
@@ -240,7 +244,7 @@
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@conditionnalStyles.0/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
-      <ownedElements xmi:type="diagram:DNodeListElement" uid="_Zi8oIJghEemfdJryDtyR4Q" name="getProperty(valueType ValueType, propertyType EJavaClass) : T" tooltipText="getProperty(valueType, propertyType) : T">
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_Zi8oIJghEemfdJryDtyR4Q" name="getProperty(valueType ValueType, propertyType EJavaClass) : Optional" tooltipText="getProperty(valueType, propertyType) : Optional">
         <target xmi:type="ecore:EOperation" href="api.ecore#//ValueTypeAccess/getProperty"/>
         <semanticElements xmi:type="ecore:EOperation" href="api.ecore#//ValueTypeAccess/getProperty"/>
         <semanticElements xmi:type="ecore:EParameter" href="api.ecore#//ValueTypeAccess/getProperty/propertyType"/>
@@ -292,7 +296,7 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='Operation']"/>
       </ownedElements>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_o7itUJgiEemfdJryDtyR4Q" name="ManifestationEdit" tooltipText="&#xA;WARNING : The generic type associated with the 'SpecificationType' classifier should have 1 type argument(s) to match the number of type parameter(s) of the classifier " width="12" height="10">
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_o7itUJgiEemfdJryDtyR4Q" name="ManifestationEdit" tooltipText="" width="12" height="10">
       <target xmi:type="ecore:EClass" href="api.ecore#//ManifestationEdit"/>
       <semanticElements xmi:type="ecore:EClass" href="api.ecore#//ManifestationEdit"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -320,6 +324,18 @@
         <semanticElements xmi:type="ecore:EParameter" href="api.ecore#//ManifestationEdit/getSpecification/characterizable"/>
         <semanticElements xmi:type="ecore:EParameter" href="api.ecore#//ManifestationEdit/getSpecification/specificationType"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_qWRwgZgjEemfdJryDtyR4Q" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='Operation']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='Operation']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_tTmXw5wJEembqfH7bXHepA" name="setSpecification(characterizable EObject, characteristic Characteristic, specificationType SpecificationType, specification SpecType)" tooltipText="setSpecification(characterizable, characteristic, specificationType, specification)">
+        <target xmi:type="ecore:EOperation" href="api.ecore#//ManifestationEdit/setSpecification"/>
+        <semanticElements xmi:type="ecore:EOperation" href="api.ecore#//ManifestationEdit/setSpecification"/>
+        <semanticElements xmi:type="ecore:EParameter" href="api.ecore#//ManifestationEdit/setSpecification/characteristic"/>
+        <semanticElements xmi:type="ecore:EParameter" href="api.ecore#//ManifestationEdit/setSpecification/characterizable"/>
+        <semanticElements xmi:type="ecore:EParameter" href="api.ecore#//ManifestationEdit/setSpecification/specification"/>
+        <semanticElements xmi:type="ecore:EParameter" href="api.ecore#//ManifestationEdit/setSpecification/specificationType"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_tTmXxJwJEembqfH7bXHepA" labelAlignment="LEFT">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='Operation']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='Operation']"/>

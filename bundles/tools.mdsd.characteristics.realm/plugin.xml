@@ -9,7 +9,7 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated realm -->
       <package
-            uri="http://www.mdsd.tools/characteristics/realm"
+            uri="http://www.mdsd.tools/characteristics/realm/1.0"
             class="tools.mdsd.characteristics.realm.RealmPackage"
             genModel="model/realm.genmodel"/>
    </extension>

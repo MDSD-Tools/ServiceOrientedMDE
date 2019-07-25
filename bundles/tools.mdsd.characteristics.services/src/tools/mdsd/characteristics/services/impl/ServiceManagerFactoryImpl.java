@@ -1,5 +1,6 @@
 package tools.mdsd.characteristics.services.impl;
 
+import javax.inject.Inject;
 import tools.mdsd.characteristics.services.Service;
 import tools.mdsd.characteristics.services.ServiceManager;
 import tools.mdsd.characteristics.services.ServiceManagerFactory;
@@ -11,6 +12,7 @@ public class ServiceManagerFactoryImpl implements ServiceManagerFactory {
 
     private InternalRegistrationFacadeFactory facadeFactory;
 
+    @Inject
     public ServiceManagerFactoryImpl(InternalRegistrationFacadeFactory facadeFactory) {
         this.facadeFactory = facadeFactory;
     }

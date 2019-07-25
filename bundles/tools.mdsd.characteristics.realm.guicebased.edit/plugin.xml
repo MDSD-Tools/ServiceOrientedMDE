@@ -22,7 +22,7 @@
    <extension point="org.eclipse.emf.edit.childCreationExtenders">
       <!-- @generated guicebased -->
       <extender
-            uri="http://www.mdsd.tools/characteristics/realm"
+            uri="http://www.mdsd.tools/characteristics/realm/1.0"
             class="tools.mdsd.characteristics.realm.guicebased.provider.GuiceBasedRealmItemProviderAdapterFactory$RealmChildCreationExtender"/>
    </extension>
 </plugin>

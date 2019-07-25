@@ -23,6 +23,7 @@
 		<module>tools.mdsd.characteristics.realm.edit</module>
 		<module>tools.mdsd.characteristics.realm.guicebased</module>
 		<module>tools.mdsd.characteristics.realm.guicebased.edit</module>
+		<module>tools.mdsd.characteristics.realm.guicebased.eclipse</module>
 		<module>tools.mdsd.characteristics.resources</module>
 		<module>tools.mdsd.characteristics.services</module>
 		<module>tools.mdsd.characteristics.services.api</module>

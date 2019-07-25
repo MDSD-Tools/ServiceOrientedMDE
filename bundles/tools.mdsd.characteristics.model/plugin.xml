@@ -6,12 +6,6 @@
 
 <plugin>
 
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated basicProperties -->
-      <package
-            uri="http://www.mdsd.tools/characteristics/valuetype/basicProperties/1.0"
-            class="tools.mdsd.characteristics.valuetype.properties.BasicProperties.BasicPropertiesPackage"/>
-   </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated characteristics -->
@@ -45,20 +39,6 @@
             genModel="model/characteristics.genmodel"/>
    </extension>
 
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated serviceAPI -->
-      <package
-            uri="http://www.mdsd.tools/characteristics/api/service/1.0"
-            class="org.palladiosimulator.pcm.characteristics.api.service.ServiceAPIPackage"
-            genModel="model/serviceAPI.genmodel"/>
-   </extension>
 
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated api -->
-      <package
-            uri="http://www.mdsd.tools/characteristics/api/1.0"
-            class="tools.mdsd.characteristics.api.ApiPackage"
-            genModel="model/api.genmodel"/>
-   </extension>
 
 </plugin>

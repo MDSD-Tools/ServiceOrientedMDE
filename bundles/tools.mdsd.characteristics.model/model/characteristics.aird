@@ -2299,7 +2299,7 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC%20ESupertypes']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_YpEJF5gYEemfdJryDtyR4Q" sourceNode="_Yac1QFLkEemDkLnPbq9GnA" targetNode="_YoxN8JgYEemfdJryDtyR4Q" beginLabel="[0..1] manifestation" endLabel="[1..1] container">
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_YpEJF5gYEemfdJryDtyR4Q" sourceNode="_Yac1QFLkEemDkLnPbq9GnA" targetNode="_YoxN8JgYEemfdJryDtyR4Q" beginLabel="[0..1] /manifestation" endLabel="[1..1] container">
       <target xmi:type="ecore:EReference" href="characteristics.ecore#//manifestation/Manifestation/container"/>
       <semanticElements xmi:type="ecore:EReference" href="characteristics.ecore#//manifestation/Manifestation/container"/>
       <semanticElements xmi:type="ecore:EReference" href="characteristics.ecore#//manifestation/ManifestationContainer/manifestation"/>
