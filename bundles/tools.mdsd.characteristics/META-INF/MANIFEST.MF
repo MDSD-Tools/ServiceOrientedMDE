@@ -10,8 +10,8 @@ Bundle-Localization: plugin
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  tools.mdsd.modelingfoundations.identifier;visibility:=reexport,
- tools.mdsd.characteristics.realm;visibility:=reexport,
- tools.mdsd.characteristics.services,
+ tools.mdsd.somde.realm;visibility:=reexport,
+ tools.mdsd.somde.services,
  tools.mdsd.characteristics.mwe2;bundle-version="1.0.0";resolution:=optional
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: tools.mdsd.characteristics,
