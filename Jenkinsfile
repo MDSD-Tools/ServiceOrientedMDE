@@ -1,4 +1,3 @@
-mdsdToolsEclipsePipeline {  
-	webserverDir = 'characteristicsmodeling'
-	updateSiteLocation = 'releng/tools.mdsd.characteristics.updatesite/target/repository'
-} 
+MDSDToolsPipeline {
+    deployUpdatesite 'releng/tools.mdsd.somde.updatesite/target/repository'
+}
