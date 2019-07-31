@@ -12,6 +12,8 @@
 	<packaging>pom</packaging>
 	
 	<modules>
+		<module>tools.mdsd.somde.feature</module>
+		<module>tools.mdsd.somde.guice.feature</module>
 	</modules>
 	
 </project>

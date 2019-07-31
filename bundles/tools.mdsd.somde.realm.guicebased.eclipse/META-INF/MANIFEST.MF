@@ -7,5 +7,5 @@ Bundle-Vendor: MDSD.tools
 Fragment-Host: tools.mdsd.somde.realm.guicebased;bundle-version="0.1.0"
 Automatic-Module-Name: tools.mdsd.characteristics.realm.guicebased.eclipse
 Bundle-RequiredExecutionEnvironment: JavaSE-11
-Import-Package: tools.mdsd.characteristics.services.eclipse.guice,
- tools.mdsd.characteristics.services.guice
+Import-Package: tools.mdsd.somde.services.eclipse.guice,
+ tools.mdsd.somde.services.guice

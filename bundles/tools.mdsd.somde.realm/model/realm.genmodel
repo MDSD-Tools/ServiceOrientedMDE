@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
-    modelDirectory="/tools.mdsd.characteristics.realm/src-gen" creationIcons="false"
-    editDirectory="/tools.mdsd.characteristics.realm.edit/src-gen" editorDirectory="/tools.mdsd.characteristics.realm.editor/src-gen"
-    modelPluginID="tools.mdsd.characteristics.realm" modelName="Realm" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    modelDirectory="/tools.mdsd.somde.realm/src-gen" creationIcons="false"
+    editDirectory="/tools.mdsd.somde.realm.edit/src-gen" editorDirectory="/tools.mdsd.somde.realm.editor/src-gen"
+    modelPluginID="tools.mdsd.somde.realm" modelName="Realm" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="10.0"
     copyrightFields="false" operationReflection="true" importOrganizing="true">
   <foreignModel>realm.ecore</foreignModel>
   <testsDirectory xsi:nil="true"/>
-  <genPackages prefix="Realm" basePackage="tools.mdsd.characteristics" resource="XMI"
+  <genPackages prefix="Realm" basePackage="tools.mdsd.somde" resource="XMI"
       disposableProviderFactory="true" ecorePackage="realm.ecore#/">
-    <genClasses ecoreClass="realm.ecore#//CharacteristicsModelingRealm">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference realm.ecore#//CharacteristicsModelingRealm/configuration"/>
-      <genOperations ecoreOperation="realm.ecore#//CharacteristicsModelingRealm/getAPI">
-        <genParameters ecoreParameter="realm.ecore#//CharacteristicsModelingRealm/getAPI/apiType"/>
-        <genTypeParameters ecoreTypeParameter="realm.ecore#//CharacteristicsModelingRealm/getAPI/APIType"/>
+    <genClasses ecoreClass="realm.ecore#//ServiceOrientedModelingRealm">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference realm.ecore#//ServiceOrientedModelingRealm/configuration"/>
+      <genOperations ecoreOperation="realm.ecore#//ServiceOrientedModelingRealm/getAPI">
+        <genParameters ecoreParameter="realm.ecore#//ServiceOrientedModelingRealm/getAPI/apiType"/>
+        <genTypeParameters ecoreTypeParameter="realm.ecore#//ServiceOrientedModelingRealm/getAPI/APIType"/>
       </genOperations>
     </genClasses>
     <genClasses image="false" ecoreClass="realm.ecore#//ConfigurationItem">

@@ -9,8 +9,8 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated guiceTest -->
       <package
-            uri="http://mdsd.tools/Characteristics/Realm/Guicebased/Tests/1.0"
-            class="tools.mdsd.characteristics.realm.guicebased.test.guicetest.GuiceTestPackage"
+            uri="http://mdsd.tools/somde/Realm/Guicebased/Tests/1.0"
+            class="tools.mdsd.somde.realm.guicebased.test.guicetest.GuiceTestPackage"
             genModel="model/guiceTest.genmodel"/>
    </extension>
 

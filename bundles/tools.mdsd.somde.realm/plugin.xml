@@ -9,8 +9,8 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated realm -->
       <package
-            uri="http://www.mdsd.tools/characteristics/realm/1.0"
-            class="tools.mdsd.characteristics.realm.RealmPackage"
+            uri="http://www.mdsd.tools/somde/realm/1.0"
+            class="tools.mdsd.somde.realm.RealmPackage"
             genModel="model/realm.genmodel"/>
    </extension>
 
@@ -18,7 +18,6 @@
       <!-- @generated realm -->
       <parser
             type="realm"
-            class="tools.mdsd.characteristics.realm.util.RealmResourceFactoryImpl"/>
+            class="tools.mdsd.somde.realm.util.RealmResourceFactoryImpl"/>
    </extension>
-
 </plugin>

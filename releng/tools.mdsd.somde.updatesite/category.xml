@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/tools.mdsd.characteristics.feature_0.1.0.qualifier.jar" id="tools.mdsd.characteristics.feature" version="0.1.0.qualifier">
-      <category name="characteristics"/>
+   <feature url="features/tools.mdsd.somde.feature_0.1.0.qualifier.jar" id="tools.mdsd.somde.feature" version="0.1.0.qualifier">
+      <category name="somde"/>
    </feature>
-   <category-def name="characteristics" label="MDSD Tools Characteristics Modeling"/>
+   <feature url="features/tools.mdsd.somde.guice.feature_0.1.0.qualifier.jar" id="tools.mdsd.somde.guice.feature" version="0.1.0.qualifier">
+      <category name="somde"/>
+   </feature>
+   <category-def name="somde" label="MDSD Tools Service Oriented MDE Framework"/>
 </site>

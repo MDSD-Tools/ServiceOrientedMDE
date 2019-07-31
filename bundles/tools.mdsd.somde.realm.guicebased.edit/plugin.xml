@@ -9,8 +9,8 @@
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <!-- @generated guicebased -->
       <factory
-            uri="http://www.mdsd.tools/characteristics/realm/guicebased/1.0"
-            class="tools.mdsd.characteristics.realm.guicebased.provider.GuiceBasedRealmItemProviderAdapterFactory"
+            uri="http://www.mdsd.tools/somde/realm/guicebased/1.0"
+            class="tools.mdsd.somde.realm.guicebased.provider.GuiceBasedRealmItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider
@@ -22,7 +22,7 @@
    <extension point="org.eclipse.emf.edit.childCreationExtenders">
       <!-- @generated guicebased -->
       <extender
-            uri="http://www.mdsd.tools/characteristics/realm/1.0"
-            class="tools.mdsd.characteristics.realm.guicebased.provider.GuiceBasedRealmItemProviderAdapterFactory$RealmChildCreationExtender"/>
+            uri="http://www.mdsd.tools/somde/realm/1.0"
+            class="tools.mdsd.somde.realm.guicebased.provider.GuiceBasedRealmItemProviderAdapterFactory$RealmChildCreationExtender"/>
    </extension>
 </plugin>

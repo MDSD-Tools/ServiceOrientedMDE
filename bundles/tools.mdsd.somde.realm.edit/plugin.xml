@@ -9,8 +9,8 @@
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <!-- @generated realm -->
       <factory
-            uri="http://www.mdsd.tools/characteristics/realm/1.0"
-            class="tools.mdsd.characteristics.realm.provider.RealmItemProviderAdapterFactory"
+            uri="http://www.mdsd.tools/somde/realm/1.0"
+            class="tools.mdsd.somde.realm.provider.RealmItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider

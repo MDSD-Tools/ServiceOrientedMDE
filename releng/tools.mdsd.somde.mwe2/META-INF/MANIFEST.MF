@@ -1,9 +1,9 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Characteristics MWE2 Model Generation Workflow
-Bundle-SymbolicName: tools.mdsd.characteristics.mwe2
+Bundle-Name: Service Oriented MDE MWE2 Model Generation Workflow
+Bundle-SymbolicName: tools.mdsd.somde.mwe2
 Bundle-Version: 1.0.0.qualifier
-Automatic-Module-Name: tools.mdsd.characteristics.mwe2
+Automatic-Module-Name: tools.mdsd.somde.mwe2
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Require-Bundle: org.eclipse.emf.mwe.core,
  org.eclipse.emf.mwe2.launch,
@@ -16,5 +16,4 @@ Require-Bundle: org.eclipse.emf.mwe.core,
  org.objectweb.asm;bundle-version="6.1.1",
  org.eclipse.core.resources,
  tools.mdsd.ecoreworkflow.mwe2lib;bundle-version="0.1.0",
- org.eclipse.core.runtime,
- tools.mdsd.modelingfoundations.identifier;bundle-version="0.1.0"
+ org.eclipse.core.runtime

@@ -13,17 +13,7 @@ Workflow {
 	bean = EclipseRCPSupportingStandaloneSetup {
 		scanClassPath = true
 		platformUri = workspaceRoot
-		
-		uriMap = ContextDependentMapping {
-			onRunningPlatform = "platform:/plugin/tools.mdsd.modelingfoundations.identifier/model/identifier.genmodel"
-			onStandalone = "platform:/resource/tools.mdsd.modelingfoundations.identifier/model/identifier.genmodel"
-		}
-		
-		uriMap = ContextDependentMapping {
-			onRunningPlatform = "platform:/plugin/tools.mdsd.modelingfoundations.identifier/model/identifier.ecore"
-			onStandalone = "platform:/resource/tools.mdsd.modelingfoundations.identifier/model/identifier.ecore"
-		}
-		
+
 		uriMap = ContextDependentMapping {
 			onRunningPlatform = "platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel"
 			onStandalone = "platform:/resource/org.eclipse.emf.ecore/model/Ecore.genmodel"
@@ -38,84 +28,38 @@ Workflow {
 	}
 
 	component = EcoreGenerator {
-		generateCustomClasses = false
-		generateEdit = true
-		generateEditor = true
-		genModel = "platform:/resource/tools.mdsd.characteristics/model/characteristics.genmodel"
-		srcPath = "platform:/resource/tools.mdsd.characteristics/src"
-		srcPath = "platform:/resource/tools.mdsd.characteristics.edit/src"
-		srcPath = "platform:/resource/tools.mdsd.characteristics.editor/src"
-	}
-		
-	component = EcoreGenerator {
         generateCustomClasses = false
         generateEdit = true
         generateEditor = false
-        genModel = "platform:/resource/tools.mdsd.characteristics.realm/model/realm.genmodel"
-        srcPath = "platform:/resource/tools.mdsd.characteristics.realm/src"
+        genModel = "platform:/resource/tools.mdsd.somde.realm/model/realm.genmodel"
+        srcPath = "platform:/resource/tools.mdsd.somde.realm/src"
     }
 	
 	component = EcoreGenerator {
 		generateCustomClasses = false
 		generateEdit = true
 		generateEditor = false
-		genModel = "platform:/resource/tools.mdsd.characteristics.realm.guicebased/model/guicebased.genmodel"
-		srcPath = "platform:/resource/tools.mdsd.characteristics.realm.guicebased/src"
-		srcPath = "platform:/resource/tools.mdsd.characteristics.realm.guicebased.edit/src"
+		genModel = "platform:/resource/tools.mdsd.somde.realm.guicebased/model/guicebased.genmodel"
+		srcPath = "platform:/resource/tools.mdsd.somde.realm.guicebased/src"
+		srcPath = "platform:/resource/tools.mdsd.somde.realm.guicebased.edit/src"
 	}
 	
    component = EcoreGenerator {
         generateCustomClasses = false
         generateEdit = false
         generateEditor = false
-        genModel = "platform:/resource/tools.mdsd.characteristics.realm.guicebased.tests/model/guiceTest.genmodel"
-        srcPath = "platform:/resource/tools.mdsd.characteristics.realm.guicebased.tests/src"
+        genModel = "platform:/resource/tools.mdsd.somde.realm.guicebased.tests/model/guiceTest.genmodel"
+        srcPath = "platform:/resource/tools.mdsd.somde.realm.guicebased.tests/src"
     }
 	
-	component = EcoreGenerator {
-		generateCustomClasses = false
-		generateEdit = false
-		generateEditor = false
-		genModel = "platform:/resource/tools.mdsd.characteristics.properties.basic/model/basicproperties.genmodel"
-		srcPath = "platform:/resource/tools.mdsd.characteristics.properties.basic/src-gen"
-	}
-	
-	component = EcoreGenerator {
-		generateCustomClasses = false
-		generateEdit = true
-		generateEditor = true
-		genModel = "platform:/resource/tools.mdsd.characteristics.examples.pcmzero/model/pcmzero.genmodel"
-		srcPath = "platform:/resource/tools.mdsd.characteristics.examples.pcmzero/src-gen"
-	}
-	
 	component = tools.mdsd.ecoreworkflow.mwe2lib.component.GapPatternPostProcessor {
-		folders = {
-            gen = "platform:/resource/tools.mdsd.characteristics.edit/src-gen"
-            src = "platform:/resource/tools.mdsd.characteristics.edit/src"
+        folders = {
+            gen = "platform:/resource/tools.mdsd.somde.realm/src-gen"
+            src = "platform:/resource/tools.mdsd.somde.realm/src"
         }
         folders = {
-            gen = "platform:/resource/tools.mdsd.characteristics.editor/src-gen"
-            src = "platform:/resource/tools.mdsd.characteristics.editor/src"
+            gen = "platform:/resource/tools.mdsd.somde.realm.guicebased.tests/src-gen"
+            src = "platform:/resource/tools.mdsd.somde.realm.guicebased.tests/src"
         }
-		folders = {
-			gen = "platform:/resource/tools.mdsd.characteristics/src-gen"
-			src = "platform:/resource/tools.mdsd.characteristics/src"
-		}
-        folders = {
-            gen = "platform:/resource/tools.mdsd.characteristics.realm/src-gen"
-            src = "platform:/resource/tools.mdsd.characteristics.realm/src"
-        }
-        folders = {
-            gen = "platform:/resource/tools.mdsd.characteristics.realm.guicebased.tests/src-gen"
-            src = "platform:/resource/tools.mdsd.characteristics.realm.guicebased.tests/src"
-        }
-		folders = {
-			gen = "platform:/resource/tools.mdsd.characteristics.examples.pcmzero/src-gen"
-			src = "platform:/resource/tools.mdsd.characteristics.examples.pcmzero/src"
-		}
-		folders = {
-			gen = "platform:/resource/tools.mdsd.characteristics.examples.pcmzero.editor/src-gen"
-			src = "platform:/resource/tools.mdsd.characteristics.examples.pcmzero.editor/src"
-		}
 	}
 }

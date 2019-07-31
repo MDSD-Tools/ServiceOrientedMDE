@@ -9,10 +9,11 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
-import tools.mdsd.characteristics.realm.guicebased.impl.GuiceInjectorDependencyResolvingAdapter;
-import tools.mdsd.characteristics.realm.guicebased.test.guicetest.Container;
-import tools.mdsd.characteristics.realm.guicebased.test.guicetest.Element;
-import tools.mdsd.characteristics.realm.guicebased.test.guicetest.GuiceTestFactory;
+import tools.mdsd.somde.realm.guicebased.MockModule;
+import tools.mdsd.somde.realm.guicebased.impl.GuiceInjectorDependencyResolvingAdapter;
+import tools.mdsd.somde.realm.guicebased.test.guicetest.Container;
+import tools.mdsd.somde.realm.guicebased.test.guicetest.Element;
+import tools.mdsd.somde.realm.guicebased.test.guicetest.GuiceTestFactory;
 
 class GuiceInjectingAdapterTest {
     @BeforeAll

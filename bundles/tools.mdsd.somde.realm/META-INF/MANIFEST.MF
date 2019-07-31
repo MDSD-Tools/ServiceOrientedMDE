@@ -2,17 +2,17 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: tools.mdsd.somde.realm;singleton:=true
-Automatic-Module-Name: tools.mdsd.characteristics.realm
+Automatic-Module-Name: tools.mdsd.somde.realm
 Bundle-Version: 0.1.0.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-11
-Export-Package: tools.mdsd.characteristics.realm,
- tools.mdsd.characteristics.realm.impl,
- tools.mdsd.characteristics.realm.util
+Export-Package: tools.mdsd.somde.realm,
+ tools.mdsd.somde.realm.impl,
+ tools.mdsd.somde.realm.util
 Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport,
- tools.mdsd.modelingfoundations.identifier;visibility:=reexport,
  org.eclipse.core.runtime,
- org.eclipse.emf.ecore.xmi
+ org.eclipse.emf.ecore.xmi,
+ tools.mdsd.somde.mwe2;bundle-version="1.0.0";resolution:=optional
 Bundle-ActivationPolicy: lazy

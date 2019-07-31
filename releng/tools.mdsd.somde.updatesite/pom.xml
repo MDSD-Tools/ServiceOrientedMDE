@@ -3,12 +3,12 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>tools.mdsd.characteristics</groupId>
+		<groupId>tools.mdsd.somde</groupId>
 		<artifactId>releng</artifactId>
 		<version>0.1.0-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>tools.mdsd.characteristics.updatesite</artifactId>
+	<artifactId>tools.mdsd.somde.updatesite</artifactId>
 	<packaging>eclipse-repository</packaging>
 
 </project>
