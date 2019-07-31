@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/tools.mdsd.characteristics.feature_0.1.0.qualifier.jar" id="tools.mdsd.characteristics.feature" version="0.1.0.qualifier">
+      <category name="characteristics"/>
+   </feature>
+   <category-def name="characteristics" label="MDSD Tools Characteristics Modeling"/>
+</site>
