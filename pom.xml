@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>tools.mdsd</groupId>
 		<artifactId>eclipse-parent-updatesite</artifactId>
-		<version>0.3.0</version>
+		<version>0.3.1</version>
 	</parent>
 	<groupId>tools.mdsd.somde</groupId>
 	<artifactId>parent</artifactId>	
