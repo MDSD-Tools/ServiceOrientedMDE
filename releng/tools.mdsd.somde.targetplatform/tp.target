@@ -15,6 +15,7 @@
     <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly" refresh="true">
         <repository location="https://updatesite.mdsd.tools/thirdparty-library/branches/gradleBuild/"/>
         <unit id="org.apache.aries.spifly.dynamic.feature.feature.group" version="1.2.3"/>
+        <unit id="com.google.inject.guice.feature.feature.group" version="4.2.2"/>
     </location>
     <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="release" refresh="true">
         <repository location="https://updatesite.mdsd.tools/thirdparty-library/release/"/>

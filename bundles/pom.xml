@@ -21,6 +21,5 @@
 		<module>tools.mdsd.somde.services.eclipse</module>
 		<module>tools.mdsd.somde.services.eclipse.guice</module>
 		<module>tools.mdsd.somde.services.guice</module>
-		<module>tools.mdsd.somde.thirdparty</module>
 	</modules>
 </project>
