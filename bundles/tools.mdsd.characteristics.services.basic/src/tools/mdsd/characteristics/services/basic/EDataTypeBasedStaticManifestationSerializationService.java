@@ -5,7 +5,7 @@ import static tools.mdsd.characteristics.services.Defaults.ECLASS_FILTER;
 import org.eclipse.emf.ecore.EDataType;
 import tools.mdsd.characteristics.properties.basic.EDataTypeBased;
 import tools.mdsd.characteristics.services.ServiceRegistrationFacade;
-import tools.mdsd.characteristics.services.api.StaticManifestationSerializationService;
+import tools.mdsd.characteristics.services.StaticManifestationSerializationService;
 import tools.mdsd.characteristics.valuetype.ValueType;
 import tools.mdsd.characteristics.valuetype.ValuetypePackage;
 

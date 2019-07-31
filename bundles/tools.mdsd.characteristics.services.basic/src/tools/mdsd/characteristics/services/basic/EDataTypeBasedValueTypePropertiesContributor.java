@@ -7,7 +7,7 @@ import java.util.Collection;
 import java.util.Collections;
 import tools.mdsd.characteristics.properties.basic.BasicPackage;
 import tools.mdsd.characteristics.services.ServiceRegistrationFacade;
-import tools.mdsd.characteristics.services.api.ValueTypePropertyContributor;
+import tools.mdsd.characteristics.services.ValueTypePropertyContributor;
 import tools.mdsd.characteristics.valuetype.ValueType;
 import tools.mdsd.characteristics.valuetype.ValuetypePackage;
 

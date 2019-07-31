@@ -41,21 +41,12 @@ Workflow {
 		generateCustomClasses = false
 		generateEdit = true
 		generateEditor = true
-		genModel = "platform:/resource/tools.mdsd.characteristics.model/model/characteristics.genmodel"
-		srcPath = "platform:/resource/tools.mdsd.characteristics.model/src"
-		srcPath = "platform:/resource/tools.mdsd.characteristics.model.impl/src"
+		genModel = "platform:/resource/tools.mdsd.characteristics/model/characteristics.genmodel"
+		srcPath = "platform:/resource/tools.mdsd.characteristics/src"
 		srcPath = "platform:/resource/tools.mdsd.characteristics.edit/src"
 		srcPath = "platform:/resource/tools.mdsd.characteristics.editor/src"
 	}
 		
-	component = EcoreGenerator {
-		generateCustomClasses = false
-		generateEdit = false
-		generateEditor = false
-		genModel = "platform:/resource/tools.mdsd.characteristics.api/model/api.genmodel"
-		srcPath = "platform:/resource/tools.mdsd.characteristics.api/src-gen"
-	}
-	
 	component = EcoreGenerator {
         generateCustomClasses = false
         generateEdit = true
@@ -107,8 +98,8 @@ Workflow {
             src = "platform:/resource/tools.mdsd.characteristics.editor/src"
         }
 		folders = {
-			gen = "platform:/resource/tools.mdsd.characteristics.model/src-gen"
-			src = "platform:/resource/tools.mdsd.characteristics.model/src"
+			gen = "platform:/resource/tools.mdsd.characteristics/src-gen"
+			src = "platform:/resource/tools.mdsd.characteristics/src"
 		}
         folders = {
             gen = "platform:/resource/tools.mdsd.characteristics.realm/src-gen"

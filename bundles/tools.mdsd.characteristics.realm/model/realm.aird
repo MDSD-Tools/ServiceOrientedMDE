@@ -5,10 +5,10 @@
     <semanticResources>realm.genmodel</semanticResources>
     <semanticResources>platform:/resource/tools.mdsd.characteristics.api/model/api.ecore</semanticResources>
     <semanticResources>http://www.eclipse.org/emf/2002/Ecore</semanticResources>
-    <semanticResources>platform:/resource/tools.mdsd.characteristics.model/model/characteristics.ecore</semanticResources>
+    <semanticResources>platform:/resource/tools.mdsd.characteristics/model/characteristics.ecore</semanticResources>
     <semanticResources>platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore</semanticResources>
     <semanticResources>platform:/plugin/tools.mdsd.modelingfoundations.identifier/model/identifier.ecore</semanticResources>
-    <semanticResources>platform:/resource/tools.mdsd.characteristics.model/model/characteristics.genmodel</semanticResources>
+    <semanticResources>platform:/resource/tools.mdsd.characteristics/model/characteristics.genmodel</semanticResources>
     <semanticResources>platform:/resource/org.eclipse.emf.ecore/model/Ecore.genmodel</semanticResources>
     <semanticResources>platform:/plugin/tools.mdsd.modelingfoundations.identifier/model/identifier.genmodel</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_ZFNOUH1pEemjX551ZUwHwQ">

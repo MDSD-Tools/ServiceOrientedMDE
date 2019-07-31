@@ -13,7 +13,6 @@ Export-Package: tools.mdsd.characteristics.realm.guicebased,
  tools.mdsd.characteristics.realm.guicebased.util
 Require-Bundle: tools.mdsd.characteristics,
  org.eclipse.emf.ecore;visibility:=reexport,
- tools.mdsd.characteristics.model;visibility:=reexport,
  tools.mdsd.modelingfoundations.identifier;visibility:=reexport,
  tools.mdsd.characteristics.realm;visibility:=reexport
 Bundle-ActivationPolicy: lazy

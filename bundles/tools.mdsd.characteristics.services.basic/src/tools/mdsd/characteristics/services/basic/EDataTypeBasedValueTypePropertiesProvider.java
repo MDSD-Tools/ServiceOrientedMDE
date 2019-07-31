@@ -6,7 +6,7 @@ import static tools.mdsd.characteristics.services.Defaults.OBJECT_IDENTITY;
 import tools.mdsd.characteristics.properties.basic.BasicPackage;
 import tools.mdsd.characteristics.properties.basic.EDataTypeBased;
 import tools.mdsd.characteristics.services.ServiceRegistrationFacade;
-import tools.mdsd.characteristics.services.api.ValueTypePropertyProvider;
+import tools.mdsd.characteristics.services.ValueTypePropertyProvider;
 import tools.mdsd.characteristics.valuetype.EDataTypeValueType;
 import tools.mdsd.characteristics.valuetype.ValueType;
 import tools.mdsd.characteristics.valuetype.ValuetypePackage;

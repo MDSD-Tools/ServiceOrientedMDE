@@ -8,7 +8,7 @@
     testsDirectory="" testSuiteClass="tools.mdsd.characteristics.realm.guicebased.guicebasedrealm.tests.GuicebasedAllTests"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
     editPluginID="tools.mdsd.characteristics.realm.guicebased.edit" editorPluginID="tools.mdsd.characteristics.realm.guicebased.editor"
-    testsPluginID="tools.mdsd.characteristics.realm.guicebased.editor" usedGenPackages="../../tools.mdsd.characteristics.model/model/characteristics.genmodel#//characteristics platform:/plugin/tools.mdsd.modelingfoundations.identifier/model/identifier.genmodel#//identifier ../../tools.mdsd.characteristics.realm/model/realm.genmodel#//realm"
+    testsPluginID="tools.mdsd.characteristics.realm.guicebased.editor" usedGenPackages="../../tools.mdsd.characteristics.realm/model/realm.genmodel#//realm"
     operationReflection="true" importOrganizing="true">
   <foreignModel>guicebased.ecore</foreignModel>
   <genPackages prefix="GuiceBasedRealm" basePackage="tools.mdsd.characteristics.realm"

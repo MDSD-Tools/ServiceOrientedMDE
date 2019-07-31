@@ -4,7 +4,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import tools.mdsd.characteristics.services.Service.ArgumentSelector;
 import tools.mdsd.characteristics.services.Service.RegistrationType;
-import tools.mdsd.modelingfoundations.identifier.Identifier;
 
 public class Defaults {
 
@@ -14,8 +13,9 @@ public class Defaults {
             new RegistrationType<>(Boolean.class, x -> Boolean.TRUE);
     public static final RegistrationType<EObject, EClass> ECLASS_FILTER =
             new RegistrationType<>(EClass.class, EObject::eClass);
-    public static final RegistrationType<Identifier, String> IDENTIFIER_FILTER =
-            new RegistrationType<>(String.class, Identifier::getId);
+    @SuppressWarnings("rawtypes")
+    public static final RegistrationType<Object, Class> INSTANCEOF_FILTER =
+            new RegistrationType<Object, Class>(Class.class, Object::getClass);
     public static final RegistrationType<Object, String> CLASSNAME_FILTER =
             new RegistrationType<>(String.class, x -> x.getClass().getName());
     public static final RegistrationType<Object, Object> OBJECT_IDENTITY =
